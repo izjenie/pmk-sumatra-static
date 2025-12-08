@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
-import NewsSection from '@/components/NewsSection';
 
 const MapComponent = dynamic(() => import('@/components/MapComponent'), { 
   ssr: false,
@@ -738,8 +737,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HIDDEN: Pemantauan Satelit Section - uncomment to show again */}
-      {/* 
       <section className="py-16 bg-gray-50">
         <h2 className="text-center text-3xl font-bold mb-6">
           Pemantauan Satelit Pulau Sumatera
@@ -750,7 +747,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      */}
 
       <footer className="bg-[#1B1B1B] text-white pt-16 pb-10">
         <div className="container mx-auto px-6 md:px-20">
