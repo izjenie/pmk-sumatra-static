@@ -582,77 +582,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Logistik Stok PMI Section */}
-      <section className="bg-gray-100 py-16">
-        <div className="container mx-auto px-4 sm:px-6 md:px-10">
-          <div className="flex flex-col items-center mb-10">
-            <div className="flex items-center gap-4 mb-2">
-              <img src="/logos/pmi.png" alt="PMI" className="w-12 h-12 object-contain" />
-              <h2 className="text-3xl font-bold text-center">
-                Logistik Stok PMI
-              </h2>
-            </div>
-            <p className="text-sm text-gray-500">
-              Pembaruan Terakhir: <span className="font-semibold">8 Desember 2025 pukul 17.02</span>
-            </p>
-          </div>
-
-          <div className="bg-white text-black rounded-xl shadow-xl p-6">
-            <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
-              <div>
-                <label className="font-semibold text-gray-700 mr-2">Cari:</label>
-                <input
-                  type="text"
-                  value={searchStockTerm}
-                  onChange={(e) => setSearchStockTerm(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:border-[#D22730] focus:ring-2 focus:ring-[#D22730]/25 outline-none transition"
-                  placeholder="Cari item..."
-                />
-              </div>
-              <a 
-                href="https://pmi.or.id/dashboard/stock" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-sm text-[#D22730] hover:underline"
-              >
-                Sumber: pmi.or.id/dashboard/stock →
-              </a>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="sticky top-0 bg-gray-50">
-                  <tr className="border-b-2 border-gray-200">
-                    <th className="text-left py-3 px-4 font-semibold">Nama Barang</th>
-                    <th className="text-right py-3 px-4 font-semibold">Jumlah Stok</th>
-                  </tr>
-                </thead>
-              </table>
-              <div className="max-h-[600px] overflow-y-auto">
-                <table className="w-full">
-                  <tbody>
-                    {filteredPmiStock.map((item) => (
-                      <tr key={item.id} className="border-b border-gray-100 hover:bg-gray-50">
-                        <td className="py-3 px-4">
-                          <div className="flex items-center gap-3">
-                            <i className={`fas ${item.icon} text-xl text-[#D22730] w-6 text-center`}></i>
-                            <span className="font-semibold">{item.name}</span>
-                          </div>
-                        </td>
-                        <td className="py-3 px-4 text-right font-mono text-lg">{item.quantity}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <div className="text-center text-sm text-gray-500 mt-4">
-                Menampilkan {filteredPmiStock.length} item
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Layanan BAZNAS Section */}
       <section className="bg-[#1B1B1B] text-white py-16">
         <div className="container mx-auto px-4 sm:px-6 md:px-10">
@@ -922,6 +851,77 @@ export default function Home() {
               <i className="fas fa-info-circle mr-2"></i>
               Klik nomor telepon untuk langsung menghubungi
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Logistik Stok PMI Section */}
+      <section className="bg-gray-100 py-16">
+        <div className="container mx-auto px-4 sm:px-6 md:px-10">
+          <div className="flex flex-col items-center mb-10">
+            <div className="flex items-center gap-4 mb-2">
+              <img src="/logos/pmi.png" alt="PMI" className="w-12 h-12 object-contain" />
+              <h2 className="text-3xl font-bold text-center">
+                Logistik Stok PMI
+              </h2>
+            </div>
+            <p className="text-sm text-gray-500">
+              Pembaruan Terakhir: <span className="font-semibold">8 Desember 2025 pukul 17.02</span>
+            </p>
+          </div>
+
+          <div className="bg-white text-black rounded-xl shadow-xl p-6">
+            <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <label className="font-semibold text-gray-700 mr-2">Cari:</label>
+                <input
+                  type="text"
+                  value={searchStockTerm}
+                  onChange={(e) => setSearchStockTerm(e.target.value)}
+                  className="px-4 py-2 border border-gray-300 rounded-lg focus:border-[#D22730] focus:ring-2 focus:ring-[#D22730]/25 outline-none transition"
+                  placeholder="Cari item..."
+                />
+              </div>
+              <a 
+                href="https://pmi.or.id/dashboard/stock" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-[#D22730] hover:underline"
+              >
+                Sumber: pmi.or.id/dashboard/stock →
+              </a>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="sticky top-0 bg-gray-50">
+                  <tr className="border-b-2 border-gray-200">
+                    <th className="text-left py-3 px-4 font-semibold">Nama Barang</th>
+                    <th className="text-right py-3 px-4 font-semibold">Jumlah Stok</th>
+                  </tr>
+                </thead>
+              </table>
+              <div className="max-h-[600px] overflow-y-auto">
+                <table className="w-full">
+                  <tbody>
+                    {filteredPmiStock.map((item) => (
+                      <tr key={item.id} className="border-b border-gray-100 hover:bg-gray-50">
+                        <td className="py-3 px-4">
+                          <div className="flex items-center gap-3">
+                            <i className={`fas ${item.icon} text-xl text-[#D22730] w-6 text-center`}></i>
+                            <span className="font-semibold">{item.name}</span>
+                          </div>
+                        </td>
+                        <td className="py-3 px-4 text-right font-mono text-lg">{item.quantity}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="text-center text-sm text-gray-500 mt-4">
+                Menampilkan {filteredPmiStock.length} item
+              </div>
+            </div>
           </div>
         </div>
       </section>
