@@ -3,9 +3,9 @@ FROM nginx:alpine
 # Copy dist folder to nginx html directory
 COPY dist/ /usr/share/nginx/html/
 
-# Custom nginx config to serve on port 3000
+# Custom nginx config to serve on port 8080
 RUN echo 'server { \
-    listen 3000; \
+    listen 8080; \
     server_name localhost; \
     root /usr/share/nginx/html; \
     index index.html; \
@@ -14,6 +14,6 @@ RUN echo 'server { \
     } \
 }' > /etc/nginx/conf.d/default.conf
 
-EXPOSE 3000
+EXPOSE 8080
 
 CMD ["nginx", "-g", "daemon off;"]
