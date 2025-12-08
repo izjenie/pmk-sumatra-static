@@ -582,83 +582,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Layanan BAZNAS Section */}
-      <section className="bg-[#1B1B1B] text-white py-16">
-        <div className="container mx-auto px-4 sm:px-6 md:px-10">
-          <div className="bg-gradient-to-br from-[#FFF8E7] to-[#FFE4B5] rounded-2xl shadow-2xl overflow-hidden max-w-4xl mx-auto">
-            {/* Header with Image */}
-            <div className="relative h-56 md:h-72 overflow-hidden">
-              <img 
-                src="/images/baznas-logistik.png" 
-                alt="Paket Logistik BAZNAS" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#FFF8E7] via-transparent to-transparent"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <div className="inline-block bg-[#D22730] px-6 py-2 rounded-lg shadow-lg">
-                  <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                    Layanan BAZNAS
-                  </h2>
-                </div>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="p-6 md:p-8 text-center">
-              {/* Hotline */}
-              <div className="mb-6">
-                <p className="text-[#8B4513] font-semibold text-lg mb-2">
-                  Pusdalops BAZNAS Tanggap Bencana
-                </p>
-                <a 
-                  href="tel:08180777211" 
-                  className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105"
-                >
-                  <div className="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center">
-                    <i className="fas fa-phone text-white text-lg"></i>
-                  </div>
-                  <span className="text-2xl md:text-3xl font-bold text-[#1B1B1B]">0818 0777 2112</span>
-                </a>
-              </div>
-
-              {/* Donation Info */}
-              <div className="bg-white/80 backdrop-blur rounded-xl p-6 shadow-inner">
-                <h3 className="text-[#D22730] font-bold text-lg mb-4">
-                  Dompet Bencana & Kemanusiaan BAZNAS
-                </h3>
-                
-                <div className="space-y-3">
-                  <div className="flex items-center justify-center gap-4 flex-wrap">
-                    <div className="bg-[#1A4D2E] text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
-                      <svg viewBox="0 0 100 40" className="h-6 w-auto">
-                        <rect width="100" height="40" rx="4" fill="white"/>
-                        <text x="50" y="26" textAnchor="middle" fill="#1A4D2E" fontSize="16" fontWeight="bold">BSI</text>
-                      </svg>
-                      <span>9000.055.740</span>
-                    </div>
-                    <div className="bg-[#003D79] text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
-                      <svg viewBox="0 0 100 40" className="h-6 w-auto">
-                        <rect width="100" height="40" rx="4" fill="white"/>
-                        <text x="50" y="26" textAnchor="middle" fill="#003D79" fontSize="14" fontWeight="bold">BCA</text>
-                      </svg>
-                      <span>686.073.7777</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 text-sm">
-                    a.n. <span className="font-semibold">Badan Amil Zakat Nasional</span>
-                  </p>
-                </div>
-              </div>
-
-              {/* Source */}
-              <p className="mt-6 text-sm text-[#8B4513]/70">
-                Sumber: <span className="font-semibold">Sitrep BAZNAS</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Daftar Posko Tanggap Darurat Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 md:px-10">
@@ -921,6 +844,83 @@ export default function Home() {
               <div className="text-center text-sm text-gray-500 mt-4">
                 Menampilkan {filteredPmiStock.length} item
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Layanan BAZNAS Section */}
+      <section className="bg-[#1B1B1B] text-white py-16">
+        <div className="container mx-auto px-4 sm:px-6 md:px-10">
+          <div className="bg-gradient-to-br from-[#FFF8E7] to-[#FFE4B5] rounded-2xl shadow-2xl overflow-hidden max-w-4xl mx-auto">
+            {/* Header with Image */}
+            <div className="relative h-56 md:h-72 overflow-hidden">
+              <img 
+                src="/images/baznas-logistik.png" 
+                alt="Paket Logistik BAZNAS" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FFF8E7] via-transparent to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <div className="inline-block bg-[#D22730] px-6 py-2 rounded-lg shadow-lg">
+                  <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+                    Layanan BAZNAS
+                  </h2>
+                </div>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 md:p-8 text-center">
+              {/* Hotline */}
+              <div className="mb-6">
+                <p className="text-[#8B4513] font-semibold text-lg mb-2">
+                  Pusdalops BAZNAS Tanggap Bencana
+                </p>
+                <a 
+                  href="tel:08180777211" 
+                  className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                >
+                  <div className="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center">
+                    <i className="fas fa-phone text-white text-lg"></i>
+                  </div>
+                  <span className="text-2xl md:text-3xl font-bold text-[#1B1B1B]">0818 0777 2112</span>
+                </a>
+              </div>
+
+              {/* Donation Info */}
+              <div className="bg-white/80 backdrop-blur rounded-xl p-6 shadow-inner">
+                <h3 className="text-[#D22730] font-bold text-lg mb-4">
+                  Dompet Bencana & Kemanusiaan BAZNAS
+                </h3>
+                
+                <div className="space-y-3">
+                  <div className="flex items-center justify-center gap-4 flex-wrap">
+                    <div className="bg-[#1A4D2E] text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
+                      <svg viewBox="0 0 100 40" className="h-6 w-auto">
+                        <rect width="100" height="40" rx="4" fill="white"/>
+                        <text x="50" y="26" textAnchor="middle" fill="#1A4D2E" fontSize="16" fontWeight="bold">BSI</text>
+                      </svg>
+                      <span>9000.055.740</span>
+                    </div>
+                    <div className="bg-[#003D79] text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
+                      <svg viewBox="0 0 100 40" className="h-6 w-auto">
+                        <rect width="100" height="40" rx="4" fill="white"/>
+                        <text x="50" y="26" textAnchor="middle" fill="#003D79" fontSize="14" fontWeight="bold">BCA</text>
+                      </svg>
+                      <span>686.073.7777</span>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    a.n. <span className="font-semibold">Badan Amil Zakat Nasional</span>
+                  </p>
+                </div>
+              </div>
+
+              {/* Source */}
+              <p className="mt-6 text-sm text-[#8B4513]/70">
+                Sumber: <span className="font-semibold">Sitrep BAZNAS</span>
+              </p>
             </div>
           </div>
         </div>
