@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
+import NewsSection from '@/components/NewsSection';
 
 const MapComponent = dynamic(() => import('@/components/MapComponent'), { 
   ssr: false,
