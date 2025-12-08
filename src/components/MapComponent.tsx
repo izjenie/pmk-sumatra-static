@@ -11,26 +11,17 @@ interface MapMarker {
   label: string;
 }
 
+const staticMarkers: MapMarker[] = [
+  { id: 1, latitude: 3.5, longitude: 98.0, marker_type: 'flood', label: 'Banjir Aceh Utara' },
+  { id: 2, latitude: 2.0, longitude: 99.5, marker_type: 'flood', label: 'Banjir Tapanuli' },
+  { id: 3, latitude: 1.5, longitude: 100.5, marker_type: 'truck', label: 'Distribusi Bantuan Padang' },
+  { id: 4, latitude: 3.0, longitude: 97.5, marker_type: 'tent', label: 'Posko Pengungsian Aceh' },
+];
+
 export default function MapComponent() {
   const mapRef = useRef<L.Map | null>(null);
   const mapContainerRef = useRef<HTMLDivElement>(null);
-  const [markers, setMarkers] = useState<MapMarker[]>([]);
-
-  useEffect(() => {
-    fetchMarkers();
-  }, []);
-
-  const fetchMarkers = async () => {
-    try {
-      const res = await fetch('/api/markers');
-      if (res.ok) {
-        const data = await res.json();
-        setMarkers(data);
-      }
-    } catch (error) {
-      console.error('Error fetching markers:', error);
-    }
-  };
+  const [markers] = useState<MapMarker[]>(staticMarkers);
 
   useEffect(() => {
     if (!mapContainerRef.current || mapRef.current) return;
