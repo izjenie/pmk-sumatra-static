@@ -329,11 +329,15 @@ export default function Home() {
               <div className="space-y-3">
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
                   <span>Meninggal Dunia</span>
-                  <span className="text-2xl font-bold">916 <span className="text-sm font-normal">jiwa</span></span>
+                  <span className="text-2xl font-bold">961 <span className="text-sm font-normal">jiwa</span></span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
                   <span>Hilang</span>
-                  <span className="text-2xl font-bold">274 <span className="text-sm font-normal">jiwa</span></span>
+                  <span className="text-2xl font-bold">291 <span className="text-sm font-normal">jiwa</span></span>
+                </div>
+                <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
+                  <span>Terluka</span>
+                  <span className="text-2xl font-bold">5 ribu <span className="text-sm font-normal">jiwa</span></span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
                   <span>Kab/Kota Terdampak</span>
@@ -377,15 +381,15 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-2">
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Rumah Rusak</p>
-                  <p className="text-lg font-bold">105,9 ribu</p>
+                  <p className="text-lg font-bold">157,6 ribu</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Rumah Ibadah</p>
-                  <p className="text-lg font-bold">420</p>
+                  <p className="text-lg font-bold">425</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Fasilitas Umum</p>
-                  <p className="text-lg font-bold">1.300</p>
+                  <p className="text-lg font-bold">1,2 ribu</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Gedung/Kantor</p>
@@ -397,11 +401,11 @@ export default function Home() {
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Jembatan</p>
-                  <p className="text-lg font-bold">405</p>
+                  <p className="text-lg font-bold">497</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2 col-span-2">
                   <p className="text-xs opacity-70">Fasilitas Pendidikan</p>
-                  <p className="text-lg font-bold">697</p>
+                  <p className="text-lg font-bold">534</p>
                 </div>
               </div>
             </div>
@@ -409,7 +413,7 @@ export default function Home() {
         </div>
 
         <p className="text-center text-sm opacity-60 mt-6" style={{ fontFamily: 'Arial, sans-serif' }}>
-          Sumber: <span className="font-semibold">Data BNPB, 7 Desember 2025, pukul 08.00 WIB</span>
+          Sumber: <span className="font-semibold">Data BNPB, 8 Desember 2025</span>
         </p>
       </section>
 

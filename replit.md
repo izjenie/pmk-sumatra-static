@@ -50,6 +50,11 @@ npm run build
 - **Map Markers**: Static markers in MapComponent.tsx showing flood areas, distribution points, and refugee camps
 
 ## Recent Changes (December 8, 2025)
+- **Updated statistics from BNPB dashboard (8 Desember 2025)**:
+  - Meninggal: 961 jiwa, Hilang: 291 jiwa, Terluka: 5 ribu jiwa
+  - Rumah Rusak: 157,6 ribu, Rumah Ibadah: 425, Fasilitas Umum: 1,2 ribu
+  - Fasilitas Kesehatan: 199, Fasilitas Pendidikan: 534, Jembatan: 497
+  - Changed all "Rb" abbreviations to "ribu" for clarity
 - Configured for Replit environment
 - Updated dev server to run on port 5000 with 0.0.0.0 binding
 - Modified MapComponent to use static marker data instead of API calls
