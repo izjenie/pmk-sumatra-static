@@ -1,13 +1,6 @@
 "use client";
 
 import { useState } from 'react';
-import dynamic from 'next/dynamic';
-
-const MapComponent = dynamic(() => import('@/components/MapComponent'), { 
-  ssr: false,
-  loading: () => <div className="h-[520px] sm:h-[650px] md:h-[768px] bg-gray-300 rounded-xl flex items-center justify-center">Loading Map...</div>
-});
-
 // Static data - no database connection needed
 const newsData = [
   { 
@@ -733,17 +726,6 @@ export default function Home() {
                 Sumber: <span className="font-semibold">Sitrep BAZNAS</span>
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-gray-50">
-        <h2 className="text-center text-3xl font-bold mb-6">
-          Pemantauan Satelit Pulau Sumatera
-        </h2>
-        <div className="container mx-auto px-3 sm:px-6 md:px-20">
-          <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-xl">
-            <MapComponent />
           </div>
         </div>
       </section>
