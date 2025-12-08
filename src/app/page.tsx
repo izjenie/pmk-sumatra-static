@@ -806,6 +806,126 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Call Center BPBD Sumatera Utara Section */}
+      <section className="py-16 bg-[#1B1B1B]">
+        <div className="container mx-auto px-4 sm:px-6 md:px-10">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#D22730] to-[#B71C1C] px-6 py-3 rounded-xl mb-4">
+              <i className="fas fa-headset text-white text-2xl"></i>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+                Call Center BPBD Sumatera Utara
+              </h2>
+            </div>
+            <p className="text-gray-400 text-lg">Kabupaten/Kota & Instansi Terkait</p>
+          </div>
+
+          {/* Main BPBD & Emergency Services */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            {[
+              { nama: "BNPB", kontak: "117", icon: "fa-shield-alt", color: "from-red-600 to-red-800" },
+              { nama: "PUSDALOPS PB BPBD Sumut", kontak: "0811 6221 733", icon: "fa-broadcast-tower", color: "from-orange-500 to-orange-700" },
+              { nama: "PMI", kontak: "0852 6612 2520", icon: "fa-first-aid", color: "from-red-500 to-red-700" },
+              { nama: "DAMKAR Medan", kontak: "0811 6566 113", icon: "fa-fire-extinguisher", color: "from-orange-600 to-red-600" },
+            ].map((item, index) => (
+              <a 
+                key={index}
+                href={`tel:${item.kontak.replace(/\s/g, '')}`}
+                className={`bg-gradient-to-br ${item.color} rounded-xl p-4 text-center hover:scale-105 transition-transform shadow-lg`}
+              >
+                <i className={`fas ${item.icon} text-3xl text-white mb-2`}></i>
+                <h3 className="font-bold text-white text-sm mb-1">{item.nama}</h3>
+                <p className="text-white/90 font-mono text-lg font-bold">{item.kontak}</p>
+              </a>
+            ))}
+          </div>
+
+          {/* BASARNAS Special */}
+          <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-6 mb-8 shadow-lg">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                  <i className="fas fa-life-ring text-3xl text-white"></i>
+                </div>
+                <div>
+                  <h3 className="font-bold text-white text-xl">BASARNAS</h3>
+                  <p className="text-blue-200 text-sm">Badan SAR Nasional</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                {["0852 0787 2962", "0851 9179 5579", "0812 7818 6376"].map((no, idx) => (
+                  <a 
+                    key={idx}
+                    href={`tel:${no.replace(/\s/g, '')}`}
+                    className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg font-mono font-bold transition-colors"
+                  >
+                    <i className="fas fa-phone text-sm"></i>
+                    {no}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Kab/Kota Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { kota: "Tapanuli Selatan", contacts: [{ nama: "Idham", jabatan: "Kabid Darlog", no: "0813 6155 8157" }, { nama: "Call Center", jabatan: "", no: "0811 6217 115" }] },
+              { kota: "Tapanuli Utara", contacts: [{ nama: "Kabid Darlog", jabatan: "", no: "0823 6596 6554" }, { nama: "Septian", jabatan: "Staff", no: "0823 6280 5391" }] },
+              { kota: "Tapanuli Tengah", contacts: [{ nama: "Rahman Siregar", jabatan: "Kalaksa", no: "0812 6497 1117" }, { nama: "Erianto Tambunan", jabatan: "Kabid Darlog", no: "0822 7719 4959" }] },
+              { kota: "Mandailing Natal", contacts: [{ nama: "Mukshin", jabatan: "Kalaksa", no: "0812 6368 9444" }, { nama: "Ibrahim", jabatan: "Kabid Darlog", no: "0822 7709 3939" }] },
+              { kota: "Padang Sidimpuan", contacts: [{ nama: "Arfan", jabatan: "Kalaksa", no: "0812 6797 5913" }, { nama: "Nazaruddin", jabatan: "Kabid Darlog", no: "0821 6605 4989" }] },
+              { kota: "Medan", contacts: [{ nama: "Call Center", jabatan: "", no: "0813 7080 0880" }] },
+              { kota: "Deli Serdang", contacts: [{ nama: "Arif Tarigan", jabatan: "Kabid Darlog", no: "0812 6066 4433" }, { nama: "Call Center", jabatan: "", no: "0811 6782 022" }] },
+              { kota: "Tebing Tinggi", contacts: [{ nama: "Iman Hebat", jabatan: "Kabid Darlog", no: "0821 6559 1206" }] },
+              { kota: "Serdang Bedagai", contacts: [{ nama: "Marnaggok", jabatan: "Kabid Darlog", no: "0813 7012 5284" }] },
+              { kota: "Langkat", contacts: [{ nama: "Call Center", jabatan: "", no: "0811 6571 117" }] },
+              { kota: "Sibolga", contacts: [{ nama: "Dores", jabatan: "Kabid Darlog", no: "0823 9832 9981" }] },
+              { kota: "Phakpak Barat", contacts: [{ nama: "J. Jaloho", jabatan: "Kabid Darlog", no: "0821 6047 0067" }] },
+              { kota: "Nias Selatan", contacts: [{ nama: "Mission Laia", jabatan: "Sekretaris", no: "0821 6099 0000" }] },
+              { kota: "Humbang Hasundutan", contacts: [{ nama: "Sabar Purba", jabatan: "Kalaksa", no: "0812 6007 4314" }, { nama: "Marnok", jabatan: "Staff", no: "0812 6912 3313" }] },
+              { kota: "Binjai", contacts: [{ nama: "Mila", jabatan: "Kabid Darlog", no: "0812 6533 4355" }, { nama: "Call Center", jabatan: "", no: "0811 6116 113" }] },
+              { kota: "Gunung Sitoli", contacts: [{ nama: "Eqoatur Jaya Daili", jabatan: "Kalaksa", no: "0812 6066 1771" }, { nama: "Adiman", jabatan: "Sekretaris", no: "0813 6215 8333" }] },
+              { kota: "Asahan", contacts: [{ nama: "BPBD", jabatan: "", no: "0822 1181 4212" }] },
+              { kota: "Batu Bara", contacts: [{ nama: "BPBD", jabatan: "", no: "0821 6662 3813" }] },
+              { kota: "DAMKAR Binjai", contacts: [{ nama: "Call Center", jabatan: "", no: "061 882 1935" }] },
+            ].map((item, index) => (
+              <div key={index} className="bg-[#2A2A2A] rounded-xl overflow-hidden border border-gray-700 hover:border-[#D22730] transition-colors">
+                <div className="bg-gradient-to-r from-[#3A3A3A] to-[#2A2A2A] px-4 py-3 border-b border-gray-700">
+                  <h3 className="font-bold text-white text-lg flex items-center gap-2">
+                    <i className="fas fa-map-marker-alt text-[#D22730] text-sm"></i>
+                    {item.kota}
+                  </h3>
+                </div>
+                <div className="p-4 space-y-3">
+                  {item.contacts.map((contact, idx) => (
+                    <div key={idx} className="flex items-center justify-between gap-3">
+                      <div className="flex-1 min-w-0">
+                        <p className="text-white font-medium text-sm truncate">{contact.nama}</p>
+                        {contact.jabatan && <p className="text-gray-400 text-xs">{contact.jabatan}</p>}
+                      </div>
+                      <a 
+                        href={`tel:${contact.no.replace(/\s/g, '')}`}
+                        className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#1da851] text-white px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors whitespace-nowrap"
+                      >
+                        <i className="fas fa-phone text-xs"></i>
+                        {contact.no}
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-gray-400 text-sm">
+              <i className="fas fa-info-circle mr-2"></i>
+              Klik nomor telepon untuk langsung menghubungi
+            </p>
+          </div>
+        </div>
+      </section>
+
       <footer className="bg-[#1B1B1B] text-white pt-16 pb-10">
         <div className="container mx-auto px-6 md:px-20">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
