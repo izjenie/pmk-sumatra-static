@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: .
+    container_name: pmk-sumatera-static
+    restart: always
+    networks:
+      - pmk_network
+
+  nginx:
+    image: nginx:alpine
+    container_name: pmk_nginx
+    restart: always
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - frontend
+    networks:
+      - pmk_network
+
+networks:
+  pmk_network:
+    driver: bridge
