@@ -406,7 +406,7 @@ export default function Home() {
         </div>
 
         <p className="text-center text-sm opacity-60 mt-6" style={{ fontFamily: 'Arial, sans-serif' }}>
-          Sumber: <span className="font-semibold">Data BNPB, 8 Desember 2025</span>
+          Sumber: <a href="https://gis.bnpb.go.id/BANSORSUMATERA2025/" target="_blank" rel="noopener noreferrer" className="font-semibold underline hover:text-white/80 transition-colors">Data BNPB, 8 Desember 2025 →</a>
         </p>
       </section>
 
