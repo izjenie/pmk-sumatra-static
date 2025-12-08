@@ -1,6 +1,14 @@
 #!/bin/bash
 
-echo " Building Docker image..."
+echo "📦 Running npm build..."
+npm run build
+
+if [ $? -ne 0 ]; then
+    echo "❌ npm build failed"
+    exit 1
+fi
+
+echo "🔨 Building Docker image..."
 docker-compose build
 
 if [ $? -eq 0 ]; then
