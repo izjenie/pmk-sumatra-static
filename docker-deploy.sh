@@ -1,25 +1,17 @@
 #!/bin/bash
 
-CONTAINER_NAME="pmk-sumatera-static"
-IMAGE_NAME="pmk-sumatera-static"
-PORT="${1:-3000}"
-
-echo "🛑 Stopping existing container..."
-docker stop $CONTAINER_NAME 2>/dev/null
-docker rm $CONTAINER_NAME 2>/dev/null
-
-echo "🔨 Building Docker image: $IMAGE_NAME"
-docker build -t $IMAGE_NAME .
+echo " Building Docker image..."
+docker-compose build
 
 if [ $? -eq 0 ]; then
     echo "✅ Build successful"
-    echo "🚀 Starting container on port $PORT..."
-    docker run -d -p $PORT:3000 --name $CONTAINER_NAME --restart unless-stopped $IMAGE_NAME
+    echo "🚀 Starting containers..."
+    docker-compose up -d
     
     if [ $? -eq 0 ]; then
-        echo "✅ Container running: http://localhost:$PORT"
+        echo "✅ Containers running: http://localhost:8080"
     else
-        echo "❌ Failed to start container"
+        echo "❌ Failed to start containers"
         exit 1
     fi
 else
