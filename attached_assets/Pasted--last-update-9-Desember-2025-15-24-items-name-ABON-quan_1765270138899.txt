@@ -1,0 +1,318 @@
+{
+  "last_update": "9 Desember 2025 15:24",
+  "items": [
+    {"name":"ABON","quantity":2196,"unit":"KARTON"},
+    {"name":"AIR MINERAL","quantity":6478,"unit":"KARTON"},
+    {"name":"ALKOHOL SWAB","quantity":6,"unit":"BOX"},
+    {"name":"APRON","quantity":12690,"unit":"PCS"},
+
+    {"name":"BABY KIT","quantity":1935,"unit":"BOX"},
+    {"name":"BANTAL","quantity":244,"unit":"UNIT"},
+    {"name":"BATERAI","quantity":42,"unit":"PCS"},
+    {"name":"BEDAK BAYI","quantity":12,"unit":"BOX"},
+
+    {"name":"BENANG JAHIT","quantity":8,"unit":"BOX"},
+    {"name":"BENDERA PMI","quantity":6750,"unit":"PCS"},
+    {"name":"BERAS","quantity":780261,"unit":"KG"},
+    {"name":"BISCUIT","quantity":9553,"unit":"KARTON"},
+
+    {"name":"BUBUR BAYI","quantity":272,"unit":"KARTON"},
+    {"name":"BUBUR INSTAN","quantity":9396,"unit":"PCS"},
+    {"name":"BUMBU INSTAN","quantity":102,"unit":"KARTON"},
+    {"name":"CAIRAN INFUS","quantity":4,"unit":"BOX"},
+
+    {"name":"CANGKUL","quantity":167,"unit":"UNIT"},
+    {"name":"CARAMANTEL","quantity":14,"unit":"ROL"},
+    {"name":"CELANA DALAM PRIA","quantity":2935,"unit":"PCS"},
+    {"name":"CELANA DALAM WANITA","quantity":950,"unit":"PCS"},
+    {"name":"CELANA PANJANG WANITA","quantity":3224,"unit":"PCS"},
+
+    {"name":"CLEANING KIT","quantity":2162,"unit":"BAG"},
+    {"name":"COVER TENDA RUB HALL","quantity":2,"unit":"PCS"},
+    {"name":"DAGING KALENG","quantity":76,"unit":"KALENG"},
+    {"name":"DASTER","quantity":3500,"unit":"UNIT"},
+
+    {"name":"DEODORANT","quantity":1,"unit":"BOX"},
+    {"name":"EMBER","quantity":20,"unit":"PCS"},
+    {"name":"EMBER PLASTIK","quantity":17,"unit":"PCS"},
+
+    {"name":"EMERGENCY KIT","quantity":35,"unit":"UNIT"},
+    {"name":"FACE SHIELD KIT","quantity":12140,"unit":"PCS"},
+    {"name":"FAMILY KIT","quantity":4148,"unit":"BOX"},
+    {"name":"FAMILY KIT D2025","quantity":800,"unit":"BAG"},
+
+    {"name":"FILTER AIR","quantity":38,"unit":"UNIT"},
+    {"name":"FOLDING BED","quantity":91,"unit":"UNIT"},
+    {"name":"GARAM","quantity":21,"unit":"KARTON"},
+
+    {"name":"GARMENT PRODUK","quantity":20890,"unit":"PCS"},
+    {"name":"GEROBAK DORONG","quantity":2,"unit":"UNIT"},
+    {"name":"GENSET","quantity":4,"unit":"UNIT"},
+    {"name":"GENSET PORTABLE","quantity":15,"unit":"UNIT"},
+
+    {"name":"GERGAJI BESI","quantity":4,"unit":"UNIT"},
+    {"name":"GULA","quantity":743,"unit":"KARTON"},
+
+    {"name":"HAND SPAYER 16 LT","quantity":20,"unit":"UNIT"},
+    {"name":"HAND SANITIZER","quantity":94,"unit":"KARTON"},
+    {"name":"HAND SIRINE BESAR","quantity":23,"unit":"UNIT"},
+    {"name":"HAND SIRINE KECIL","quantity":10,"unit":"UNIT"},
+
+    {"name":"HANDUK","quantity":134,"unit":"BALE"},
+    {"name":"HANDUK BESAR","quantity":2005,"unit":"PCS"},
+
+    {"name":"HANDY TALKY MOTOROLA","quantity":98,"unit":"UNIT"},
+
+    {"name":"HAZMAT","quantity":2571,"unit":"PCS"},
+    {"name":"HEAD CAP","quantity":50000,"unit":"PCS"},
+    {"name":"HEAD IMMOBILIZATION","quantity":3,"unit":"UNIT"},
+    {"name":"HEAD LAMP","quantity":33,"unit":"UNIT"},
+
+    {"name":"HELM","quantity":267,"unit":"UNIT"},
+    {"name":"HYGIENE AND DISINFEKTAN KIT","quantity":2305,"unit":"BOX"},
+    {"name":"HYGIENE KIT","quantity":9166,"unit":"BOX"},
+
+    {"name":"IKAN KALENG","quantity":201,"unit":"KALENG"},
+    {"name":"ISOLATION GOWNS","quantity":7600,"unit":"UNIT"},
+
+    {"name":"JAKET","quantity":4,"unit":"BALE"},
+    {"name":"JAS HUJAN","quantity":682,"unit":"PCS"},
+
+    {"name":"JERIGEN 10 L","quantity":9733,"unit":"PCS"},
+    {"name":"JERIGEN 20 L","quantity":2880,"unit":"PCS"},
+    {"name":"JERRY CAN FOLDABLE","quantity":1000,"unit":"UNIT"},
+    {"name":"KACAMATA","quantity":5678,"unit":"PCS"},
+
+    {"name":"KANTONG MAYAT","quantity":2420,"unit":"PCS"},
+    {"name":"KAOS KAKI","quantity":100,"unit":"KARTON"},
+    {"name":"KARBOL","quantity":10,"unit":"KARTON"},
+
+    {"name":"KASUR C2025","quantity":558,"unit":"UNIT"},
+    {"name":"KASUR LANTAI","quantity":854,"unit":"UNIT"},
+
+    {"name":"KECAP MANIS","quantity":16,"unit":"KARTON"},
+    {"name":"KELAMBU","quantity":10615,"unit":"PCS"},
+    {"name":"KERUDUNG","quantity":14,"unit":"BOX"},
+
+    {"name":"KETEL PACK","quantity":249,"unit":"UNIT"},
+    {"name":"KITCHEN KIT","quantity":2550,"unit":"BOX"},
+    {"name":"KNAPACK","quantity":24,"unit":"UNIT"},
+    {"name":"KOMPAS","quantity":169,"unit":"UNIT"},
+
+    {"name":"KOPI SACHET","quantity":33,"unit":"KARTON"},
+    {"name":"KORNET","quantity":8555,"unit":"KALENG"},
+    {"name":"KURMA","quantity":90,"unit":"BOX"},
+
+    {"name":"LAMPU BADAI LENTERA","quantity":2000,"unit":"UNIT"},
+    {"name":"LAMP EMERGENCY","quantity":15336,"unit":"UNIT"},
+    {"name":"LOTION ANTI NYAMUK","quantity":188,"unit":"BOX"},
+    {"name":"MADU","quantity":120,"unit":"PCS"},
+
+    {"name":"MAKANAN KALENG","quantity":5874,"unit":"KALENG"},
+    {"name":"MAKANAN RINGAN","quantity":129284,"unit":"KARTON"},
+    {"name":"MAKANAN SIAP SAJI","quantity":7,"unit":"KARTON"},
+
+    {"name":"MASKER KAIN","quantity":129082,"unit":"PCS"},
+    {"name":"MASKER MEDIS","quantity":290465,"unit":"PCS"},
+    {"name":"MASKER N95","quantity":5386,"unit":"PCS"},
+    {"name":"MASKER RESPIRATOR","quantity":317,"unit":"PCS"},
+
+    {"name":"MASTRAS","quantity":1473,"unit":"PCS"},
+    {"name":"MEDIA FILTER ZEOLIT","quantity":4,"unit":"UNIT"},
+
+    {"name":"MENSTRUAL HYGIENE MANAGEMENT KIT","quantity":4,"unit":"BOX"},
+
+    {"name":"MIE INSTAN","quantity":11399,"unit":"KARTON"},
+    {"name":"MINUMAN ENERGY","quantity":7282,"unit":"PCS"},
+    {"name":"MINUMAN KALENG","quantity":12,"unit":"KARTON"},
+    {"name":"MINUMAN KEMASAN BOTOL","quantity":331,"unit":"KARTON"},
+    {"name":"MINUMAN SACHET","quantity":78,"unit":"KARTON"},
+
+    {"name":"MINYAK GORENG 1 L","quantity":806,"unit":"KARTON"},
+    {"name":"MINYAK KAYU PUTIH","quantity":1381,"unit":"PCS"},
+
+    {"name":"MODUL KOMUNIKASI STARLINK","quantity":10,"unit":"UNIT"},
+
+    {"name":"NESTING","quantity":47,"unit":"UNIT"},
+    {"name":"OBAT-OBATAN","quantity":930,"unit":"KARTON"},
+
+    {"name":"OXYGEN CONCENTRATOR","quantity":10,"unit":"UNIT"},
+    {"name":"OXYMETER","quantity":270,"unit":"PCS"},
+
+    {"name":"PAKAIAN ANAK","quantity":5942,"unit":"PCS"},
+    {"name":"PAKAIAN DALAM WANITA","quantity":3340,"unit":"PCS"},
+    {"name":"PAKAIAN DEWASA","quantity":25631,"unit":"PCS"},
+
+    {"name":"PAKET SEMBAKO","quantity":4335,"unit":"BAG"},
+
+    {"name":"PALU","quantity":249,"unit":"UNIT"},
+    {"name":"PASTA GIGI","quantity":60,"unit":"KARTON"},
+    {"name":"PELASTIK ROLL","quantity":12,"unit":"ROL"},
+
+    {"name":"PEMBALUT WANITA","quantity":956,"unit":"KARTON"},
+    {"name":"PEMBALUT WANITA","quantity":24,"unit":"UNIT"},
+
+    {"name":"PEMBERSIH LANTAI","quantity":3,"unit":"KARTON"},
+    {"name":"PERAHU KARET","quantity":2,"unit":"UNIT"},
+
+    {"name":"PERALATAN DAPUR","quantity":68,"unit":"BOX"},
+    {"name":"PERALATAN MANDI","quantity":30,"unit":"BOX"},
+
+    {"name":"PERLENGKAPAN BAYI","quantity":30,"unit":"PACK"},
+    {"name":"PERLENGKAPAN DAPUR UMUM","quantity":155,"unit":"UNIT"},
+    {"name":"PERLENGKAPAN IBADAH","quantity":102,"unit":"BALE"},
+    {"name":"PERLENGKAPAN SAR","quantity":1,"unit":"BAG"},
+
+    {"name":"PERLENGKAPAN SEKOLAH","quantity":201,"unit":"BAG"},
+    {"name":"PHBS","quantity":96,"unit":"PCS"},
+
+    {"name":"PISAU LIPAT","quantity":118,"unit":"PCS"},
+    {"name":"PLASTIK SAMPAH","quantity":25,"unit":"PACK"},
+
+    {"name":"POMPA AIR","quantity":7,"unit":"UNIT"},
+    {"name":"POPOK ANAK","quantity":2263,"unit":"KARTON"},
+    {"name":"POPOK DEWASA","quantity":295,"unit":"KARTON"},
+
+    {"name":"PORTABLE TOILET","quantity":6,"unit":"UNIT"},
+
+    {"name":"RENDANG KALENG","quantity":1175,"unit":"KALENG"},
+
+    {"name":"ROMPI BIRU","quantity":142,"unit":"PCS"},
+    {"name":"ROMPI MERAH","quantity":1363,"unit":"PCS"},
+    {"name":"ROMPI MERAH","quantity":25,"unit":"UNIT"},
+
+    {"name":"SABUN BAYI","quantity":3,"unit":"BOX"},
+    {"name":"SABUN CUCI PIRING","quantity":15,"unit":"KARTON"},
+    {"name":"SABUN MANDI","quantity":1200,"unit":"BOX"},
+
+    {"name":"SAMBAL BOTOL","quantity":1,"unit":"KARTON"},
+
+    {"name":"SANDAL JEPIT","quantity":100,"unit":"PCS"},
+    {"name":"SARDEN","quantity":1611,"unit":"KARTON"},
+
+    {"name":"SARUNG","quantity":32164,"unit":"PCS"},
+    {"name":"SARUNG TANGAN KAIN","quantity":523,"unit":"PCS"},
+    {"name":"SARUNG TANGAN KARET","quantity":845,"unit":"PCS"},
+    {"name":"SARUNG TANGAN KULIT","quantity":246,"unit":"PCS"},
+    {"name":"SARUNG TANGAN LATEX","quantity":2770,"unit":"PCS"},
+    {"name":"SARUNG TANGAN MEDIS","quantity":5,"unit":"UNIT"},
+
+    {"name":"SCHOOL KIT","quantity":200,"unit":"BAG"},
+    {"name":"SCHOOL KIT","quantity":3045,"unit":"BAG"},
+
+    {"name":"SEKOP","quantity":701,"unit":"PCS"},
+    {"name":"SEKOP","quantity":71,"unit":"UNIT"},
+    {"name":"SEKOP LIPAT","quantity":249,"unit":"PCS"},
+
+    {"name":"SELANG FILTER","quantity":1,"unit":"UNIT"},
+    {"name":"SELANG KOMPRESOR","quantity":140,"unit":"PCS"},
+
+    {"name":"SELIMUT","quantity":17,"unit":"BALE"},
+    {"name":"SELIMUT","quantity":11429,"unit":"PCS"},
+    {"name":"SELIMUT A2025","quantity":3817,"unit":"PCS"},
+
+    {"name":"SENG GELOMBANG","quantity":46969,"unit":"PCS"},
+
+    {"name":"SENTER LED","quantity":13,"unit":"UNIT"},
+
+    {"name":"SEPATU BOOT","quantity":864,"unit":"PCS"},
+    {"name":"SEPEDA","quantity":16,"unit":"UNIT"},
+
+    {"name":"SHAMPO","quantity":2196,"unit":"BOTOL"},
+    {"name":"SHELTER KIT","quantity":145,"unit":"BAG"},
+    {"name":"SHELTER TOOL KIT","quantity":1100,"unit":"BAG"},
+
+    {"name":"SIKAT GIGI","quantity":47,"unit":"KARTON"},
+
+    {"name":"SKOP","quantity":12,"unit":"UNIT"},
+
+    {"name":"SLEEPING BAG","quantity":40,"unit":"PCS"},
+
+    {"name":"SODA KUE","quantity":???,"unit":"???"},
+
+    {"name":"SOP BUAH","quantity":???,"unit":"???"},
+
+    {"name":"SOSIS","quantity":52,"unit":"KARTON"},
+    {"name":"SPRAYER MANUAL","quantity":1362,"unit":"UNIT"},
+    {"name":"SPRAY GUN","quantity":166,"unit":"UNIT"},
+
+    {"name":"STARLINK","quantity":90,"unit":"UNIT"},
+
+    {"name":"STIKER","quantity":4000,"unit":"LEMBAR"},
+
+    {"name":"SUSU BUBUK","quantity":193,"unit":"KARTON"},
+    {"name":"SUSU KALENG","quantity":234,"unit":"KALENG"},
+    {"name":"SUSU KOTAK","quantity":3026,"unit":"KARTON"},
+    {"name":"SUSU SACHET","quantity":40,"unit":"KARTON"},
+
+    {"name":"TABUNG FILTER","quantity":8,"unit":"UNIT"},
+    {"name":"TABUNG GAS 17 KG","quantity":1,"unit":"UNIT"},
+    {"name":"TABUNG OKSIGEN 10 L","quantity":3,"unit":"UNIT"},
+
+    {"name":"TALI TWIST ROPE","quantity":457,"unit":"ROL"},
+    {"name":"TAMBANG","quantity":8,"unit":"ROL"},
+
+    {"name":"TANDON AIR 300 L","quantity":4,"unit":"UNIT"},
+
+    {"name":"TANDU BASKET","quantity":4,"unit":"UNIT"},
+    {"name":"TANDU LIPAT","quantity":5,"unit":"UNIT"},
+    {"name":"TANDU SCOPE","quantity":5,"unit":"UNIT"},
+
+    {"name":"TARPAULIN","quantity":1383,"unit":"PCS"},
+    {"name":"TARPAULIN","quantity":1419,"unit":"UNIT"},
+
+    {"name":"TAS EVAKUASI","quantity":249,"unit":"PCS"},
+    {"name":"TAS PINGGANG","quantity":247,"unit":"PCS"},
+
+    {"name":"TEH CELUP","quantity":75,"unit":"KARTON"},
+    {"name":"TEH CELUP","quantity":38,"unit":"PACK"},
+
+    {"name":"TELUR","quantity":570,"unit":"KG"},
+    {"name":"TELUR ASIN","quantity":35,"unit":"KARTON"},
+
+    {"name":"TENDA","quantity":13,"unit":"UNIT"},
+    {"name":"TENDA ALAS","quantity":12,"unit":"UNIT"},
+    {"name":"TENDA EMERGENCY","quantity":1,"unit":"UNIT"},
+    {"name":"TENDA FAMILY","quantity":286,"unit":"BAG"},
+    {"name":"TENDA GULUNG C2025","quantity":800,"unit":"UNIT"},
+    {"name":"TENDA INDIVIDU","quantity":71,"unit":"UNIT"},
+    {"name":"TENDA MODULAR","quantity":450,"unit":"UNIT"},
+    {"name":"TENDA OVAL","quantity":2,"unit":"UNIT"},
+    {"name":"TENDA PELETON","quantity":3,"unit":"UNIT"},
+    {"name":"TENDA PELETON","quantity":5,"unit":"UNIT"},
+    {"name":"TENDA PERSONIL","quantity":10,"unit":"UNIT"},
+    {"name":"TENDA REGU","quantity":1,"unit":"UNIT"},
+    {"name":"TENDA RELAWAN","quantity":2,"unit":"UNIT"},
+    {"name":"TENDA SERBAGUNA","quantity":2,"unit":"UNIT"},
+
+    {"name":"TENSI DIGITAL","quantity":1,"unit":"UNIT"},
+
+    {"name":"TERPAL ROLL","quantity":40,"unit":"ROL"},
+
+    {"name":"THERMOMETER INFRARED","quantity":285,"unit":"PCS"},
+
+    {"name":"TIKAR","quantity":800,"unit":"PCS"},
+
+    {"name":"TISSUE","quantity":96,"unit":"KARTON"},
+    {"name":"TISU BASAH","quantity":2,"unit":"KARTON"},
+
+    {"name":"TOLAK ANGIN","quantity":255,"unit":"KARTON"},
+
+    {"name":"TOPI RIMBA PMI","quantity":37,"unit":"PCS"},
+    {"name":"TOPI KUPLUK PMI","quantity":47,"unit":"PCS"},
+
+    {"name":"TRIPOD","quantity":3,"unit":"UNIT"},
+
+    {"name":"VELDPLES","quantity":47,"unit":"PCS"},
+
+    {"name":"VERTICAL RESCUE","quantity":1,"unit":"BOX"},
+
+    {"name":"VITAMIN C","quantity":889,"unit":"KARTON"},
+
+    {"name":"WATER BLADDER","quantity":15,"unit":"UNIT"},
+    {"name":"WATER TANK 6 M3","quantity":1,"unit":"UNIT"},
+
+    {"name":"WATERTANK KIT FLEXIBLE ONION 5 M3","quantity":28,"unit":"UNIT"},
+    {"name":"WATERTANK KIT FLEXIBLE ONION 10 M3","quantity":1,"unit":"UNIT"}
+  ]
+}
