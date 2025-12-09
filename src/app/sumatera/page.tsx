@@ -340,7 +340,7 @@ export default function Home() {
   const [searchStockTerm, setSearchStockTerm] = useState('');
   const [selectedNews, setSelectedNews] = useState<typeof newsData[0] | null>(null);
   const [searchPosTerm, setSearchPosTerm] = useState('');
-  const [selectedRegion, setSelectedRegion] = useState<string>('Semua');
+  const [selectedRegion, setSelectedRegion] = useState<string>('Aceh');
 
   const filteredPmiStock = pmiStockData.filter(item =>
     item.name.toLowerCase().includes(searchStockTerm.toLowerCase())
@@ -941,75 +941,80 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-4 mb-8 max-w-4xl mx-auto">
-            <div className="relative flex-1">
-              <i className="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-              <input
-                type="text"
-                placeholder="Cari pos pengungsian..."
-                value={searchPosTerm}
-                onChange={(e) => setSearchPosTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300 focus:border-[#1B4D89] focus:ring-2 focus:ring-[#1B4D89]/20 outline-none transition-all"
-              />
-            </div>
-            <select
-              value={selectedRegion}
-              onChange={(e) => setSelectedRegion(e.target.value)}
-              className="px-4 py-3 rounded-xl border border-gray-300 focus:border-[#1B4D89] focus:ring-2 focus:ring-[#1B4D89]/20 outline-none transition-all bg-white"
-            >
-              <option value="Semua">Semua Wilayah</option>
-              <option value="Aceh">Aceh</option>
-              <option value="Sumatera Utara">Sumatera Utara</option>
-              <option value="Sumatera Barat">Sumatera Barat</option>
-            </select>
+          <div className="flex flex-wrap justify-center gap-2 mb-6">
+            {['Aceh', 'Sumatera Utara', 'Sumatera Barat'].map((region) => (
+              <button
+                key={region}
+                onClick={() => setSelectedRegion(region)}
+                className={`px-6 py-3 rounded-xl font-semibold transition-all ${
+                  selectedRegion === region
+                    ? 'bg-[#1B4D89] text-white shadow-lg'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                {region}
+                <span className="ml-2 text-sm opacity-75">
+                  ({posPengungsianData[region as keyof typeof posPengungsianData]?.length || 0})
+                </span>
+              </button>
+            ))}
           </div>
 
-          <div className="space-y-8">
-            {getFilteredPos().map(({ region, posts }) => (
-              <div key={region}>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 bg-[#1B4D89] rounded-lg flex items-center justify-center">
-                    <i className="fas fa-map-marker-alt text-white text-sm"></i>
-                  </div>
-                  <h3 className="text-xl font-bold text-[#1B1B1B]">{region}</h3>
-                  <span className="text-sm text-gray-500">({posts.length} pos)</span>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {posts.map((post, idx) => (
-                    <div key={idx} className="bg-gray-50 rounded-xl p-4 border border-gray-200 hover:shadow-md transition-shadow">
-                      <h4 className="font-semibold text-[#1B1B1B] mb-2 line-clamp-2">{post.name}</h4>
-                      <div className="space-y-1 text-sm text-gray-600">
-                        <p className="flex items-start gap-2">
-                          <i className="fas fa-location-dot text-[#D22730] mt-0.5 flex-shrink-0"></i>
-                          <span>{post.lokasi}</span>
-                        </p>
-                        <p className="flex items-start gap-2">
-                          <i className="fas fa-building text-gray-400 mt-0.5 flex-shrink-0"></i>
-                          <span>{post.kabupaten}, {post.kecamatan}</span>
-                        </p>
-                      </div>
-                      <a
-                        href={`https://www.google.com/maps?q=${post.lat},${post.lng}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-3 inline-flex items-center gap-2 text-sm text-[#1B4D89] hover:text-[#D22730] font-medium transition-colors"
-                      >
-                        <i className="fas fa-map"></i>
-                        Buka di Google Maps
-                        <i className="fas fa-external-link-alt text-xs"></i>
-                      </a>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-            {getFilteredPos().length === 0 && (
-              <div className="text-center py-12 text-gray-500">
-                <i className="fas fa-search text-4xl mb-4 opacity-50"></i>
-                <p>Tidak ada pos pengungsian yang ditemukan</p>
-              </div>
-            )}
+          <div className="relative mb-6 max-w-md mx-auto">
+            <i className="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+            <input
+              type="text"
+              placeholder="Cari pos pengungsian..."
+              value={searchPosTerm}
+              onChange={(e) => setSearchPosTerm(e.target.value)}
+              className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300 focus:border-[#1B4D89] focus:ring-2 focus:ring-[#1B4D89]/20 outline-none transition-all"
+            />
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {(posPengungsianData[selectedRegion as keyof typeof posPengungsianData] || [])
+              .filter(post =>
+                post.name.toLowerCase().includes(searchPosTerm.toLowerCase()) ||
+                post.lokasi.toLowerCase().includes(searchPosTerm.toLowerCase()) ||
+                post.kabupaten.toLowerCase().includes(searchPosTerm.toLowerCase())
+              )
+              .map((post, idx) => (
+                <div key={idx} className="bg-gray-50 rounded-xl p-4 border border-gray-200 hover:shadow-md transition-shadow">
+                  <h4 className="font-semibold text-[#1B1B1B] mb-2 line-clamp-2">{post.name}</h4>
+                  <div className="space-y-1 text-sm text-gray-600">
+                    <p className="flex items-start gap-2">
+                      <i className="fas fa-location-dot text-[#D22730] mt-0.5 flex-shrink-0"></i>
+                      <span>{post.lokasi}</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <i className="fas fa-building text-gray-400 mt-0.5 flex-shrink-0"></i>
+                      <span>{post.kabupaten}, {post.kecamatan}</span>
+                    </p>
+                  </div>
+                  <a
+                    href={`https://www.google.com/maps?q=${post.lat},${post.lng}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center gap-2 text-sm text-[#1B4D89] hover:text-[#D22730] font-medium transition-colors"
+                  >
+                    <i className="fas fa-map"></i>
+                    Buka di Google Maps
+                    <i className="fas fa-external-link-alt text-xs"></i>
+                  </a>
+                </div>
+              ))}
+          </div>
+          {(posPengungsianData[selectedRegion as keyof typeof posPengungsianData] || [])
+            .filter(post =>
+              post.name.toLowerCase().includes(searchPosTerm.toLowerCase()) ||
+              post.lokasi.toLowerCase().includes(searchPosTerm.toLowerCase()) ||
+              post.kabupaten.toLowerCase().includes(searchPosTerm.toLowerCase())
+            ).length === 0 && (
+            <div className="text-center py-12 text-gray-500">
+              <i className="fas fa-search text-4xl mb-4 opacity-50"></i>
+              <p>Tidak ada pos pengungsian yang ditemukan</p>
+            </div>
+          )}
         </div>
       </section>
 
