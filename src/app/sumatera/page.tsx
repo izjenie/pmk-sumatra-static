@@ -486,7 +486,7 @@ export default function Home() {
               <h2 className="text-2xl font-bold text-[#1B1B1B]">
                 {selectedNews.title}
               </h2>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed whitespace-pre-line">
                 {selectedNews.content}
               </p>
             </div>
