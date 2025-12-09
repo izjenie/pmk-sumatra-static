@@ -58,7 +58,7 @@ const newsData = [
 const pmiStockData = [
   { id: 1, name: 'Abon', icon: 'fa-box', quantity: '2.036 KARTON' },
   { id: 2, name: 'Air Mineral', icon: 'fa-bottle-water', quantity: '6.184 KARTON' },
-  { id: 3, name: 'Alat Tulis', icon: 'fa-pen', quantity: '-47 BOX' },
+  { id: 3, name: 'Alat Tulis', icon: 'fa-pen', quantity: '153 BOX' },
   { id: 4, name: 'Alkohol Swab', icon: 'fa-box', quantity: '6 BOX' },
   { id: 5, name: 'Apron', icon: 'fa-shirt', quantity: '12.690 PCS' },
   { id: 6, name: 'Baby Kit', icon: 'fa-baby', quantity: '1.685 BOX' },
