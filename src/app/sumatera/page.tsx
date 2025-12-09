@@ -389,11 +389,11 @@ export default function Home() {
               <div className="space-y-3">
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
                   <span>Meninggal Dunia</span>
-                  <span className="text-2xl font-bold">962 <span className="text-sm font-normal">jiwa</span></span>
+                  <span className="text-2xl font-bold">964 <span className="text-sm font-normal">jiwa</span></span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
                   <span>Hilang</span>
-                  <span className="text-2xl font-bold">291 <span className="text-sm font-normal">jiwa</span></span>
+                  <span className="text-2xl font-bold">262 <span className="text-sm font-normal">jiwa</span></span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
                   <span>Terluka</span>
@@ -441,31 +441,31 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-2">
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Rumah Rusak</p>
-                  <p className="text-lg font-bold">157,8 ribu</p>
+                  <p className="text-lg font-bold">157,9 ribu</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Rumah Ibadah</p>
-                  <p className="text-lg font-bold">425</p>
+                  <p className="text-lg font-bold">423</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Fasilitas Umum</p>
-                  <p className="text-lg font-bold">1,1 ribu</p>
+                  <p className="text-lg font-bold">1,2 ribu</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Gedung/Kantor</p>
-                  <p className="text-lg font-bold">234</p>
+                  <p className="text-lg font-bold">287</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Fas. Kesehatan</p>
-                  <p className="text-lg font-bold">161</p>
+                  <p className="text-lg font-bold">215</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Jembatan</p>
-                  <p className="text-lg font-bold">497</p>
+                  <p className="text-lg font-bold">498</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2 col-span-2">
                   <p className="text-xs opacity-70">Fasilitas Pendidikan</p>
-                  <p className="text-lg font-bold">534</p>
+                  <p className="text-lg font-bold">584</p>
                 </div>
               </div>
             </div>
