@@ -341,6 +341,7 @@ export default function Home() {
   const [selectedNews, setSelectedNews] = useState<typeof newsData[0] | null>(null);
   const [searchPosTerm, setSearchPosTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState<string>('Aceh');
+  const [selectedEmergencyTab, setSelectedEmergencyTab] = useState<string>('Sumatera Barat');
 
   const filteredPmiStock = pmiStockData.filter(item =>
     item.name.toLowerCase().includes(searchStockTerm.toLowerCase())
@@ -672,59 +673,95 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Provinsi Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Sumatera Barat */}
-            <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
-              <h4 className="text-xl font-bold text-[#87CEEB] mb-4 text-center border-b border-white/20 pb-3">
-                PROVINSI SUMATERA BARAT
-              </h4>
-              <div className="space-y-2">
-                {[
-                  { name: 'BPBD Sumatera Barat', phone: '(0751) 890721' },
-                  { name: 'PMI Sumatera Barat', phone: '(0751) 27882' },
-                  { name: 'Damkar Kota Padang', phone: '0811 6606 113' },
-                  { name: 'BPBD Padang Pariaman', phone: '0811 666 2114' },
-                  { name: 'Damkar Bukittinggi', phone: '0853 5515 7883' },
-                  { name: 'BPBD Pesisir Selatan', phone: '0852 6938 0950' },
-                ].map((item, idx) => (
-                  <a key={idx} href={`tel:${item.phone.replace(/[^0-9]/g, '')}`} className="flex justify-between items-center py-2 px-3 rounded-lg hover:bg-white/10 transition-colors group">
-                    <span className="text-white font-medium">{item.name}</span>
-                    <span className="text-[#87CEEB] font-semibold group-hover:text-white transition-colors">{item.phone}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
+          {/* Tab Buttons */}
+          <div className="flex justify-center gap-4 mb-8">
+            {['Sumatera Barat', 'Sumatera Utara'].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setSelectedEmergencyTab(tab)}
+                className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${
+                  selectedEmergencyTab === tab
+                    ? 'bg-white text-[#1B1B1B] shadow-xl'
+                    : 'bg-white/10 text-white hover:bg-white/20 border border-white/30'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
 
-            {/* Sumatera Utara */}
-            <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
-              <h4 className="text-xl font-bold text-[#87CEEB] mb-4 text-center border-b border-white/20 pb-3">
-                PROVINSI SUMATERA UTARA
-              </h4>
-              <div className="space-y-2 max-h-[300px] overflow-y-auto custom-scroll">
-                {[
-                  { name: 'Basarnas Medan', phone: '085191795579' },
-                  { name: 'BPBD PEMPROVSU', phone: '08116221733' },
-                  { name: 'BPBD Deli Serdang', phone: '08116782022' },
-                  { name: 'BPBD Medan', phone: '081370800880' },
-                  { name: 'Damkar Medan', phone: '08116566113' },
-                  { name: 'Damkar Binjai', phone: '(061) 8821935' },
-                  { name: 'BPBD Binjai', phone: '08116192611' },
-                  { name: 'BPBD P. Siantar', phone: '082262173370' },
-                  { name: 'BPBD Tapteng', phone: '081290900222' },
-                  { name: 'BPBD Taput', phone: '081375194119' },
-                  { name: 'BPBD Sibolga', phone: '063121544' },
-                  { name: 'BPBD Tapsel', phone: '08116217115' },
-                  { name: 'BPBD Sidempuan', phone: '081392415449' },
-                ].map((item, idx) => (
-                  <a key={idx} href={`tel:${item.phone.replace(/[^0-9]/g, '')}`} className="flex justify-between items-center py-2 px-3 rounded-lg hover:bg-white/10 transition-colors group">
-                    <span className="text-white font-medium">{item.name}</span>
-                    <span className="text-[#87CEEB] font-semibold group-hover:text-white transition-colors">{item.phone}</span>
-                  </a>
-                ))}
+          {/* Provinsi Content */}
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+              <div className="bg-gradient-to-r from-[#1B4D89] to-[#2d6cb5] px-6 py-4">
+                <h4 className="text-xl font-bold text-white text-center">
+                  Kontak Darurat Provinsi {selectedEmergencyTab}
+                </h4>
+              </div>
+              <div className="p-6">
+                {selectedEmergencyTab === 'Sumatera Barat' && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {[
+                      { name: 'BPBD Sumatera Barat', phone: '(0751) 890721' },
+                      { name: 'PMI Sumatera Barat', phone: '(0751) 27882' },
+                      { name: 'Damkar Kota Padang', phone: '0811 6606 113' },
+                      { name: 'BPBD Padang Pariaman', phone: '0811 666 2114' },
+                      { name: 'Damkar Bukittinggi', phone: '0853 5515 7883' },
+                      { name: 'BPBD Pesisir Selatan', phone: '0852 6938 0950' },
+                    ].map((item, idx) => (
+                      <a 
+                        key={idx} 
+                        href={`tel:${item.phone.replace(/[^0-9]/g, '')}`} 
+                        className="flex items-center justify-between bg-gray-50 hover:bg-[#1B4D89] hover:text-white rounded-xl p-4 transition-all group border border-gray-200"
+                      >
+                        <span className="font-semibold text-gray-800 group-hover:text-white">{item.name}</span>
+                        <span className="flex items-center gap-2 text-[#1B4D89] group-hover:text-white font-bold">
+                          <i className="fas fa-phone text-sm"></i>
+                          {item.phone}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                )}
+                {selectedEmergencyTab === 'Sumatera Utara' && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {[
+                      { name: 'Basarnas Medan', phone: '0851 9179 5579' },
+                      { name: 'BPBD PEMPROVSU', phone: '0811 6221 733' },
+                      { name: 'BPBD Deli Serdang', phone: '0811 6782 022' },
+                      { name: 'BPBD Medan', phone: '0813 7080 0880' },
+                      { name: 'Damkar Medan', phone: '0811 6566 113' },
+                      { name: 'Damkar Binjai', phone: '(061) 8821935' },
+                      { name: 'BPBD Binjai', phone: '0811 6192 611' },
+                      { name: 'BPBD P. Siantar', phone: '0822 6217 3370' },
+                      { name: 'BPBD Tapteng', phone: '0812 9090 0222' },
+                      { name: 'BPBD Taput', phone: '0813 7519 4119' },
+                      { name: 'BPBD Sibolga', phone: '0631 21544' },
+                      { name: 'BPBD Tapsel', phone: '0811 6217 115' },
+                      { name: 'BPBD Sidempuan', phone: '0813 9241 5449' },
+                    ].map((item, idx) => (
+                      <a 
+                        key={idx} 
+                        href={`tel:${item.phone.replace(/[^0-9]/g, '')}`} 
+                        className="flex items-center justify-between bg-gray-50 hover:bg-[#1B4D89] hover:text-white rounded-xl p-4 transition-all group border border-gray-200"
+                      >
+                        <span className="font-semibold text-gray-800 group-hover:text-white">{item.name}</span>
+                        <span className="flex items-center gap-2 text-[#1B4D89] group-hover:text-white font-bold">
+                          <i className="fas fa-phone text-sm"></i>
+                          {item.phone}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>
+
+          <p className="text-center text-white/60 text-sm mt-8">
+            <i className="fas fa-info-circle mr-2"></i>
+            Klik nomor telepon untuk langsung menghubungi
+          </p>
         </div>
       </section>
 
