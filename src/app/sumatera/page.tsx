@@ -1002,16 +1002,6 @@ export default function Home() {
               Peta Operasi
             </h2>
           </div>
-          <p className="text-sm text-gray-500">
-            <a 
-                href="https://gis.bnpb.go.id/BANSORSUMATERA2025/" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-[#D22730] hover:underline"
-              >
-                Sumber: gis.bnpb.go.id/BANSORSUMATERA2025/ →
-              </a>
-          </p>
         </div>
 
         <div className="bg-white text-black rounded-xl shadow-xl p-3 h-200">
@@ -1026,23 +1016,6 @@ export default function Home() {
         </div>
       </div>
       </section>
-      
-
-      {/* <section className="bg-gray-100 py-16">
-        <h2 className="text-center text-3xl font-bold mb-14 tracking-wide">
-          Peta Operasi
-        </h2>
-        <div className="container mx-auto px-4 sm:px-6 md:px-10 border h-200">
-
-          <iframe
-            id="ifrSafe-widget_22"
-            className="w-full h-full"
-            allowFullScreen
-            allow="geolocation"
-            data-testid="embedSafe"
-            src="https://gis.bnpb.go.id/arcgis/apps/experiencebuilder/experience/?id=fdfd2c15e4124a1a90cf1e1686ae0e4c">
-          </iframe>
-        </div> */}
 
       <footer className="bg-[#1B1B1B] text-white pt-16 pb-10">
         <div className="container mx-auto px-6 md:px-20">
