@@ -34,6 +34,18 @@ export default function RootLayout({
           rel="stylesheet" 
           href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
         />
+        <Script 
+          src="https://www.googletagmanager.com/gtag/js?id=G-9N2BG2NBS9"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-9N2BG2NBS9');
+          `}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
