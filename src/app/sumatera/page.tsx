@@ -342,6 +342,7 @@ export default function Home() {
   const [searchPosTerm, setSearchPosTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState<string>('Aceh');
   const [selectedEmergencyTab, setSelectedEmergencyTab] = useState<string>('Sumatera Barat');
+  const [selectedPengungsiTab, setSelectedPengungsiTab] = useState<string>('Semua');
 
   const filteredPmiStock = pmiStockData.filter(item =>
     item.name.toLowerCase().includes(searchStockTerm.toLowerCase())
@@ -614,23 +615,59 @@ export default function Home() {
                 <span className="text-2xl">🎯</span>
                 <h3 className="text-xl font-bold">Pengungsi</h3>
               </div>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
-                  <span>Sumatera Utara</span>
-                  <span className="text-xl font-bold">34,900 <span className="text-sm font-normal">jiwa</span></span>
-                </div>
-                <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
-                  <span>Aceh</span>
-                  <span className="text-xl font-bold">795,700 <span className="text-sm font-normal">jiwa</span></span>
-                </div>
-                <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
-                  <span>Sumatera Barat</span>
-                  <span className="text-xl font-bold">14,700 <span className="text-sm font-normal">jiwa</span></span>
-                </div>
+              
+              {/* Tab Buttons */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {['Semua', 'Aceh', 'Sumatera Utara', 'Sumatera Barat'].map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => setSelectedPengungsiTab(tab)}
+                    className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
+                      selectedPengungsiTab === tab
+                        ? 'bg-white text-[#D22730]'
+                        : 'bg-white/20 text-white hover:bg-white/30'
+                    }`}
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
+
+              <div className="space-y-2 max-h-[200px] overflow-y-auto custom-scroll">
+                {[
+                  { kabupaten: "Aceh Tamiang", value: 252623, provinsi: "Aceh" },
+                  { kabupaten: "Aceh Timur", value: 238500, provinsi: "Aceh" },
+                  { kabupaten: "Aceh Utara", value: 166920, provinsi: "Aceh" },
+                  { kabupaten: "Bireuen", value: 54114, provinsi: "Aceh" },
+                  { kabupaten: "Gayo Lues", value: 33779, provinsi: "Aceh" },
+                  { kabupaten: "Pidie", value: 24369, provinsi: "Aceh" },
+                  { kabupaten: "Pidie Jaya", value: 19074, provinsi: "Aceh" },
+                  { kabupaten: "Tapanuli Tengah", value: 18331, provinsi: "Sumatera Utara" },
+                  { kabupaten: "Aceh Tengah", value: 12978, provinsi: "Aceh" },
+                  { kabupaten: "Langkat", value: 11054, provinsi: "Sumatera Utara" },
+                  { kabupaten: "Bener Meriah", value: 8937, provinsi: "Aceh" },
+                  { kabupaten: "Nagan Raya", value: 8059, provinsi: "Aceh" },
+                  { kabupaten: "Tapanuli Selatan", value: 7248, provinsi: "Sumatera Utara" },
+                  { kabupaten: "Tanah Datar", value: 6137, provinsi: "Sumatera Barat" },
+                  { kabupaten: "Kota Subulussalam", value: 5905, provinsi: "Aceh" },
+                  { kabupaten: "Aceh Tenggara", value: 5812, provinsi: "Aceh" },
+                  { kabupaten: "Agam", value: 5277, provinsi: "Sumatera Barat" },
+                  { kabupaten: "Pasaman Barat", value: 4789, provinsi: "Sumatera Barat" },
+                  { kabupaten: "Pesisir Selatan", value: 2700, provinsi: "Sumatera Barat" },
+                  { kabupaten: "Humbang Hasundutan", value: 2200, provinsi: "Sumatera Utara" },
+                  { kabupaten: "Kota Sibolga", value: 2096, provinsi: "Sumatera Utara" },
+                ]
+                .filter(item => selectedPengungsiTab === 'Semua' || item.provinsi === selectedPengungsiTab)
+                .map((item, idx) => (
+                  <div key={idx} className="flex justify-between items-center bg-white/10 rounded-lg px-3 py-2">
+                    <span className="text-sm">{item.kabupaten}</span>
+                    <span className="text-sm font-bold">{item.value.toLocaleString('id-ID')} <span className="text-xs font-normal">jiwa</span></span>
+                  </div>
+                ))}
               </div>
               <div className="mt-4 text-center bg-white/20 rounded-lg py-3">
                 <p className="text-sm opacity-80">Total Pengungsi</p>
-                <p className="text-3xl font-black">± 845 ribu <span className="text-lg font-normal">jiwa</span></p>
+                <p className="text-3xl font-black">± 891 ribu <span className="text-lg font-normal">jiwa</span></p>
               </div>
             </div>
 
