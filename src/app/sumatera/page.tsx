@@ -292,7 +292,7 @@ export default function Home() {
         <div className="container mx-auto text-center">
           <img src="/logo.png" className="h-16 mx-auto" alt="Logo" />
           <p className="text-xs mt-2 text-white leading-tight font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>
-            KEMENTRIAN KOORDINATOR <br />
+            KEMENTERIAN KOORDINATOR <br />
             BIDANG PEMBANGUNAN MANUSIA DAN KEBUDAYAAN <br />
             REPUBLIK INDONESIA
           </p>
@@ -1005,6 +1005,34 @@ export default function Home() {
                   <img src="/logos/bapanas.png" alt="Badan Pangan Nasional" className="w-full h-full object-contain" />
                 </div>
                 <span className="text-xs text-gray-400">Bapanas</span>
+              </div>
+              {/* Badan Komunikasi Pemerintah RI */}
+              <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-lg flex items-center justify-center p-1">
+                  <img src="/logos/bakom.png" alt="Badan Komunikasi Pemerintah" className="w-full h-full object-contain" />
+                </div>
+                <span className="text-xs text-gray-400">Bakom RI</span>
+              </div>
+              {/* Kementerian Kesehatan */}
+              <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-lg flex items-center justify-center p-1">
+                  <img src="/logos/kemenkes.png" alt="Kementerian Kesehatan" className="w-full h-full object-contain" />
+                </div>
+                <span className="text-xs text-gray-400">Kemenkes</span>
+              </div>
+              {/* Kementerian Dalam Negeri */}
+              <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-lg flex items-center justify-center p-1">
+                  <img src="/logos/kemendagri.png" alt="Kementerian Dalam Negeri" className="w-full h-full object-contain" />
+                </div>
+                <span className="text-xs text-gray-400">Kemendagri</span>
+              </div>
+              {/* BMKG */}
+              <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-lg flex items-center justify-center p-1">
+                  <img src="/logos/bmkg.png" alt="BMKG" className="w-full h-full object-contain" />
+                </div>
+                <span className="text-xs text-gray-400">BMKG</span>
               </div>
             </div>
           </div>
