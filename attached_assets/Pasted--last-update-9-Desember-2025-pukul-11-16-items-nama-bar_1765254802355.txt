@@ -1,0 +1,565 @@
+{
+  "last_update": "9 Desember 2025 pukul 11.16",
+  "items": [
+    {
+      "nama_barang": "Rompi Biru",
+      "jumlah": "142 PCS"
+    },
+    {
+      "nama_barang": "Rompi Merah",
+      "jumlah": "1.363 PCS"
+    },
+    {
+      "nama_barang": "Rompi Merah",
+      "jumlah": "25 UNIT"
+    },
+    {
+      "nama_barang": "Sabun Bayi",
+      "jumlah": "3 BOX"
+    },
+    {
+      "nama_barang": "Sabun Cuci",
+      "jumlah": "20 KARTON"
+    },
+    {
+      "nama_barang": "Sabun Cuci Piring",
+      "jumlah": "12 KARTON"
+    },
+    {
+      "nama_barang": "Sabun Mandi",
+      "jumlah": "1.197 BOX"
+    },
+    {
+      "nama_barang": "Sabun Mandi Cair",
+      "jumlah": "1.176 PCS"
+    },
+    {
+      "nama_barang": "Sambal Botol",
+      "jumlah": "1 KARTON"
+    },
+    {
+      "nama_barang": "Sandal Jepit",
+      "jumlah": "100 PCS"
+    },
+    {
+      "nama_barang": "Sarden",
+      "jumlah": "1.296 KARTON"
+    },
+    {
+      "nama_barang": "Sarung",
+      "jumlah": "32.164 PCS"
+    },
+    {
+      "nama_barang": "Sarung Tangan Kain",
+      "jumlah": "523 PCS"
+    },
+    {
+      "nama_barang": "Sarung Tangan Karet",
+      "jumlah": "845 PCS"
+    },
+    {
+      "nama_barang": "Sarung Tangan Kulit",
+      "jumlah": "246 PCS"
+    },
+    {
+      "nama_barang": "Sarung Tangan Latex",
+      "jumlah": "2.770 PCS"
+    },
+    {
+      "nama_barang": "Makanan Kaleng",
+      "jumlah": "5.874 KALENG"
+    },
+    {
+      "nama_barang": "Makanan Ringan",
+      "jumlah": "129.428 KARTON"
+    },
+    {
+      "nama_barang": "Masker kain",
+      "jumlah": "129.082 PCS"
+    },
+    {
+      "nama_barang": "Masker Medis",
+      "jumlah": "285.465 PCS"
+    },
+    {
+      "nama_barang": "Masker N95",
+      "jumlah": "5.386 PCS"
+    },
+    {
+      "nama_barang": "Masker Respirator",
+      "jumlah": "317 PCS"
+    },
+    {
+      "nama_barang": "Matras",
+      "jumlah": "1.473 PCS"
+    },
+    {
+      "nama_barang": "Media Filter Zeolit",
+      "jumlah": "4 UNIT"
+    },
+    {
+      "nama_barang": "Menstrual Hygiene Management Kit",
+      "jumlah": "4 BOX"
+    },
+    {
+      "nama_barang": "Mie Instan",
+      "jumlah": "11.407 KARTON"
+    },
+    {
+      "nama_barang": "Minuman Energy",
+      "jumlah": "7.186 PCS"
+    },
+    {
+      "nama_barang": "Minuman Kaleng",
+      "jumlah": "12 KARTON"
+    },
+    {
+      "nama_barang": "Minuman Sachet",
+      "jumlah": "63 KARTON"
+    },
+    {
+      "nama_barang": "Minyak Goreng 1 L",
+      "jumlah": "853 KARTON"
+    },
+    {
+      "nama_barang": "Minyak Kayu Putih",
+      "jumlah": "1.300 PCS"
+    },
+    {
+      "nama_barang": "Teh Celup",
+      "jumlah": "75 KARTON"
+    },
+    {
+      "nama_barang": "Teh Celup",
+      "jumlah": "38 PACK"
+    },
+    {
+      "nama_barang": "Telur",
+      "jumlah": "500 KG"
+    },
+    {
+      "nama_barang": "Tenda",
+      "jumlah": "13 UNIT"
+    },
+    {
+      "nama_barang": "Tenda Alas",
+      "jumlah": "12 UNIT"
+    },
+    {
+      "nama_barang": "Tenda Emergency",
+      "jumlah": "1 UNIT"
+    },
+    {
+      "nama_barang": "Tenda Family",
+      "jumlah": "286 BAG"
+    },
+    {
+      "nama_barang": "Tenda Gulung C2025",
+      "jumlah": "800 UNIT"
+    },
+    {
+      "nama_barang": "Tenda Individu",
+      "jumlah": "71 UNIT"
+    },
+    {
+      "nama_barang": "Tenda Modular",
+      "jumlah": "450 UNIT"
+    },
+    {
+      "nama_barang": "Tenda Oval",
+      "jumlah": "2 UNIT"
+    },
+    {
+      "nama_barang": "Tenda Peleton",
+      "jumlah": "3 UNIT"
+    },
+    {
+      "nama_barang": "Tenda Peleton",
+      "jumlah": "5 UNIT"
+    },
+    {
+      "nama_barang": "Tenda Personil",
+      "jumlah": "10 UNIT"
+    },
+    {
+      "nama_barang": "Tenda Regu",
+      "jumlah": "1 UNIT"
+    },
+    {
+      "nama_barang": "Tenda Relawan",
+      "jumlah": "2 UNIT"
+    },
+    {
+      "nama_barang": "Tissue",
+      "jumlah": "96 KARTON"
+    },
+    {
+      "nama_barang": "Tisu Basah",
+      "jumlah": "2 KARTON"
+    },
+    {
+      "nama_barang": "Tolak Angin",
+      "jumlah": "255 KARTON"
+    },
+    {
+      "nama_barang": "Topi Kupluk PMI",
+      "jumlah": "47 PCS"
+    },
+    {
+      "nama_barang": "Topi Rimba PMI",
+      "jumlah": "37 PCS"
+    },
+    {
+      "nama_barang": "Tripod",
+      "jumlah": "3 UNIT"
+    },
+    {
+      "nama_barang": "Veldples",
+      "jumlah": "47 PCS"
+    },
+    {
+      "nama_barang": "Vertical Rescue",
+      "jumlah": "1 BOX"
+    },
+    {
+      "nama_barang": "Vitamin C",
+      "jumlah": "889 KARTON"
+    },
+    {
+      "nama_barang": "Water Bladder",
+      "jumlah": "15 UNIT"
+    },
+    {
+      "nama_barang": "Water Tank 6 m3",
+      "jumlah": "1 UNIT"
+    },
+    {
+      "nama_barang": "Watertank Kit Flexible Onion 10 m3",
+      "jumlah": "1 UNIT"
+    },
+    {
+      "nama_barang": "Watertank Kit Flexible Onion 5 m3",
+      "jumlah": "28 UNIT"
+    },
+    {
+      "nama_barang": "Tenda Serbaguna",
+      "jumlah": "2 UNIT"
+    },
+    {
+      "nama_barang": "Tensi Digital",
+      "jumlah": "1 UNIT"
+    },
+    {
+      "nama_barang": "Terpal Roll",
+      "jumlah": "40 ROL"
+    },
+    {
+      "nama_barang": "Thermometer Infrared",
+      "jumlah": "285 PCS"
+    },
+    {
+      "nama_barang": "Sarung Tangan Medis",
+      "jumlah": "5 UNIT"
+    },
+    {
+      "nama_barang": "School Kit",
+      "jumlah": "3.245 BAG"
+    },
+    {
+      "nama_barang": "Sekop",
+      "jumlah": "701 PCS"
+    },
+    {
+      "nama_barang": "Sekop",
+      "jumlah": "71 UNIT"
+    },
+    {
+      "nama_barang": "Sekop Lipat",
+      "jumlah": "249 PCS"
+    },
+    {
+      "nama_barang": "Selang Filter",
+      "jumlah": "1 UNIT"
+    },
+    {
+      "nama_barang": "Selang Kompresor",
+      "jumlah": "140 PCS"
+    },
+    {
+      "nama_barang": "Selimut",
+      "jumlah": "7 BALE"
+    },
+    {
+      "nama_barang": "Selimut",
+      "jumlah": "11.329 PCS"
+    },
+    {
+      "nama_barang": "Selimut A2025",
+      "jumlah": "3.817 PCS"
+    },
+    {
+      "nama_barang": "Seng Gelombang",
+      "jumlah": "46.969 PCS"
+    },
+    {
+      "nama_barang": "Senter LED",
+      "jumlah": "13 UNIT"
+    },
+    {
+      "nama_barang": "Sepatu Boot",
+      "jumlah": "864 PCS"
+    },
+    {
+      "nama_barang": "Sepeda",
+      "jumlah": "16 UNIT"
+    },
+    {
+      "nama_barang": "Seragam Sekolah",
+      "jumlah": "932 PCS"
+    },
+    {
+      "nama_barang": "Shampo",
+      "jumlah": "2.004 BOTOL"
+    },
+    {
+      "nama_barang": "Modul Komunikasi Starlink",
+      "jumlah": "10 UNIT"
+    },
+    {
+      "nama_barang": "Nesting",
+      "jumlah": "47 UNIT"
+    },
+    {
+      "nama_barang": "Obat-obatan",
+      "jumlah": "925 KARTON"
+    },
+    {
+      "nama_barang": "Oxygen Concentrator",
+      "jumlah": "10 UNIT"
+    },
+    {
+      "nama_barang": "Oxymeter",
+      "jumlah": "270 PCS"
+    },
+    {
+      "nama_barang": "Pakaian Anak",
+      "jumlah": "5.942 PCS"
+    },
+    {
+      "nama_barang": "Pakaian Dalam Wanita",
+      "jumlah": "3.340 PCS"
+    },
+    {
+      "nama_barang": "Pakaian Dewasa",
+      "jumlah": "25.631 PCS"
+    },
+    {
+      "nama_barang": "Paket Sembako",
+      "jumlah": "4.123 BAG"
+    },
+    {
+      "nama_barang": "Palu",
+      "jumlah": "249 UNIT"
+    },
+    {
+      "nama_barang": "Pasta Gigi",
+      "jumlah": "56 KARTON"
+    },
+    {
+      "nama_barang": "Pelastik Roll",
+      "jumlah": "12 ROL"
+    },
+    {
+      "nama_barang": "Pembalut Wanita",
+      "jumlah": "933 KARTON"
+    },
+    {
+      "nama_barang": "Pembalut Wanita",
+      "jumlah": "2.053 PCS"
+    },
+    {
+      "nama_barang": "Pembalut Wanita",
+      "jumlah": "24 UNIT"
+    },
+    {
+      "nama_barang": "Pembersih Lantai",
+      "jumlah": "3 KARTON"
+    },
+    {
+      "nama_barang": "Shelter Kit",
+      "jumlah": "145 BAG"
+    },
+    {
+      "nama_barang": "Shelter Tool Kit",
+      "jumlah": "100 BAG"
+    },
+    {
+      "nama_barang": "Shoes Cover",
+      "jumlah": "625 PCS"
+    },
+    {
+      "nama_barang": "Sikat Gigi",
+      "jumlah": "47 KARTON"
+    },
+    {
+      "nama_barang": "Skop",
+      "jumlah": "12 UNIT"
+    },
+    {
+      "nama_barang": "Sleeping Bag",
+      "jumlah": "40 PCS"
+    },
+    {
+      "nama_barang": "Sosis",
+      "jumlah": "30 KARTON"
+    },
+    {
+      "nama_barang": "Sprayer Manual",
+      "jumlah": "1.362 UNIT"
+    },
+    {
+      "nama_barang": "Spray,Gun",
+      "jumlah": "166 UNIT"
+    },
+    {
+      "nama_barang": "Starlink",
+      "jumlah": "90 UNIT"
+    },
+    {
+      "nama_barang": "Stiker",
+      "jumlah": "4.000 LEMBAR"
+    },
+    {
+      "nama_barang": "Susu Bubuk",
+      "jumlah": "193 KARTON"
+    },
+    {
+      "nama_barang": "Susu Kaleng",
+      "jumlah": "205 KALENG"
+    },
+    {
+      "nama_barang": "Susu Kotak",
+      "jumlah": "3.012 KARTON"
+    },
+    {
+      "nama_barang": "Susu Sachet",
+      "jumlah": "35 KARTON"
+    },
+    {
+      "nama_barang": "Tabung Filter",
+      "jumlah": "8 UNIT"
+    },
+    {
+      "nama_barang": "Tabung Gas 17 Kg",
+      "jumlah": "1 UNIT"
+    },
+    {
+      "nama_barang": "Tabung Oksigen 10 L",
+      "jumlah": "3 UNIT"
+    },
+    {
+      "nama_barang": "Tali Twist Rope",
+      "jumlah": "457 ROL"
+    },
+    {
+      "nama_barang": "Tambang",
+      "jumlah": "8 ROL"
+    },
+    {
+      "nama_barang": "Tandon Air 300 Lt",
+      "jumlah": "4 UNIT"
+    },
+    {
+      "nama_barang": "Tandu Basket",
+      "jumlah": "4 UNIT"
+    },
+    {
+      "nama_barang": "Tandu Lipat",
+      "jumlah": "5 UNIT"
+    },
+    {
+      "nama_barang": "Tandu Scoope",
+      "jumlah": "5 UNIT"
+    },
+    {
+      "nama_barang": "Tarpaulin",
+      "jumlah": "1.383 PCS"
+    },
+    {
+      "nama_barang": "Tarpaulin",
+      "jumlah": "769 UNIT"
+    },
+    {
+      "nama_barang": "Tas Evakuasi",
+      "jumlah": "249 PCS"
+    },
+    {
+      "nama_barang": "Tas Pinggang",
+      "jumlah": "247 PCS"
+    },
+    {
+      "nama_barang": "Perahu Karet",
+      "jumlah": "2 UNIT"
+    },
+    {
+      "nama_barang": "Peralatan Mandi",
+      "jumlah": "30 BOX"
+    },
+    {
+      "nama_barang": "Perlengkapan Bayi",
+      "jumlah": "10 BALE"
+    },
+    {
+      "nama_barang": "Perlengkapan Bayi",
+      "jumlah": "30 PACK"
+    },
+    {
+      "nama_barang": "Perlengkapan Dapur Umum",
+      "jumlah": "155 UNIT"
+    },
+    {
+      "nama_barang": "Perlengkapan Ibadah",
+      "jumlah": "67 BALE"
+    },
+    {
+      "nama_barang": "Perlengkapan SAR",
+      "jumlah": "1 BAG"
+    },
+    {
+      "nama_barang": "Perlengkapan Sekolah",
+      "jumlah": "201 BAG"
+    },
+    {
+      "nama_barang": "PHBS",
+      "jumlah": "96 PCS"
+    },
+    {
+      "nama_barang": "Pisau Lipat",
+      "jumlah": "118 PCS"
+    },
+    {
+      "nama_barang": "Plastik Sampah",
+      "jumlah": "25 PACK"
+    },
+    {
+      "nama_barang": "Pompa Air",
+      "jumlah": "7 UNIT"
+    },
+    {
+      "nama_barang": "Popok Anak",
+      "jumlah": "2.290 KARTON"
+    },
+    {
+      "nama_barang": "Popok Dewasa",
+      "jumlah": "275 KARTON"
+    },
+    {
+      "nama_barang": "Portable Toilet",
+      "jumlah": "6 UNIT"
+    },
+    {
+      "nama_barang": "Rendang Kaleng",
+      "jumlah": "1.175 KALENG"
+    }
+  ]
+}
