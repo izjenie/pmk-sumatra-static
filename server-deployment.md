@@ -48,17 +48,7 @@ git pull
 
 ---
 
-## Step 6: Remove Semua Docker Container
-
-Hapus semua container yang sedang berjalan:
-
-```bash
-sudo docker rm -f $(sudo docker ps -a -q)
-```
-
----
-
-## Step 7: Jalankan Docker Baru
+## Step 6: Jalankan Docker Baru
 
 ```bash
 sudo ./docker-production.sh
