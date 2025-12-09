@@ -449,6 +449,9 @@ export default function Home() {
       {/* Nomor Darurat Bencana Section */}
       <section className="py-16 bg-gradient-to-b from-[#1B1B1B] to-[#2d4a6d]">
         <div className="container mx-auto px-4 sm:px-6 md:px-10">
+          <p className="text-center text-xl md:text-2xl text-white/80 mb-4">
+            Kawal informasi seputar bencana Sumatera secara tepat dan akurat
+          </p>
           <h2 className="text-center text-3xl md:text-4xl font-extrabold text-white mb-2">
             NOMOR DARURAT
           </h2>
@@ -570,9 +573,6 @@ export default function Home() {
 
       <section className="bg-gradient-to-br from-[#1B1B1B] via-[#2a2a2a] to-[#1B1B1B] text-white pt-16 pb-20 relative">
         <div className="text-center mb-12 px-6">
-          <p className="text-xl md:text-2xl opacity-80 mb-4">
-            Kawal informasi seputar bencana Sumatera secara tepat dan akurat
-          </p>
           <h1 className="text-3xl md:text-4xl font-bold mb-2 tracking-wide">
             Situasi Darurat di Sumatera
           </h1>
