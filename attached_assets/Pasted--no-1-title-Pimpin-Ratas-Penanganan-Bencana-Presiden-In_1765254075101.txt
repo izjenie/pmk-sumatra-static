@@ -1,0 +1,44 @@
+[
+  {
+    "no": 1,
+    "title": "Pimpin Ratas Penanganan Bencana, Presiden Instruksikan Penyaluran Bantuan Lebih Teliti dan Tepat Waktu",
+    "date": "8 Desember 2025",
+    "content": "Presiden Prabowo Subianto memimpin langsung Rapat Terbatas (Ratas) terkait penanganan dan pemulihan bencana alam di Aceh. Dalam rapat tersebut, Presiden memerintahkan jajarannya untuk segera menindaklanjuti temuan lapangan dan arahan-arahan yang telah disampaikan. Beliau menegaskan bahwa kekompakan seluruh unsur pemerintah, relawan, dan masyarakat merupakan kekuatan terbesar dalam mempercepat pemulihan wilayah yang terdampak bencana.\n\nDalam arahannya, Presiden menekankan pentingnya akurasi dan ketepatan waktu dalam penyaluran bantuan. Beliau menginstruksikan agar operasi terpadu yang melibatkan TNI, Polri, Basarnas, dan BNPB terus diperkuat, khususnya dalam mempercepat distribusi bantuan ke wilayah terisolir. Apresiasi mendalam juga disampaikan kepada para kepala daerah, termasuk Bupati Aceh Tengah dan Bener Meriah, serta kepada masyarakat luas atas solidaritas sosial yang tinggi.",
+    "kategori": "Pemerintahan"
+  },
+  {
+    "no": 2,
+    "title": "Tinjau Jembatan Bireuen-Takengon, Presiden Tunjuk KSAD Jenderal Maruli Simanjuntak Komandoi Perbaikan Infrastruktur",
+    "date": "8 Desember 2025",
+    "content": "Usai meninjau pengerjaan jembatan di ruas vital Bireuen–Takengon, Kabupaten Bireuen, Presiden Prabowo berdialog langsung dengan warga dan petugas lapangan. Presiden melihat langsung kerja keras personel TNI, Polri, tim teknik PUPR, dan relawan dalam memulihkan akses yang terputus. Kunjungan ini menegaskan komitmen pemerintah untuk memastikan kebutuhan masyarakat terpenuhi dan isolasi wilayah segera berakhir.\n\nSebagai langkah percepatan strategis, Presiden menunjuk Kepala Staf Angkatan Darat (KSAD), Jenderal TNI Maruli Simanjuntak, sebagai komandan percepatan perbaikan infrastruktur. Penunjukan ini bertujuan agar pengerahan alat berat dan personel zeni TNI dapat lebih optimal dan taktis, sehingga perbaikan jalan maupun jembatan yang rusak parah dapat diselesaikan dalam waktu sesingkat-singkatnya.",
+    "kategori": "Infrastruktur"
+  },
+  {
+    "no": 3,
+    "title": "Pastikan Stok Pangan Aman, Presiden: Bantuan Dikirim dari Berbagai Daerah untuk Warga Aceh",
+    "date": "8 Desember 2025",
+    "content": "Presiden Prabowo memastikan bahwa ketersediaan bahan pangan bagi warga terdampak bencana di Aceh telah diantisipasi dengan matang. Dalam keterangannya di Kabupaten Bireuen, Presiden menyebutkan bahwa bantuan tidak hanya mengandalkan stok lokal, tetapi juga akan dikirimkan dari berbagai daerah lain untuk menjamin tidak ada kekurangan logistik bagi para pengungsi maupun warga yang terisolir.\n\nPemerintah berkomitmen penuh untuk memastikan seluruh proses pemulihan berlangsung cepat, terkoordinasi, dan sesuai standar keselamatan. Langkah ini diambil guna menjamin masyarakat Aceh dapat kembali beraktivitas dengan aman, lancar, dan normal secepat mungkin. Presiden terus memantau situasi untuk memastikan distribusi berjalan lancar hingga ke lini terbawah.",
+    "kategori": "Sosial"
+  },
+  {
+    "no": 4,
+    "title": "Presiden Prabowo Kembali ke Aceh, Tinjau Langsung Kerusakan Banjir dan Percepatan Penanganan Darurat",
+    "date": "8 Desember 2025",
+    "content": "Presiden Prabowo Subianto kembali melakukan kunjungan kerja ke Aceh untuk meninjau penanganan bencana alam secara langsung. Fokus utama kunjungan kali ini adalah melihat sejumlah lokasi yang mengalami kerusakan parah akibat banjir dan memastikan percepatan penanganan darurat berjalan efektif. Presiden ingin memastikan proses pemulihan di wilayah terdampak mendapatkan atensi maksimal dari pemerintah pusat.\n\nBapak Presiden juga melakukan pengecekan terhadap penyaluran bantuan, proses evakuasi warga, serta upaya pembukaan akses jalan yang terputus. Berlokasi di sekitar Bandara Internasional Sultan Iskandar Muda, Kabupaten Aceh Besar, Presiden memberikan arahan langsung untuk mengatasi kendala-kendala logistik yang menghambat distribusi bantuan.",
+    "kategori": "Nasional"
+  },
+  {
+    "no": 5,
+    "title": "Tinjau Posko Terpadu Lanud Sultan Iskandar Muda, Pemerintah Pastikan Arus Logistik Bantuan Terus Mengalir",
+    "date": "8 Desember 2025",
+    "content": "Menteri Koordinator Bidang Pembangunan Manusia dan Kebudayaan (Menko PMK), Pratikno, meninjau Posko Terpadu penanganan bencana alam Aceh di Lanud Sultan Iskandar Muda. Tempat ini difungsikan sebagai gudang logistik utama sebelum bantuan didistribusikan ke wilayah terdampak. Kunjungan ini memastikan kesiapan stok dan kelancaran rantai pasok bantuan kemanusiaan.\n\nSesuai arahan Bapak Presiden, bantuan tambahan akan terus dikirimkan dan berbagai langkah pemulihan akan dipercepat. Posko ini menjadi pusat koordinasi vital untuk memastikan bantuan pangan, sandang, dan obat-obatan dapat segera sampai ke tangan warga yang membutuhkan, seiring dengan upaya pemerintah mempercepat normalisasi situasi pasca-bencana.",
+    "kategori": "Nasional"
+  },
+  {
+    "no": 6,
+    "title": "PLN Berhasil Pulihkan 100% Sistem Kelistrikan Sumatra Utara Pasca Banjir dan Longsor",
+    "date": "8 Desember 2025",
+    "content": "PT PLN (Persero) mengumumkan keberhasilan memulihkan 100% sistem kelistrikan yang terdampak banjir dan longsor di Sumatra Utara. Pemulihan total tercapai pada hari Minggu, di mana 103 jaringan distribusi yang sebelumnya rusak kini telah beroperasi kembali. Keberhasilan ini menjadi kabar baik bagi warga yang sempat mengalami pemadaman total akibat bencana alam.\n\nProses pemulihan ini merupakan hasil sinergi antara PLN, TNI, Polri, BNPB, pemerintah daerah, dan masyarakat yang bahu-membahu memperbaiki infrastruktur listrik yang rusak. Semua pihak bergandeng tangan untuk mewujudkan 'Sumatra Utara Kembali Terang', yang menjadi modal penting bagi pemulihan aktivitas ekonomi dan sosial masyarakat pasca-bencana.",
+    "kategori": "Energi"
+  }
+]
