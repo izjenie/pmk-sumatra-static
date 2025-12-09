@@ -322,7 +322,7 @@ export default function Home() {
               <div className="space-y-3">
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
                   <span>Meninggal Dunia</span>
-                  <span className="text-2xl font-bold">961 <span className="text-sm font-normal">jiwa</span></span>
+                  <span className="text-2xl font-bold">962 <span className="text-sm font-normal">jiwa</span></span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
                   <span>Hilang</span>
@@ -374,7 +374,7 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-2">
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Rumah Rusak</p>
-                  <p className="text-lg font-bold">157,6 ribu</p>
+                  <p className="text-lg font-bold">157,8 ribu</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Rumah Ibadah</p>
@@ -382,7 +382,7 @@ export default function Home() {
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Fasilitas Umum</p>
-                  <p className="text-lg font-bold">1,2 ribu</p>
+                  <p className="text-lg font-bold">1,1 ribu</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Gedung/Kantor</p>
@@ -390,7 +390,7 @@ export default function Home() {
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Fas. Kesehatan</p>
-                  <p className="text-lg font-bold">199</p>
+                  <p className="text-lg font-bold">161</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Jembatan</p>
@@ -406,7 +406,7 @@ export default function Home() {
         </div>
 
         <p className="text-center text-sm opacity-60 mt-6" style={{ fontFamily: 'Arial, sans-serif' }}>
-          Sumber: <a href="https://gis.bnpb.go.id/BANSORSUMATERA2025/" target="_blank" rel="noopener noreferrer" className="font-semibold underline hover:text-white/80 transition-colors">Data BNPB, 8 Desember 2025 →</a>
+          Sumber: <a href="https://gis.bnpb.go.id/BANSORSUMATERA2025/" target="_blank" rel="noopener noreferrer" className="font-semibold underline hover:text-white/80 transition-colors">Data BNPB, 9 Desember 2025 →</a>
         </p>
       </section>
 
