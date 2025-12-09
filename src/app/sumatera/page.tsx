@@ -280,13 +280,92 @@ const pmiStockData = [
   { id: 222, name: 'Watertank Kit Flexible Onion 10 M3', icon: 'fa-droplet', quantity: '1 UNIT' },
 ];
 
+// Data Pos Pengungsian
+const posPengungsianData = {
+  'Aceh': [
+    { name: 'SMU 1 Rantau', lokasi: 'Aceh Tamiang - Rantau', lat: 4.3325, lng: 98.061, kabupaten: 'Aceh Tamiang', kecamatan: 'Karang Baru' },
+    { name: 'Kantor BPBD Aceh Barat', lokasi: 'Aceh Barat - Johan Pahlawan', lat: 4.146, lng: 96.126, kabupaten: 'Aceh Barat', kecamatan: 'Johan Pahlawan' },
+    { name: 'RSUD Cut Nyak Dhien', lokasi: 'Aceh Barat - Johan Pahlawan', lat: 4.146, lng: 96.126, kabupaten: 'Aceh Barat', kecamatan: 'Johan Pahlawan' },
+    { name: 'Rumah Sakit Teuku Peukan', lokasi: 'Aceh Barat Daya - Susoh', lat: 3.735, lng: 96.84, kabupaten: 'Aceh Barat Daya', kecamatan: 'Blangpidie' },
+    { name: 'Kantor Camat Trumon', lokasi: 'Aceh Selatan - Trumon', lat: 2.825, lng: 97.62, kabupaten: 'Aceh Selatan', kecamatan: 'Trumon' },
+    { name: 'RSUD Dr. H. Yuliddin Away', lokasi: 'Aceh Selatan - Tapak Tuan', lat: 3.262, lng: 97.185, kabupaten: 'Aceh Selatan', kecamatan: 'Tapaktuan' },
+    { name: 'Kantor BPBD Kab. Aceh Singkil', lokasi: 'Aceh Singkil - Singkil', lat: 2.28, lng: 97.79, kabupaten: 'Aceh Singkil', kecamatan: 'Singkil' },
+    { name: 'RSUD Aceh Singkil', lokasi: 'Aceh Singkil - Gunung Meriah', lat: 2.305, lng: 97.85, kabupaten: 'Aceh Singkil', kecamatan: 'Singkil' },
+    { name: 'GOR Aceh Tamiang, Karang Baru', lokasi: 'Aceh Tamiang - Karang Baru', lat: 4.303, lng: 98.0525, kabupaten: 'Aceh Tamiang', kecamatan: 'Karang Baru' },
+    { name: 'Puskesmas Karang Baru', lokasi: 'Aceh Tamiang - Karang Baru', lat: 4.303, lng: 98.0525, kabupaten: 'Aceh Tamiang', kecamatan: 'Karang Baru' },
+    { name: 'Mesjid At-Taqwa Rantau', lokasi: 'Aceh Tamiang - Rantau', lat: 4.3325, lng: 98.061, kabupaten: 'Aceh Tamiang', kecamatan: 'Karang Baru' },
+    { name: 'Kejaksaan Negeri Aceh Tamiang', lokasi: 'Aceh Tamiang - Karang Baru', lat: 4.303, lng: 98.0525, kabupaten: 'Aceh Tamiang', kecamatan: 'Karang Baru' },
+    { name: 'SMK 1 Kota Lintang', lokasi: 'Aceh Tamiang - Kota Kuala Simpang', lat: 4.281, lng: 98.062, kabupaten: 'Aceh Tamiang', kecamatan: 'Kota Kualasinpang' },
+    { name: 'Aula Setdakab (Serule Kayu)', lokasi: 'Bener Meriah - Bukit', lat: 4.72, lng: 96.85, kabupaten: 'Bener Meriah', kecamatan: 'Bukit' },
+    { name: 'Masjid Balee Redelong', lokasi: 'Bener Meriah - Bukit', lat: 4.72, lng: 96.85, kabupaten: 'Bener Meriah', kecamatan: 'Bukit' },
+    { name: 'SD 2 Jamur Ujung', lokasi: 'Bener Meriah - Wih Pesam', lat: 4.7, lng: 96.8, kabupaten: 'Bener Meriah', kecamatan: 'Wih Pesam' },
+  ],
+  'Sumatera Utara': [
+    { name: 'GOR Pandan', lokasi: 'Tapanuli Tengah - Pandan', lat: 1.69, lng: 98.83, kabupaten: 'Tapanuli Tengah', kecamatan: 'Pandan' },
+    { name: 'Lobu Pining', lokasi: 'Tapanuli Utara - Pahae Julu', lat: 1.9682, lng: 99.0185, kabupaten: 'Tapanuli Utara', kecamatan: 'Siatas Barita' },
+    { name: 'Gereja HKBP Desa Sibalanga', lokasi: 'Tapanuli Utara - Adian Koting', lat: 1.745, lng: 98.785, kabupaten: 'Kota Sibolga', kecamatan: 'Sibolga Utara' },
+    { name: 'SMAN 1 Kejuruan Muda', lokasi: 'Aceh Tamiang - Kejuruan Muda', lat: 4.21, lng: 98.12, kabupaten: 'Langkat', kecamatan: 'Pematang Jaya' },
+    { name: 'Gedung Serba Guna', lokasi: 'Deli Serdang - Pantai Labu', lat: 3.6503, lng: 98.9099, kabupaten: 'Deli Serdang', kecamatan: 'Pantai Labu' },
+    { name: 'Desa Bulu Cina', lokasi: 'Deli Serdang - Hamparan Perak', lat: 3.73, lng: 98.57, kabupaten: 'Deli Serdang', kecamatan: 'Hamparan Perak' },
+    { name: 'Wisma Gereja HKBP Ds. Tarabintang', lokasi: 'Humbang Hasundutan - Tarabintang', lat: 2.1, lng: 98.55, kabupaten: 'Humbang Hasundutan', kecamatan: 'Pakkat' },
+    { name: 'Jalan T.Imam Bonjol Kel. Setia', lokasi: 'Kota Binjai - Binjai Kota', lat: 3.6, lng: 98.48, kabupaten: 'Kota Binjai', kecamatan: 'Binjai Kota' },
+    { name: 'Kantor Lurah Sei Mati', lokasi: 'Kota Medan - Medan Labuhan', lat: 3.695, lng: 98.69, kabupaten: 'Kota Medan', kecamatan: 'Medan Labuhan' },
+    { name: 'Masjid Al Falah', lokasi: 'Kota Medan - Medan Maimun', lat: 3.578, lng: 98.685, kabupaten: 'Kota Medan', kecamatan: 'Medan Maimun' },
+    { name: 'Kantor Walikota', lokasi: 'Kota Padang Sidempuan - Padangsidimpuan Utara', lat: 1.38, lng: 99.27, kabupaten: 'Kota Padang Sidempuan', kecamatan: 'Padangsidimpuan Utara' },
+    { name: 'GOR Porimbunan', lokasi: 'Kota Sibolga - Sibolga Selatan', lat: 1.73, lng: 98.79, kabupaten: 'Kota Sibolga', kecamatan: 'Sibolga Sambas' },
+    { name: 'Area Toll Tanjung Pura', lokasi: 'Langkat - Tanjung Pura', lat: 3.9102, lng: 98.4324, kabupaten: 'Langkat', kecamatan: 'Tanjung Pura' },
+    { name: 'Masjid At Taqwa Besitang', lokasi: 'Langkat - Besitang', lat: 4.0641, lng: 98.1591, kabupaten: 'Langkat', kecamatan: 'Besitang' },
+    { name: 'SMPN Besitang', lokasi: 'Langkat - Besitang', lat: 4.064, lng: 98.1567, kabupaten: 'Langkat', kecamatan: 'Besitang' },
+    { name: 'Ds. Sei Rampah', lokasi: 'Serdang Bedagai - Sei Rampah', lat: 3.48, lng: 99.13, kabupaten: 'Serdang Bedagai', kecamatan: 'Sei Rampah' },
+  ],
+  'Sumatera Barat': [
+    { name: 'Kantor Camat IV Koto', lokasi: 'Agam - IV Koto', lat: -0.25, lng: 100.35, kabupaten: 'Agam', kecamatan: 'Tilatang Kamang' },
+    { name: 'BPBD Agam, Padang Baru', lokasi: 'Agam - Lubuk Basung', lat: -0.33, lng: 100.04, kabupaten: 'Agam', kecamatan: 'Lubuk Basung' },
+    { name: 'RSUD Lubuk Basung', lokasi: 'Agam - Lubuk Basung', lat: -0.33, lng: 100.04, kabupaten: 'Agam', kecamatan: 'Lubuk Basung' },
+    { name: 'Masjid Raya Ansharullah Nanggalo Padang', lokasi: 'Kota Padang - Nanggalo', lat: -0.89, lng: 100.37, kabupaten: 'Kota Padang', kecamatan: 'Nanggalo' },
+    { name: 'Rumah Dinas Wali Kota Padang', lokasi: 'Kota Padang - Padang Barat', lat: -0.945, lng: 100.355, kabupaten: 'Kota Padang', kecamatan: 'Padang Barat' },
+    { name: 'Posko Tanggap Darurat Kelurahan Batu Gadang', lokasi: 'Kota Padang - Lubuk Kilangan', lat: -0.95, lng: 100.45, kabupaten: 'Kota Padang', kecamatan: 'Lubuk Kilangan' },
+    { name: 'Posko Tanggap Darurat Kelurahan Koto Lalang', lokasi: 'Kota Padang - Lubuk Kilangan', lat: -0.95, lng: 100.45, kabupaten: 'Kota Padang', kecamatan: 'Lubuk Kilangan' },
+    { name: 'GOR Bulutangkis Bancah Laweh', lokasi: 'Kota Padang Panjang - Padang Panjang Timur', lat: -0.463, lng: 100.405, kabupaten: 'Kota Padang Panjang', kecamatan: 'Padang Panjang Barat' },
+    { name: 'Pos Silayiang Bawah', lokasi: 'Kota Padang Panjang - Padang Panjang Barat', lat: -0.46, lng: 100.39, kabupaten: 'Kota Padang Panjang', kecamatan: 'Padang Panjang Barat' },
+    { name: 'Balaikota Solok Kel. IX Korong', lokasi: 'Kota Solok - Lubuk Sikarah', lat: -0.79, lng: 100.65, kabupaten: 'Kota Solok', kecamatan: 'Lubuk Sikarah' },
+    { name: 'Taman Kota Kalumpang Kel. VI Suku', lokasi: 'Kota Solok - Lubuk Sikarah', lat: -0.79, lng: 100.65, kabupaten: 'Kota Solok', kecamatan: 'Lubuk Sikarah' },
+    { name: 'Nagari Kasang Kec. Batang Anai', lokasi: 'Padang Pariaman - Batang Anai', lat: -0.8, lng: 100.3, kabupaten: 'Padang Pariaman', kecamatan: 'Batang Anai' },
+    { name: 'Posko Muaro Pingai', lokasi: 'Solok - Junjung Sirih', lat: -0.65, lng: 100.58, kabupaten: 'Solok', kecamatan: 'X Koto Singkarak' },
+    { name: 'SD 11 Paninggahan', lokasi: 'Solok - Paninggahan', lat: -0.62, lng: 100.55, kabupaten: 'Tanah Datar', kecamatan: 'Rambatan' },
+  ],
+};
+
 export default function Home() {
   const [searchStockTerm, setSearchStockTerm] = useState('');
   const [selectedNews, setSelectedNews] = useState<typeof newsData[0] | null>(null);
+  const [searchPosTerm, setSearchPosTerm] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState<string>('Semua');
 
   const filteredPmiStock = pmiStockData.filter(item =>
     item.name.toLowerCase().includes(searchStockTerm.toLowerCase())
   );
+
+  const getFilteredPos = () => {
+    const regions = selectedRegion === 'Semua' 
+      ? Object.keys(posPengungsianData) 
+      : [selectedRegion];
+    
+    const result: { region: string; posts: typeof posPengungsianData['Aceh'] }[] = [];
+    
+    regions.forEach(region => {
+      const posts = posPengungsianData[region as keyof typeof posPengungsianData]?.filter(post =>
+        post.name.toLowerCase().includes(searchPosTerm.toLowerCase()) ||
+        post.lokasi.toLowerCase().includes(searchPosTerm.toLowerCase()) ||
+        post.kabupaten.toLowerCase().includes(searchPosTerm.toLowerCase())
+      ) || [];
+      if (posts.length > 0) {
+        result.push({ region, posts });
+      }
+    });
+    
+    return result;
+  };
 
   return (
     <div className="bg-white text-[#1B1B1B]">
@@ -841,6 +920,95 @@ export default function Home() {
               <i className="fas fa-info-circle mr-2"></i>
               Klik nomor telepon untuk langsung menghubungi
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Pos Pengungsian Section */}
+      <section className="bg-white py-16">
+        <div className="container mx-auto px-4 sm:px-6 md:px-10">
+          <div className="flex flex-col items-center mb-10">
+            <div className="flex items-center gap-4 mb-2">
+              <div className="w-12 h-12 bg-[#1B4D89] rounded-full flex items-center justify-center">
+                <i className="fas fa-campground text-white text-xl"></i>
+              </div>
+              <h2 className="text-3xl font-bold text-center text-[#1B1B1B]">
+                Pos Pengungsian
+              </h2>
+            </div>
+            <p className="text-sm text-gray-500">
+              Lokasi pos pengungsian di wilayah terdampak bencana
+            </p>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-4 mb-8 max-w-4xl mx-auto">
+            <div className="relative flex-1">
+              <i className="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+              <input
+                type="text"
+                placeholder="Cari pos pengungsian..."
+                value={searchPosTerm}
+                onChange={(e) => setSearchPosTerm(e.target.value)}
+                className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300 focus:border-[#1B4D89] focus:ring-2 focus:ring-[#1B4D89]/20 outline-none transition-all"
+              />
+            </div>
+            <select
+              value={selectedRegion}
+              onChange={(e) => setSelectedRegion(e.target.value)}
+              className="px-4 py-3 rounded-xl border border-gray-300 focus:border-[#1B4D89] focus:ring-2 focus:ring-[#1B4D89]/20 outline-none transition-all bg-white"
+            >
+              <option value="Semua">Semua Wilayah</option>
+              <option value="Aceh">Aceh</option>
+              <option value="Sumatera Utara">Sumatera Utara</option>
+              <option value="Sumatera Barat">Sumatera Barat</option>
+            </select>
+          </div>
+
+          <div className="space-y-8">
+            {getFilteredPos().map(({ region, posts }) => (
+              <div key={region}>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-8 bg-[#1B4D89] rounded-lg flex items-center justify-center">
+                    <i className="fas fa-map-marker-alt text-white text-sm"></i>
+                  </div>
+                  <h3 className="text-xl font-bold text-[#1B1B1B]">{region}</h3>
+                  <span className="text-sm text-gray-500">({posts.length} pos)</span>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {posts.map((post, idx) => (
+                    <div key={idx} className="bg-gray-50 rounded-xl p-4 border border-gray-200 hover:shadow-md transition-shadow">
+                      <h4 className="font-semibold text-[#1B1B1B] mb-2 line-clamp-2">{post.name}</h4>
+                      <div className="space-y-1 text-sm text-gray-600">
+                        <p className="flex items-start gap-2">
+                          <i className="fas fa-location-dot text-[#D22730] mt-0.5 flex-shrink-0"></i>
+                          <span>{post.lokasi}</span>
+                        </p>
+                        <p className="flex items-start gap-2">
+                          <i className="fas fa-building text-gray-400 mt-0.5 flex-shrink-0"></i>
+                          <span>{post.kabupaten}, {post.kecamatan}</span>
+                        </p>
+                      </div>
+                      <a
+                        href={`https://www.google.com/maps?q=${post.lat},${post.lng}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 inline-flex items-center gap-2 text-sm text-[#1B4D89] hover:text-[#D22730] font-medium transition-colors"
+                      >
+                        <i className="fas fa-map"></i>
+                        Buka di Google Maps
+                        <i className="fas fa-external-link-alt text-xs"></i>
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+            {getFilteredPos().length === 0 && (
+              <div className="text-center py-12 text-gray-500">
+                <i className="fas fa-search text-4xl mb-4 opacity-50"></i>
+                <p>Tidak ada pos pengungsian yang ditemukan</p>
+              </div>
+            )}
           </div>
         </div>
       </section>
