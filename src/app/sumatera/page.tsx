@@ -573,8 +573,8 @@ export default function Home() {
 
           {/* Call Center Utama */}
           <div className="flex flex-wrap justify-center gap-6 mb-12">
-            <a href="tel:117" className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all hover:scale-105 flex items-center gap-4 min-w-[200px]">
-              <div className="w-14 h-14 bg-[#D22730] rounded-full flex items-center justify-center">
+            <a href="tel:117" className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all hover:scale-105 flex items-center gap-4 w-[280px]">
+              <div className="w-14 h-14 bg-[#D22730] rounded-full flex items-center justify-center flex-shrink-0">
                 <i className="fas fa-phone text-white text-2xl"></i>
               </div>
               <div>
@@ -582,8 +582,8 @@ export default function Home() {
                 <p className="text-4xl font-black text-[#1B1B1B]">117</p>
               </div>
             </a>
-            <a href="tel:115" className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all hover:scale-105 flex items-center gap-4 min-w-[200px]">
-              <div className="w-14 h-14 bg-[#D22730] rounded-full flex items-center justify-center">
+            <a href="tel:115" className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all hover:scale-105 flex items-center gap-4 w-[280px]">
+              <div className="w-14 h-14 bg-[#D22730] rounded-full flex items-center justify-center flex-shrink-0">
                 <i className="fas fa-phone text-white text-2xl"></i>
               </div>
               <div>
