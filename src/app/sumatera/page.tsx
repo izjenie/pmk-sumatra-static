@@ -289,13 +289,78 @@ export default function Home() {
   return (
     <div className="bg-white text-[#1B1B1B]">
       <header className="py-6 bg-[#1B1B1B] shadow text-white">
-        <div className="container mx-auto text-center">
-          <img src="/logo.png" className="h-16 mx-auto" alt="Logo" />
-          <p className="text-xs mt-2 text-white leading-tight font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>
-            KEMENTERIAN KOORDINATOR <br />
-            BIDANG PEMBANGUNAN MANUSIA DAN KEBUDAYAAN <br />
-            REPUBLIK INDONESIA
-          </p>
+        <div className="container mx-auto ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8 place-items-center">
+            <div className="container mx-auto text-center">
+              <img src="/logo.png" className="h-20 mx-auto" alt="Logo" />
+              <p className="text-s mt-2 text-white leading-tight font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>
+                KEMENTERIAN KOORDINATOR <br />
+                BIDANG PEMBANGUNAN MANUSIA DAN KEBUDAYAAN <br />
+                REPUBLIK INDONESIA
+              </p>
+            </div>
+            <div className="pt-1">
+              <p className="text-center text-sm text-gray-400 mb-6">Didukung oleh:</p>
+              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-3">
+                {/* BNPB */}
+                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                    <img src="/logos/bnpb.png" alt="BNPB" className="w-full h-full object-contain" />
+                  </div>
+                  <span className="text-xs text-gray-400">BNPB</span>
+                </div>
+                {/* BASARNAS */}
+                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                    <img src="/logos/basarnas.png" alt="BASARNAS" className="w-full h-full object-contain" />
+                  </div>
+                  <span className="text-xs text-gray-400">BASARNAS</span>
+                </div>
+                {/* PMI */}
+                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                    <img src="/logos/pmi.png" alt="PMI" className="w-full h-full object-contain" />
+                  </div>
+                  <span className="text-xs text-gray-400">PMI</span>
+                </div>
+                {/* Badan Pangan Nasional */}
+                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                    <img src="/logos/bapanas.png" alt="Badan Pangan Nasional" className="w-full h-full object-contain" />
+                  </div>
+                  <span className="text-xs text-gray-400">Bapanas</span>
+                </div>
+                {/* Badan Komunikasi Pemerintah RI */}
+                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                    <img src="/logos/bakom.png" alt="Badan Komunikasi Pemerintah" className="w-full h-full object-contain" />
+                  </div>
+                  <span className="text-xs text-gray-400">Bakom RI</span>
+                </div>
+                {/* Kementerian Kesehatan */}
+                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                    <img src="/logos/kemenkes.png" alt="Kementerian Kesehatan" className="w-full h-full object-contain" />
+                  </div>
+                  <span className="text-xs text-gray-400">Kemenkes</span>
+                </div>
+                {/* Kementerian Dalam Negeri */}
+                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                    <img src="/logos/kemendagri.png" alt="Kementerian Dalam Negeri" className="w-full h-full object-contain" />
+                  </div>
+                  <span className="text-xs text-gray-400">Kemendagri</span>
+                </div>
+                {/* BMKG */}
+                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                    <img src="/logos/bmkg.png" alt="BMKG" className="w-full h-full object-contain" />
+                  </div>
+                  <span className="text-xs text-gray-400">BMKG</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -968,74 +1033,7 @@ export default function Home() {
           </div>
 
           {/* Partner Logos */}
-          <div className="border-t border-[#2A2A2A] mt-12 pt-8">
-            <p className="text-center text-sm text-gray-400 mb-6">Didukung oleh:</p>
-            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
-              {/* Kemenko PMK */}
-              <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-lg flex items-center justify-center p-2">
-                  <img src="/logo.png" alt="Kemenko PMK" className="w-full h-full object-contain" />
-                </div>
-                <span className="text-xs text-gray-400">Kemenko PMK</span>
-              </div>
-              {/* BNPB */}
-              <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-lg flex items-center justify-center p-1">
-                  <img src="/logos/bnpb.png" alt="BNPB" className="w-full h-full object-contain" />
-                </div>
-                <span className="text-xs text-gray-400">BNPB</span>
-              </div>
-              {/* BASARNAS */}
-              <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-lg flex items-center justify-center p-1">
-                  <img src="/logos/basarnas.png" alt="BASARNAS" className="w-full h-full object-contain" />
-                </div>
-                <span className="text-xs text-gray-400">BASARNAS</span>
-              </div>
-              {/* PMI */}
-              <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-lg flex items-center justify-center p-1">
-                  <img src="/logos/pmi.png" alt="PMI" className="w-full h-full object-contain" />
-                </div>
-                <span className="text-xs text-gray-400">PMI</span>
-              </div>
-              {/* Badan Pangan Nasional */}
-              <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-lg flex items-center justify-center p-1">
-                  <img src="/logos/bapanas.png" alt="Badan Pangan Nasional" className="w-full h-full object-contain" />
-                </div>
-                <span className="text-xs text-gray-400">Bapanas</span>
-              </div>
-              {/* Badan Komunikasi Pemerintah RI */}
-              <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-lg flex items-center justify-center p-1">
-                  <img src="/logos/bakom.png" alt="Badan Komunikasi Pemerintah" className="w-full h-full object-contain" />
-                </div>
-                <span className="text-xs text-gray-400">Bakom RI</span>
-              </div>
-              {/* Kementerian Kesehatan */}
-              <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-lg flex items-center justify-center p-1">
-                  <img src="/logos/kemenkes.png" alt="Kementerian Kesehatan" className="w-full h-full object-contain" />
-                </div>
-                <span className="text-xs text-gray-400">Kemenkes</span>
-              </div>
-              {/* Kementerian Dalam Negeri */}
-              <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-lg flex items-center justify-center p-1">
-                  <img src="/logos/kemendagri.png" alt="Kementerian Dalam Negeri" className="w-full h-full object-contain" />
-                </div>
-                <span className="text-xs text-gray-400">Kemendagri</span>
-              </div>
-              {/* BMKG */}
-              <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-lg flex items-center justify-center p-1">
-                  <img src="/logos/bmkg.png" alt="BMKG" className="w-full h-full object-contain" />
-                </div>
-                <span className="text-xs text-gray-400">BMKG</span>
-              </div>
-            </div>
-          </div>
+          
 
           <div className="border-t border-[#2A2A2A] mt-8 pt-6 text-center text-xs text-gray-400">
             © 2025 Kementerian Koordinator Bidang Pembangunan Manusia dan Kebudayaan
