@@ -7,7 +7,12 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+  allowedDevOrigins: [
+    "localhost:5000",
+    "127.0.0.1:5000",
+    "*.replit.dev",
+    "*.janeway.replit.dev",
+  ],
 };
 
 export default nextConfig;
-
