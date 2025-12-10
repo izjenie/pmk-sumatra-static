@@ -283,7 +283,8 @@ export default function Home() {
   const [selectedRegion, setSelectedRegion] = useState<string>('Aceh');
   const [selectedEmergencyTab, setSelectedEmergencyTab] = useState<string>('Sumatera Barat');
   const [selectedPengungsiTab, setSelectedPengungsiTab] = useState<string>('Semua');
-  const [selectedPmiCategory, setSelectedPmiCategory] = useState<string>('Semua');
+  const [selectedPmiCategory, setSelectedPmiCategory] = useState<string>('Makanan');
+  const [selectedPoskoTab, setSelectedPoskoTab] = useState<string>('Aceh');
   const [pengungsiData, setPengungsiData] = useState<{kabupaten: string; value: number; provinsi: string}[]>([]);
   const [totalPengungsi, setTotalPengungsi] = useState<number>(0);
   
@@ -824,61 +825,107 @@ export default function Home() {
                 Daftar Posko Tanggap Darurat
               </h2>
             </div>
-            <p className="text-gray-600 text-lg">Kabupaten/Kota di Provinsi Aceh</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { kota: "Bener Meriah", lokasi: "Pusat Perkantoran Bener Meriah / Kantor Bupati", nama: "Riswandika", jabatan: "Sekda Bener Meriah", kontak: ["085277761777"] },
-              { kota: "Langsa", lokasi: "BPBD Langsa", nama: "Nursal", jabatan: "Kepala Pelaksana BPBD", kontak: ["08116777776"] },
-              { kota: "Pidie", lokasi: "BPBD Pidie", nama: "Rabiul", jabatan: "Kepala Pelaksana BPBD", kontak: ["0811687540"] },
-              { kota: "Aceh Tengah", lokasi: "Kantor Bupati", nama: "Kepala Pelaksana BPBD", jabatan: "", kontak: ["085312839906", "082272926272"] },
-              { kota: "Subulussalam", lokasi: "BPBD Subulussalam", nama: "Ramadhan", jabatan: "Kepala Pelaksana BPBD", kontak: ["081263334511"] },
-              { kota: "Bireuen", lokasi: "Pendopo Bupati Bireuen", nama: "Junaidi", jabatan: "Sekretaris BPBD", kontak: ["081322091183"] },
-              { kota: "Pidie Jaya", lokasi: "Gedung MTQ", nama: "M. Nur", jabatan: "Kepala Pelaksana BPBD", kontak: ["08126961789"] },
-              { kota: "Lhokseumawe", lokasi: "Kantor Wali Kota", nama: "Haris", jabatan: "PLT Sekda", kontak: ["081262805671"] },
-              { kota: "Aceh Tamiang", lokasi: "-", nama: "Taryadi, SH, MH / Sulaiman / Erwin / Vian", jabatan: "TNI / BPBD", kontak: ["08126535555", "082160765678", "085270087600", "082370312858"] },
-              { kota: "Aceh Barat", lokasi: "BPBD Aceh Barat", nama: "T. Ronald", jabatan: "PLT Kalaksa BPBD", kontak: ["0811683300"] },
-              { kota: "Nagan Raya", lokasi: "Kantor Bupati Nagan Raya, Desa Sukaraja", nama: "Irfanda", jabatan: "Kepala Pelaksana BPBD", kontak: ["082166658456"] },
-              { kota: "Aceh Selatan", lokasi: "Koramil Trumon, Kantor Camat Trumon", nama: "Dandim", jabatan: "Staf", kontak: ["085362721822"] },
-              { kota: "Aceh Singkil", lokasi: "Kantor BPBD Aceh Singkil", nama: "Alhusni", jabatan: "Kepala Pelaksana BPBD", kontak: ["082277465795"] },
-              { kota: "Aceh Utara", lokasi: "Kabag Pemerintahan Kab. Aceh Utara", nama: "Yudha", jabatan: "", kontak: ["081394408638"] },
-              { kota: "Aceh Besar", lokasi: "Gudang Logistik BPBD Aceh Besar", nama: "Ridwan", jabatan: "Kepala Pelaksana BPBD", kontak: ["08126942570"] },
-            ].map((posko, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden border border-gray-100">
-                <div className="bg-gradient-to-r from-[#D22730] to-[#B71C1C] px-4 py-3">
-                  <h3 className="font-bold text-white text-lg flex items-center gap-2">
-                    <i className="fas fa-building text-sm"></i>
-                    {posko.kota}
-                  </h3>
-                </div>
-                <div className="p-4 space-y-3">
-                  <div className="flex items-start gap-2">
-                    <i className="fas fa-map-pin text-[#D22730] mt-1 w-4"></i>
-                    <span className="text-gray-700 text-sm">{posko.lokasi}</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <i className="fas fa-user text-[#D22730] mt-1 w-4"></i>
-                    <div>
-                      <span className="text-gray-800 font-semibold text-sm">{posko.nama}</span>
-                      {posko.jabatan && <span className="text-gray-500 text-xs block">{posko.jabatan}</span>}
+          <div className="flex flex-wrap justify-center gap-2 mb-6">
+            {['Aceh', 'Sumatera Utara', 'Sumatera Barat'].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setSelectedPoskoTab(tab)}
+                className={`px-4 py-2 rounded-full font-semibold text-sm transition-all ${
+                  selectedPoskoTab === tab
+                    ? 'bg-[#D22730] text-white shadow-lg'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          <div className="overflow-y-auto max-h-[500px] pr-2" style={{ scrollbarWidth: 'thin' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {(() => {
+                const poskoData: Record<string, {kota: string; lokasi: string; nama: string; jabatan: string; kontak: string[]}[]> = {
+                  'Aceh': [
+                    { kota: "Bener Meriah", lokasi: "Pusat Perkantoran Bener Meriah / Kantor Bupati", nama: "Riswandika", jabatan: "Sekda Bener Meriah", kontak: ["085277761777"] },
+                    { kota: "Langsa", lokasi: "BPBD Langsa", nama: "Nursal", jabatan: "Kepala Pelaksana BPBD", kontak: ["08116777776"] },
+                    { kota: "Pidie", lokasi: "BPBD Pidie", nama: "Rabiul", jabatan: "Kepala Pelaksana BPBD", kontak: ["0811687540"] },
+                    { kota: "Aceh Tengah", lokasi: "Kantor Bupati", nama: "Kepala Pelaksana BPBD", jabatan: "", kontak: ["085312839906", "082272926272"] },
+                    { kota: "Subulussalam", lokasi: "BPBD Subulussalam", nama: "Ramadhan", jabatan: "Kepala Pelaksana BPBD", kontak: ["081263334511"] },
+                    { kota: "Bireuen", lokasi: "Pendopo Bupati Bireuen", nama: "Junaidi", jabatan: "Sekretaris BPBD", kontak: ["081322091183"] },
+                    { kota: "Pidie Jaya", lokasi: "Gedung MTQ", nama: "M. Nur", jabatan: "Kepala Pelaksana BPBD", kontak: ["08126961789"] },
+                    { kota: "Lhokseumawe", lokasi: "Kantor Wali Kota", nama: "Haris", jabatan: "PLT Sekda", kontak: ["081262805671"] },
+                    { kota: "Aceh Tamiang", lokasi: "-", nama: "Taryadi, SH, MH / Sulaiman / Erwin / Vian", jabatan: "TNI / BPBD", kontak: ["08126535555", "082160765678", "085270087600", "082370312858"] },
+                    { kota: "Aceh Barat", lokasi: "BPBD Aceh Barat", nama: "T. Ronald", jabatan: "PLT Kalaksa BPBD", kontak: ["0811683300"] },
+                    { kota: "Nagan Raya", lokasi: "Kantor Bupati Nagan Raya, Desa Sukaraja", nama: "Irfanda", jabatan: "Kepala Pelaksana BPBD", kontak: ["082166658456"] },
+                    { kota: "Aceh Selatan", lokasi: "Koramil Trumon, Kantor Camat Trumon", nama: "Dandim", jabatan: "Staf", kontak: ["085362721822"] },
+                    { kota: "Aceh Singkil", lokasi: "Kantor BPBD Aceh Singkil", nama: "Alhusni", jabatan: "Kepala Pelaksana BPBD", kontak: ["082277465795"] },
+                    { kota: "Aceh Utara", lokasi: "Kabag Pemerintahan Kab. Aceh Utara", nama: "Yudha", jabatan: "", kontak: ["081394408638"] },
+                    { kota: "Aceh Besar", lokasi: "Gudang Logistik BPBD Aceh Besar", nama: "Ridwan", jabatan: "Kepala Pelaksana BPBD", kontak: ["08126942570"] },
+                  ],
+                  'Sumatera Utara': [
+                    { kota: "Medan", lokasi: "Kantor BPBD Kota Medan", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0618454900"] },
+                    { kota: "Deli Serdang", lokasi: "Kantor BPBD Deli Serdang", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0617030007"] },
+                    { kota: "Langkat", lokasi: "Kantor BPBD Langkat", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0618913255"] },
+                    { kota: "Karo", lokasi: "Kantor BPBD Karo", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0628320110"] },
+                    { kota: "Simalungun", lokasi: "Kantor BPBD Simalungun", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0622437770"] },
+                    { kota: "Asahan", lokasi: "Kantor BPBD Asahan", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0623341234"] },
+                    { kota: "Labuhanbatu", lokasi: "Kantor BPBD Labuhanbatu", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0624421700"] },
+                    { kota: "Tapanuli Utara", lokasi: "Kantor BPBD Tapanuli Utara", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0633331125"] },
+                    { kota: "Nias", lokasi: "Kantor BPBD Nias", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0639321021"] },
+                    { kota: "Binjai", lokasi: "Kantor BPBD Binjai", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0618821800"] },
+                  ],
+                  'Sumatera Barat': [
+                    { kota: "Padang", lokasi: "Kantor BPBD Kota Padang", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0751811120"] },
+                    { kota: "Bukittinggi", lokasi: "Kantor BPBD Bukittinggi", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0752625555"] },
+                    { kota: "Payakumbuh", lokasi: "Kantor BPBD Payakumbuh", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0752796699"] },
+                    { kota: "Padang Panjang", lokasi: "Kantor BPBD Padang Panjang", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0752485555"] },
+                    { kota: "Solok", lokasi: "Kantor BPBD Kota Solok", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0755324455"] },
+                    { kota: "Agam", lokasi: "Kantor BPBD Agam", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0752765432"] },
+                    { kota: "Tanah Datar", lokasi: "Kantor BPBD Tanah Datar", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0752571234"] },
+                    { kota: "Pesisir Selatan", lokasi: "Kantor BPBD Pesisir Selatan", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0756211100"] },
+                    { kota: "Sijunjung", lokasi: "Kantor BPBD Sijunjung", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0754831234"] },
+                    { kota: "Dharmasraya", lokasi: "Kantor BPBD Dharmasraya", nama: "Kepala BPBD", jabatan: "Kepala Pelaksana BPBD", kontak: ["0754401234"] },
+                  ],
+                };
+                return poskoData[selectedPoskoTab]?.map((posko, index) => (
+                  <div key={index} className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden border border-gray-100">
+                    <div className="bg-gradient-to-r from-[#D22730] to-[#B71C1C] px-4 py-3">
+                      <h3 className="font-bold text-white text-lg flex items-center gap-2">
+                        <i className="fas fa-building text-sm"></i>
+                        {posko.kota}
+                      </h3>
+                    </div>
+                    <div className="p-4 space-y-3">
+                      <div className="flex items-start gap-2">
+                        <i className="fas fa-map-pin text-[#D22730] mt-1 w-4"></i>
+                        <span className="text-gray-700 text-sm">{posko.lokasi}</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <i className="fas fa-user text-[#D22730] mt-1 w-4"></i>
+                        <div>
+                          <span className="text-gray-800 font-semibold text-sm">{posko.nama}</span>
+                          {posko.jabatan && <span className="text-gray-500 text-xs block">{posko.jabatan}</span>}
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-2 pt-2">
+                        {posko.kontak.map((no, idx) => (
+                          <a 
+                            key={idx}
+                            href={`tel:${no}`}
+                            className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#1da851] text-white px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors"
+                          >
+                            <i className="fas fa-phone text-xs"></i>
+                            {no}
+                          </a>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {posko.kontak.map((no, idx) => (
-                      <a 
-                        key={idx}
-                        href={`tel:${no}`}
-                        className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#1da851] text-white px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors"
-                      >
-                        <i className="fas fa-phone text-xs"></i>
-                        {no}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
+                ));
+              })()}
+            </div>
           </div>
 
           <div className="text-center mt-8">
