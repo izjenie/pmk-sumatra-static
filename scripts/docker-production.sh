@@ -4,7 +4,7 @@
 # by izjenie, Dec 2025
 
 echo "🔨 Building Docker image..."
-docker-compose build
+docker compose build
 
 if [ $? -eq 0 ]; then
     echo "✅ Build successful"
