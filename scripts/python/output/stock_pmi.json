@@ -67,6 +67,11 @@
       "satuan": "KARTON"
     },
     {
+      "nama": "BISKUIT KALENG",
+      "jumlah": "76",
+      "satuan": "KALENG"
+    },
+    {
       "nama": "BRA",
       "jumlah": "1.104",
       "satuan": "PCS"
@@ -147,9 +152,14 @@
       "satuan": "PCS"
     },
     {
+      "nama": "EMBER PLASTIK",
+      "jumlah": "17",
+      "satuan": "PCS"
+    },
+    {
       "nama": "EMERGENCY KIT",
-      "jumlah": "35",
-      "satuan": "UNIT"
+      "jumlah": "270",
+      "satuan": "BAG"
     },
     {
       "nama": "FACE SHIELD",
@@ -313,7 +323,7 @@
     },
     {
       "nama": "JERRY CAN FOLDABLE",
-      "jumlah": "1.628",
+      "jumlah": "1.000",
       "satuan": "UNIT"
     },
     {
@@ -322,24 +332,9 @@
       "satuan": "PCS"
     },
     {
-      "nama": "KANTONG MAYAT",
-      "jumlah": "5.103",
-      "satuan": "PCS"
-    },
-    {
       "nama": "KAOS KAKI",
       "jumlah": "100",
       "satuan": "KARTON"
-    },
-    {
-      "nama": "KECAP MANIS",
-      "jumlah": "16",
-      "satuan": "KARTON"
-    },
-    {
-      "nama": "KITCHEN KIT",
-      "jumlah": "2.550",
-      "satuan": "BOX"
     },
     {
       "nama": "KARBOL",
@@ -347,9 +342,39 @@
       "satuan": "KARTON"
     },
     {
+      "nama": "KASUR C2025",
+      "jumlah": "720",
+      "satuan": "UNIT"
+    },
+    {
+      "nama": "KASUR LANTAI",
+      "jumlah": "854",
+      "satuan": "UNIT"
+    },
+    {
+      "nama": "KANTONG MAYAT",
+      "jumlah": "6.129",
+      "satuan": "PCS"
+    },
+    {
+      "nama": "KECAP MANIS",
+      "jumlah": "16",
+      "satuan": "KARTON"
+    },
+    {
       "nama": "KELAMBU",
       "jumlah": "10.615",
       "satuan": "PCS"
+    },
+    {
+      "nama": "KITCHEN KIT",
+      "jumlah": "2.550",
+      "satuan": "BOX"
+    },
+    {
+      "nama": "KIT",
+      "jumlah": "4",
+      "satuan": "BOX"
     },
     {
       "nama": "KNAPACK",
@@ -462,11 +487,6 @@
       "satuan": "KARTON"
     },
     {
-      "nama": "MINUMAN",
-      "jumlah": "166.684",
-      "satuan": ""
-    },
-    {
       "nama": "MINUMAN ENERGY",
       "jumlah": "7.302",
       "satuan": "PCS"
@@ -499,6 +519,11 @@
     {
       "nama": "MODUL KOMUNIKASI STARLINK",
       "jumlah": "10",
+      "satuan": "UNIT"
+    },
+    {
+      "nama": "MOTOROLA",
+      "jumlah": "98",
       "satuan": "UNIT"
     },
     {
@@ -537,8 +562,8 @@
       "satuan": "PCS"
     },
     {
-      "nama": "PAKAIAN DALAM WANITA",
-      "jumlah": "3.474",
+      "nama": "PAKAIAN APD CAT 3",
+      "jumlah": "200",
       "satuan": "PCS"
     },
     {
@@ -562,14 +587,19 @@
       "satuan": "KARTON"
     },
     {
-      "nama": "PELASTIK ROLL",
-      "jumlah": "12",
-      "satuan": "ROL"
-    },
-    {
-      "nama": "PEMBALUT WANITA",
+      "nama": "PEMBALUT WANITA 1",
       "jumlah": "997",
       "satuan": "KARTON"
+    },
+    {
+      "nama": "PEMBALUT WANITA 2",
+      "jumlah": "7.653",
+      "satuan": "PCS"
+    },
+    {
+      "nama": "PEMBALUT WANITA 3",
+      "jumlah": "24",
+      "satuan": "UNIT"
     },
     {
       "nama": "PEMBERSIH LANTAI",
@@ -577,9 +607,9 @@
       "satuan": "KARTON"
     },
     {
-      "nama": "PERAHU KARET",
-      "jumlah": "2",
-      "satuan": "UNIT"
+      "nama": "PERALATAN",
+      "jumlah": "232",
+      "satuan": "KARTON"
     },
     {
       "nama": "PERALATAN DAPUR",
@@ -717,14 +747,24 @@
       "satuan": "PCS"
     },
     {
-      "nama": "SARUNG TANGAN MEDIS",
-      "jumlah": "5",
-      "satuan": "UNIT"
-    },
-    {
       "nama": "SARUNG TANGAN KARET",
       "jumlah": "845",
       "satuan": "PCS"
+    },
+    {
+      "nama": "SARUNG TANGAN KULIT",
+      "jumlah": "246",
+      "satuan": "PCS"
+    },
+    {
+      "nama": "SARUNG TANGAN LATEX",
+      "jumlah": "2.770",
+      "satuan": "PCS"
+    },
+    {
+      "nama": "SARUNG TANGAN MEDIS",
+      "jumlah": "5",
+      "satuan": "UNIT"
     },
     {
       "nama": "SCHOOL KIT",
@@ -750,11 +790,6 @@
       "nama": "SELANG KOMPRESOR",
       "jumlah": "140",
       "satuan": "PCS"
-    },
-    {
-      "nama": "SELIMUT",
-      "jumlah": "449",
-      "satuan": "BALE"
     },
     {
       "nama": "SELIMUT",
@@ -837,7 +872,7 @@
       "satuan": "UNIT"
     },
     {
-      "nama": "SPRAY, GUN",
+      "nama": "SPRAY,GUN",
       "jumlah": "166",
       "satuan": "UNIT"
     },
@@ -918,13 +953,8 @@
     },
     {
       "nama": "TARPAULIN",
-      "jumlah": "1.383",
+      "jumlah": "2.802",
       "satuan": "PCS"
-    },
-    {
-      "nama": "TARPAULIN",
-      "jumlah": "1.419",
-      "satuan": "UNIT"
     },
     {
       "nama": "TAS EVAKUASI",
@@ -940,11 +970,6 @@
       "nama": "TEH CELUP",
       "jumlah": "76",
       "satuan": "KARTON"
-    },
-    {
-      "nama": "TEH CELUP",
-      "jumlah": "38",
-      "satuan": "PACK"
     },
     {
       "nama": "TELUR",
@@ -998,7 +1023,17 @@
     },
     {
       "nama": "TENDA PELETON",
-      "jumlah": "3",
+      "jumlah": "8",
+      "satuan": "UNIT"
+    },
+    {
+      "nama": "TENDA PERSONIL",
+      "jumlah": "10",
+      "satuan": "UNIT"
+    },
+    {
+      "nama": "TENDA REGU",
+      "jumlah": "1",
       "satuan": "UNIT"
     },
     {
@@ -1007,14 +1042,14 @@
       "satuan": "UNIT"
     },
     {
-      "nama": "TERPAL ROLL",
-      "jumlah": "40",
-      "satuan": "ROL"
+      "nama": "TENDA RUB HALL",
+      "jumlah": "2",
+      "satuan": "PCS"
     },
     {
-      "nama": "TISU BASAH",
+      "nama": "TENDA SERBAGUNA",
       "jumlah": "2",
-      "satuan": "KARTON"
+      "satuan": "UNIT"
     },
     {
       "nama": "TENSI DIGITAL",
@@ -1022,14 +1057,14 @@
       "satuan": "UNIT"
     },
     {
-      "nama": "TIKAR",
-      "jumlah": "810",
-      "satuan": "PCS"
+      "nama": "TEPUNG TERIGU",
+      "jumlah": "200",
+      "satuan": "KG"
     },
     {
-      "nama": "TOPI KUPLUK PMI",
-      "jumlah": "47",
-      "satuan": "PCS"
+      "nama": "TERPAL ROLL",
+      "jumlah": "40",
+      "satuan": "ROL"
     },
     {
       "nama": "THERMOMETER INFRARED",
@@ -1037,9 +1072,29 @@
       "satuan": "PCS"
     },
     {
+      "nama": "TIKAR",
+      "jumlah": "810",
+      "satuan": "PCS"
+    },
+    {
+      "nama": "TISSUE",
+      "jumlah": "97",
+      "satuan": "KARTON"
+    },
+    {
+      "nama": "TISU BASAH",
+      "jumlah": "2",
+      "satuan": "KARTON"
+    },
+    {
       "nama": "TOLAK ANGIN",
       "jumlah": "255",
       "satuan": "KARTON"
+    },
+    {
+      "nama": "TOPI KUPLUK PMI",
+      "jumlah": "47",
+      "satuan": "PCS"
     },
     {
       "nama": "TOPI RIMBA PMI",
@@ -1060,11 +1115,6 @@
       "nama": "VERTICAL RESCUE",
       "jumlah": "1",
       "satuan": "BOX"
-    },
-    {
-      "nama": "VERTICAL RESCUE",
-      "jumlah": "1",
-      "satuan": "UNIT"
     },
     {
       "nama": "VITAMIN C",
@@ -1089,6 +1139,11 @@
     {
       "nama": "WATERTANK KIT FLEXIBLE ONION 5 M3",
       "jumlah": "28",
+      "satuan": "UNIT"
+    },
+    {
+      "nama": "ZEOLIT",
+      "jumlah": "4",
       "satuan": "UNIT"
     }
   ]
