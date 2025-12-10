@@ -18,7 +18,15 @@ cd ~/pmk-sumatra-static
 
 ---
 
-## Step 3: Build Aplikasi
+## Step 3: Pull Update dari GitHub
+
+```bash
+git pull
+```
+
+---
+
+## Step 4: Build Aplikasi
 
 ```bash
 sudo npm run build
@@ -26,7 +34,7 @@ sudo npm run build
 
 ---
 
-## Step 4: Jalankan Docker Production
+## Step 5: Jalankan Docker Production
 
 ```bash
 sudo ./scripts/docker-production.sh
