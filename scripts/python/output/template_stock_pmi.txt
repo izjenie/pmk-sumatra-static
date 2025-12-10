@@ -1,0 +1,47 @@
+{
+  "last_update": "9 Desember 2025 pukul 22.59",
+  "logistik": {
+    "makanan": {
+      "abon": "2.196 KARTON",
+      "bubur_bayi": "277 KARTON",
+      "telur_asin": "35 KARTON"
+    },
+    "minuman": {
+      "air_mineral": "6.586 KARTON",
+      "minuman_sachet": "143 KARTON"
+    },
+    "sembako": {
+      "beras": "783.535 Kg",
+      "teh_celup": ["75 KARTON", "38 PACK"]
+    },
+    "pakaian": {
+      "celana_dalam_pria": "2.935 PCS",
+      "shoes_cover": "625 PCS"
+    },
+    "perlengkapan_bayi": {
+      "baby_kit": "1.935 BOX",
+      "sabun_bayi": "4 BOX"
+    },
+    "kesehatan": {
+      "alkohol_swab": "6 BOX",
+      "tolak_angin": "255 KARTON",
+      "vitamin_c": "889 KARTON"
+    },
+    "logistik_tenda": {
+      "cover_tenda_rub_hall": "2 PCS",
+      "tenda_alas": "12 UNIT"
+    },
+    "perlengkapan_evakuasi": {
+      "hand_sirine_besar": "23 UNIT",
+      "vertical_rescue": "1 BOX"
+    },
+    "alat_kebutuhan": {
+      "bantal": "244 UNIT",
+      "tripod": "3 UNIT"
+    },
+    "air_dan_sanitasi": {
+      "cleaning_kit": "2.162 BAG",
+      "watertank_kit_flexible_onion_10m3": "1 UNIT"
+    }
+  }
+}
