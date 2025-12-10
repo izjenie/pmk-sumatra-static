@@ -53,173 +53,8 @@ const newsData = [
   },
 ];
 
-// Data Logistik Stok PMI (sumber: pmi.or.id/dashboard/stock - 9 Desember 2025 pukul 22.59)
-const pmiStockCategories = {
-  'Makanan': [
-    { name: 'Abon', quantity: '2.196 KARTON' },
-    { name: 'Bubur Bayi', quantity: '277 KARTON' },
-    { name: 'Bubur Instan', quantity: '9.396 PCS' },
-    { name: 'Gula', quantity: '758 KARTON' },
-    { name: 'Ikan Kaleng', quantity: '201 KALENG' },
-    { name: 'Kopi Sachet', quantity: '41 KARTON' },
-    { name: 'Kornet', quantity: '8.855 KALENG' },
-    { name: 'Makanan Kaleng', quantity: '5.874 KALENG' },
-    { name: 'Makanan Ringan', quantity: '129.284 KARTON' },
-    { name: 'Makanan Siap Saji', quantity: '7 KARTON' },
-    { name: 'Mie Instan', quantity: '11.999 KARTON' },
-    { name: 'Rendang Kaleng', quantity: '1.175 KALENG' },
-    { name: 'Sarden', quantity: '2.221 KARTON' },
-    { name: 'Sosis', quantity: '52 KARTON' },
-    { name: 'Susu Bubuk', quantity: '193 KARTON' },
-    { name: 'Susu Kaleng', quantity: '234 KALENG' },
-    { name: 'Susu Kotak', quantity: '3.071 KARTON' },
-    { name: 'Susu Sachet', quantity: '40 KARTON' },
-    { name: 'Telur', quantity: '570 KG' },
-    { name: 'Telur Asin', quantity: '35 KARTON' },
-  ],
-  'Minuman': [
-    { name: 'Air Mineral', quantity: '6.586 KARTON' },
-    { name: 'Minuman Energy', quantity: '7.282 PCS' },
-    { name: 'Minuman Kaleng', quantity: '12 KARTON' },
-    { name: 'Minuman Kemasan Botol', quantity: '332 KARTON' },
-    { name: 'Minuman Sachet', quantity: '143 KARTON' },
-  ],
-  'Sembako': [
-    { name: 'Beras', quantity: '783.535 Kg' },
-    { name: 'Bumbu Instan', quantity: '102 KARTON' },
-    { name: 'Garam', quantity: '21 KARTON' },
-    { name: 'Kecap Manis', quantity: '16 KARTON' },
-    { name: 'Kurma', quantity: '90 BOX' },
-    { name: 'Madu', quantity: '120 PCS' },
-    { name: 'Minyak Goreng 1L', quantity: '814 KARTON' },
-    { name: 'Minyak Kayu Putih', quantity: '1.382 PCS' },
-    { name: 'Sambal Botol', quantity: '1 KARTON' },
-    { name: 'Teh Celup', quantity: '75 KARTON + 38 PACK' },
-  ],
-  'Pakaian': [
-    { name: 'Celana Dalam Pria', quantity: '2.935 PCS' },
-    { name: 'Celana Dalam Wanita', quantity: '950 PCS' },
-    { name: 'Celana Panjang Wanita', quantity: '3.224 PCS' },
-    { name: 'Daster', quantity: '3.500 UNIT' },
-    { name: 'Garment Produk', quantity: '20.890 Pcs' },
-    { name: 'Handuk', quantity: '134 BALE + 2.432 PCS' },
-    { name: 'Jaket', quantity: '4 BALE' },
-    { name: 'Jas Hujan', quantity: '682 PCS' },
-    { name: 'Kaos Kaki', quantity: '100 KARTON' },
-    { name: 'Kerudung', quantity: '14 BOX' },
-    { name: 'Pakaian Anak', quantity: '5.942 PCS' },
-    { name: 'Pakaian Dewasa', quantity: '25.631 PCS' },
-    { name: 'Rompi Biru', quantity: '142 PCS' },
-    { name: 'Rompi Merah', quantity: '1.363 PCS + 25 UNIT' },
-    { name: 'Sarung', quantity: '32.164 PCS' },
-    { name: 'Sandal Jepit', quantity: '100 PCS' },
-    { name: 'Sepatu Boot', quantity: '864 PCS' },
-    { name: 'Seragam Sekolah', quantity: '932 PCS' },
-    { name: 'Shoes Cover', quantity: '625 PCS' },
-  ],
-  'Perlengkapan Bayi': [
-    { name: 'Baby Kit', quantity: '1.935 BOX' },
-    { name: 'Bedak Bayi', quantity: '12 BOX' },
-    { name: 'Biskuit Bayi', quantity: '62 KARTON' },
-    { name: 'Perlengkapan Bayi', quantity: '30 PACK + 10 BALE' },
-    { name: 'Popok Anak', quantity: '2.283 KARTON' },
-    { name: 'Popok Dewasa', quantity: '295 KARTON' },
-    { name: 'Sabun Bayi', quantity: '4 BOX' },
-  ],
-  'Kesehatan': [
-    { name: 'Alkohol Swab', quantity: '6 BOX' },
-    { name: 'Apron', quantity: '12.690 PCS' },
-    { name: 'Cairan Infus', quantity: '4 BOX' },
-    { name: 'Face Shield', quantity: '12.140 PCS' },
-    { name: 'Hazmat', quantity: '2.571 PCS' },
-    { name: 'Head Cap', quantity: '50.000 PCS' },
-    { name: 'Hygiene Kit', quantity: '9.166 BOX' },
-    { name: 'Isolation Gowns', quantity: '7.600 UNIT' },
-    { name: 'Kantong Mayat', quantity: '2.420 PCS' },
-    { name: 'Kelambu', quantity: '10.615 PCS' },
-    { name: 'Masker Kain', quantity: '129.082 PCS' },
-    { name: 'Masker Medis', quantity: '290.465 PCS' },
-    { name: 'Masker N95', quantity: '5.386 PCS' },
-    { name: 'Obat-obatan', quantity: '930 KARTON' },
-    { name: 'Oximeter', quantity: '270 PCS' },
-    { name: 'Oxygen Concentrator', quantity: '10 UNIT' },
-    { name: 'Pembalut Wanita', quantity: '957 KARTON + 3.397 PCS' },
-    { name: 'Sarung Tangan Latex', quantity: '2.770 PCS' },
-    { name: 'Thermometer Infrared', quantity: '285 PCS' },
-    { name: 'Vitamin C', quantity: '889 KARTON' },
-  ],
-  'Tenda': [
-    { name: 'Cover Tenda Rub Hall', quantity: '2 PCS' },
-    { name: 'Tenda', quantity: '13 UNIT' },
-    { name: 'Tenda Emergency', quantity: '1 UNIT' },
-    { name: 'Tenda Family', quantity: '286 BAG' },
-    { name: 'Tenda Gulung 2025', quantity: '800 UNIT' },
-    { name: 'Tenda Individu', quantity: '71 UNIT' },
-    { name: 'Tenda Modular', quantity: '450 UNIT' },
-    { name: 'Tenda Oval', quantity: '2 UNIT' },
-    { name: 'Tenda Peleton', quantity: '8 UNIT' },
-    { name: 'Tenda Personil', quantity: '10 UNIT' },
-    { name: 'Tenda Regu', quantity: '1 UNIT' },
-    { name: 'Tenda Relawan', quantity: '2 UNIT' },
-    { name: 'Tenda Serbaguna', quantity: '2 UNIT' },
-    { name: 'Tenda Alas', quantity: '12 UNIT' },
-  ],
-  'Evakuasi': [
-    { name: 'Hand Sirine Besar', quantity: '23 UNIT' },
-    { name: 'Hand Sirine Kecil', quantity: '10 UNIT' },
-    { name: 'Helm', quantity: '267 UNIT' },
-    { name: 'Perahu Karet', quantity: '2 UNIT' },
-    { name: 'Perlengkapan SAR', quantity: '1 BAG' },
-    { name: 'Tali Twist Rope', quantity: '457 ROL' },
-    { name: 'Tambang', quantity: '8 ROL' },
-    { name: 'Tandu Basket', quantity: '4 UNIT' },
-    { name: 'Tandu Lipat', quantity: '5 UNIT' },
-    { name: 'Tandu Scoope', quantity: '5 UNIT' },
-    { name: 'Tas Evakuasi', quantity: '249 PCS' },
-    { name: 'Vertical Rescue', quantity: '1 BOX' },
-  ],
-  'Alat Kebutuhan': [
-    { name: 'Bantal', quantity: '244 UNIT' },
-    { name: 'Folding Bed', quantity: '91 UNIT' },
-    { name: 'Genset', quantity: '4 UNIT' },
-    { name: 'Genset Portable', quantity: '15 UNIT' },
-    { name: 'Handy Talky Motorola', quantity: '98 UNIT' },
-    { name: 'Jerigen 10L', quantity: '9.733 PCS' },
-    { name: 'Jerigen 20L', quantity: '2.880 PCS' },
-    { name: 'Kasur', quantity: '854 UNIT' },
-    { name: 'Kitchen Kit', quantity: '2.550 BOX' },
-    { name: 'Lampu Emergency', quantity: '15.336 UNIT' },
-    { name: 'Matras', quantity: '1.473 PCS' },
-    { name: 'Modul Starlink', quantity: '10 UNIT' },
-    { name: 'School Kit', quantity: '3.245 BAG' },
-    { name: 'Selimut', quantity: '417 BALE + 15.256 PCS' },
-    { name: 'Shelter Kit', quantity: '145 BAG' },
-    { name: 'Shelter Tool Kit', quantity: '1.100 BAG' },
-    { name: 'Starlink', quantity: '90 UNIT' },
-    { name: 'Tarpaulin', quantity: '1.383 PCS + 1.419 UNIT' },
-    { name: 'Terpal Roll', quantity: '40 ROL' },
-    { name: 'Tikar', quantity: '800 PCS' },
-  ],
-  'Air & Sanitasi': [
-    { name: 'Cleaning Kit', quantity: '2.162 BAG' },
-    { name: 'Filter Air', quantity: '38 UNIT' },
-    { name: 'Hand Sanitizer', quantity: '94 KARTON' },
-    { name: 'Hand Sprayer 16L', quantity: '20 UNIT' },
-    { name: 'Pompa Air', quantity: '7 UNIT' },
-    { name: 'Sabun Cuci', quantity: '31 KARTON' },
-    { name: 'Sabun Cuci Piring', quantity: '15 KARTON' },
-    { name: 'Sabun Mandi', quantity: '1.201 BOX' },
-    { name: 'Sabun Mandi Cair', quantity: '1.176 PCS' },
-    { name: 'Seng Gelombang', quantity: '46.969 PCS' },
-    { name: 'Shampo', quantity: '2.246 BOTOL' },
-    { name: 'Water Bladder', quantity: '15 UNIT' },
-    { name: 'Water Tank 6M3', quantity: '1 UNIT' },
-    { name: 'Watertank Onion 5M3', quantity: '28 UNIT' },
-    { name: 'Watertank Onion 10M3', quantity: '1 UNIT' },
-  ],
-};
-
-const pmiCategoryList = Object.keys(pmiStockCategories);
+type PmiStockItem = { name: string; quantity: string };
+type PmiStockCategories = Record<string, PmiStockItem[]>;
 
 // Data Pos Pengungsian
 const posPengungsianData = {
@@ -284,6 +119,8 @@ export default function Home() {
   const [selectedEmergencyTab, setSelectedEmergencyTab] = useState<string>('Aceh');
   const [selectedPengungsiTab, setSelectedPengungsiTab] = useState<string>('Semua');
   const [selectedPmiCategory, setSelectedPmiCategory] = useState<string>('Makanan');
+  const [pmiStockCategories, setPmiStockCategories] = useState<PmiStockCategories>({});
+  const [pmiLastUpdate, setPmiLastUpdate] = useState<string>('');
   const [selectedPoskoTab, setSelectedPoskoTab] = useState<string>('Aceh');
   const [pengungsiData, setPengungsiData] = useState<{ kabupaten: string; value: number; provinsi: string }[]>([]);
   const [totalPengungsi, setTotalPengungsi] = useState<number>(0);
@@ -378,6 +215,40 @@ export default function Home() {
       .then(res => res.text())
       .then(text => setLastUpdate(text.trim()))
       .catch(err => console.error('Failed to load last update:', err));
+
+    // Fetch PMI stock data
+    fetch('/data/stock_pmi.txt')
+      .then(res => res.json())
+      .then(data => {
+        setPmiLastUpdate(data.last_update || '');
+        const categoryMap: Record<string, string> = {
+          'makanan': 'Makanan',
+          'minuman': 'Minuman',
+          'sembako': 'Sembako',
+          'pakaian': 'Pakaian',
+          'perlengkapan_bayi': 'Perlengkapan Bayi',
+          'kesehatan': 'Kesehatan',
+          'logistik_tenda': 'Tenda',
+          'perlengkapan_evakuasi': 'Evakuasi',
+          'alat_kebutuhan': 'Alat Kebutuhan',
+          'air_dan_sanitasi': 'Air & Sanitasi',
+        };
+        const transformed: PmiStockCategories = {};
+        if (data.logistik) {
+          Object.entries(data.logistik).forEach(([key, items]) => {
+            const categoryName = categoryMap[key] || key;
+            transformed[categoryName] = Object.entries(items as Record<string, string>).map(([itemKey, quantity]) => ({
+              name: itemKey.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
+              quantity: quantity
+            }));
+          });
+        }
+        setPmiStockCategories(transformed);
+        if (Object.keys(transformed).length > 0 && !transformed['Makanan']) {
+          setSelectedPmiCategory(Object.keys(transformed)[0]);
+        }
+      })
+      .catch(err => console.error('Failed to load PMI stock data:', err));
   }, []);
 
   const getFilteredPos = () => {
@@ -1035,14 +906,14 @@ export default function Home() {
               </h2>
             </div>
             <p className="text-sm text-gray-500">
-              Pembaruan Terakhir: <span className="font-semibold">9 Desember 2025 pukul 22.59</span>
+              Pembaruan Terakhir: <span className="font-semibold">{pmiLastUpdate || 'Memuat...'}</span>
             </p>
           </div>
 
           <div className="bg-white text-black rounded-xl shadow-xl p-6">
             {/* Category Tabs */}
             <div className="flex flex-wrap gap-2 mb-6">
-              {pmiCategoryList.map((category) => (
+              {Object.keys(pmiStockCategories).map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedPmiCategory(category)}
@@ -1061,13 +932,13 @@ export default function Home() {
               <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex justify-between items-center">
                 <h3 className="font-bold text-gray-800">{selectedPmiCategory}</h3>
                 <span className="text-sm text-gray-500">
-                  {pmiStockCategories[selectedPmiCategory as keyof typeof pmiStockCategories]?.length || 0} item
+                  {pmiStockCategories[selectedPmiCategory]?.length || 0} item
                 </span>
               </div>
               <div className="max-h-[400px] overflow-y-auto">
                 <table className="w-full">
                   <tbody>
-                    {(pmiStockCategories[selectedPmiCategory as keyof typeof pmiStockCategories] || []).map((item, idx) => (
+                    {(pmiStockCategories[selectedPmiCategory] || []).map((item, idx) => (
                       <tr key={idx} className="border-b border-gray-100 hover:bg-gray-50">
                         <td className="py-3 px-4">
                           <span className="font-medium text-gray-800">{item.name}</span>
