@@ -4,35 +4,13 @@ Panduan step-by-step untuk deploy update ke production server.
 
 ---
 
-## Step 1: Build di Lokal
-
-Jalankan build untuk generate folder `dist/` yang baru:
-
-```bash
-npm run build
-```
-
----
-
-## Step 2: Push ke GitHub
-
-Commit dan push perubahan ke repository:
-
-```bash
-git add .
-git commit -m "Update deployment"
-git push
-```
-
----
-
-## Step 3: Login ke Server
+## Step 1: Login ke Server
 
 Login ke production server.
 
 ---
 
-## Step 4: Masuk ke Directory Project
+## Step 2: Masuk ke Directory Project
 
 ```bash
 cd ~/pmk-sumatra-static
@@ -40,28 +18,22 @@ cd ~/pmk-sumatra-static
 
 ---
 
-## Step 5: Pull Update dari GitHub
+## Step 3: Build Aplikasi
 
 ```bash
-git pull
+sudo npm run build
 ```
 
 ---
 
-## Step 6: Jalankan Docker Baru
+## Step 4: Jalankan Docker Production
 
 ```bash
-sudo ./docker-production.sh
+sudo ./scripts/docker-production.sh
 ```
 
 ---
 
 ## Verifikasi
 
-Cek apakah container sudah berjalan:
-
-```bash
-sudo docker ps
-```
-
-Akses aplikasi di browser: https://tanggap-bencana.go.id/sumatera/
+Test di browser: https://www.tanggap-bencana.go.id
