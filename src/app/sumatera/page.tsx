@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // Static data - no database connection needed
 const newsData = [
   { 
@@ -343,6 +343,100 @@ export default function Home() {
   const [selectedRegion, setSelectedRegion] = useState<string>('Aceh');
   const [selectedEmergencyTab, setSelectedEmergencyTab] = useState<string>('Sumatera Barat');
   const [selectedPengungsiTab, setSelectedPengungsiTab] = useState<string>('Semua');
+  const [pengungsiData, setPengungsiData] = useState<{kabupaten: string; value: number; provinsi: string}[]>([]);
+  const [totalPengungsi, setTotalPengungsi] = useState<number>(0);
+  
+  // Situasi Darurat states
+  const [meninggal, setMeninggal] = useState<number>(0);
+  const [hilang, setHilang] = useState<number>(0);
+  const [terluka, setTerluka] = useState<number>(0);
+  const [kabTerdampak, setKabTerdampak] = useState<number>(0);
+  
+  // Kerusakan states
+  const [rumahRusak, setRumahRusak] = useState<number>(0);
+  const [fasilitasUmum, setFasilitasUmum] = useState<number>(0);
+  const [fasKesehatan, setFasKesehatan] = useState<number>(0);
+  const [fasPendidikan, setFasPendidikan] = useState<number>(0);
+  const [rumahIbadah, setRumahIbadah] = useState<number>(0);
+  const [gedungKantor, setGedungKantor] = useState<number>(0);
+  const [jembatan, setJembatan] = useState<number>(0);
+  const [lastUpdate, setLastUpdate] = useState<string>('');
+
+  // Mapping kabupaten to provinsi
+  const kabupatenProvinsiMap: Record<string, string> = {
+    'Aceh Tamiang': 'Aceh',
+    'Aceh Timur': 'Aceh',
+    'Aceh Utara': 'Aceh',
+    'Bireuen': 'Aceh',
+    'Gayo Lues': 'Aceh',
+    'Pidie': 'Aceh',
+    'Pidie Jaya': 'Aceh',
+    'Aceh Tengah': 'Aceh',
+    'Bener Meriah': 'Aceh',
+    'Nagan Raya': 'Aceh',
+    'Kota Subulussalam': 'Aceh',
+    'Aceh Tenggara': 'Aceh',
+    'Tapanuli Tengah': 'Sumatera Utara',
+    'Langkat': 'Sumatera Utara',
+    'Tapanuli Selatan': 'Sumatera Utara',
+    'Humbang Hasundutan': 'Sumatera Utara',
+    'Kota Sibolga': 'Sumatera Utara',
+    'Tanah Datar': 'Sumatera Barat',
+    'Agam': 'Sumatera Barat',
+    'Pasaman Barat': 'Sumatera Barat',
+    'Pesisir Selatan': 'Sumatera Barat',
+  };
+
+  // Helper function to fetch single value from ESRI JSON
+  const fetchSingleValue = async (url: string): Promise<number> => {
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      return data.features?.[0]?.attributes?.value || 0;
+    } catch (err) {
+      console.error(`Failed to load ${url}:`, err);
+      return 0;
+    }
+  };
+
+  useEffect(() => {
+    // Fetch pengungsi data (has multiple features)
+    fetch('/data/jumlah_pengungsi.txt')
+      .then(res => res.json())
+      .then(data => {
+        const features = data.features || [];
+        const mapped = features.map((f: { attributes: { kabupaten: string; value: number } }) => ({
+          kabupaten: f.attributes.kabupaten,
+          value: f.attributes.value,
+          provinsi: kabupatenProvinsiMap[f.attributes.kabupaten] || 'Lainnya'
+        }));
+        setPengungsiData(mapped);
+        const total = mapped.reduce((sum: number, item: { value: number }) => sum + item.value, 0);
+        setTotalPengungsi(total);
+      })
+      .catch(err => console.error('Failed to load pengungsi data:', err));
+
+    // Fetch Situasi Darurat data
+    fetchSingleValue('/data/jumlah_meninggal.txt').then(setMeninggal);
+    fetchSingleValue('/data/jumlah_hilang.txt').then(setHilang);
+    fetchSingleValue('/data/jumlah_luka.txt').then(setTerluka);
+    fetchSingleValue('/data/jumlah_kabupaten_terdampak.txt').then(setKabTerdampak);
+
+    // Fetch Kerusakan data
+    fetchSingleValue('/data/jumlah_rumah_rusak.txt').then(setRumahRusak);
+    fetchSingleValue('/data/jumlah_fasilitas_umum.txt').then(setFasilitasUmum);
+    fetchSingleValue('/data/jumlah_fasilitas_kesehatan.txt').then(setFasKesehatan);
+    fetchSingleValue('/data/jumlah_fasilitas_pendidikan.txt').then(setFasPendidikan);
+    fetchSingleValue('/data/jumlah_rumah_ibadah.txt').then(setRumahIbadah);
+    fetchSingleValue('/data/jumlah_gedung_kantor.txt').then(setGedungKantor);
+    fetchSingleValue('/data/jumlah_jembatan.txt').then(setJembatan);
+
+    // Fetch last update
+    fetch('/data/last_update.txt')
+      .then(res => res.text())
+      .then(text => setLastUpdate(text.trim()))
+      .catch(err => console.error('Failed to load last update:', err));
+  }, []);
 
   const filteredPmiStock = pmiStockData.filter(item =>
     item.name.toLowerCase().includes(searchStockTerm.toLowerCase())
@@ -592,19 +686,19 @@ export default function Home() {
               <div className="space-y-3">
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
                   <span>Meninggal Dunia</span>
-                  <span className="text-2xl font-bold">964 <span className="text-sm font-normal">jiwa</span></span>
+                  <span className="text-2xl font-bold">{meninggal.toLocaleString('id-ID')} <span className="text-sm font-normal">jiwa</span></span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
                   <span>Hilang</span>
-                  <span className="text-2xl font-bold">262 <span className="text-sm font-normal">jiwa</span></span>
+                  <span className="text-2xl font-bold">{hilang.toLocaleString('id-ID')} <span className="text-sm font-normal">jiwa</span></span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
                   <span>Terluka</span>
-                  <span className="text-2xl font-bold">5 ribu <span className="text-sm font-normal">jiwa</span></span>
+                  <span className="text-2xl font-bold">{terluka.toLocaleString('id-ID')} <span className="text-sm font-normal">jiwa</span></span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
                   <span>Kab/Kota Terdampak</span>
-                  <span className="text-2xl font-bold">52</span>
+                  <span className="text-2xl font-bold">{kabTerdampak.toLocaleString('id-ID')}</span>
                 </div>
               </div>
             </div>
@@ -634,29 +728,7 @@ export default function Home() {
               </div>
 
               <div className="space-y-2 max-h-[200px] overflow-y-auto custom-scroll">
-                {[
-                  { kabupaten: "Aceh Tamiang", value: 252623, provinsi: "Aceh" },
-                  { kabupaten: "Aceh Timur", value: 238500, provinsi: "Aceh" },
-                  { kabupaten: "Aceh Utara", value: 166920, provinsi: "Aceh" },
-                  { kabupaten: "Bireuen", value: 54114, provinsi: "Aceh" },
-                  { kabupaten: "Gayo Lues", value: 33779, provinsi: "Aceh" },
-                  { kabupaten: "Pidie", value: 24369, provinsi: "Aceh" },
-                  { kabupaten: "Pidie Jaya", value: 19074, provinsi: "Aceh" },
-                  { kabupaten: "Tapanuli Tengah", value: 18331, provinsi: "Sumatera Utara" },
-                  { kabupaten: "Aceh Tengah", value: 12978, provinsi: "Aceh" },
-                  { kabupaten: "Langkat", value: 11054, provinsi: "Sumatera Utara" },
-                  { kabupaten: "Bener Meriah", value: 8937, provinsi: "Aceh" },
-                  { kabupaten: "Nagan Raya", value: 8059, provinsi: "Aceh" },
-                  { kabupaten: "Tapanuli Selatan", value: 7248, provinsi: "Sumatera Utara" },
-                  { kabupaten: "Tanah Datar", value: 6137, provinsi: "Sumatera Barat" },
-                  { kabupaten: "Kota Subulussalam", value: 5905, provinsi: "Aceh" },
-                  { kabupaten: "Aceh Tenggara", value: 5812, provinsi: "Aceh" },
-                  { kabupaten: "Agam", value: 5277, provinsi: "Sumatera Barat" },
-                  { kabupaten: "Pasaman Barat", value: 4789, provinsi: "Sumatera Barat" },
-                  { kabupaten: "Pesisir Selatan", value: 2700, provinsi: "Sumatera Barat" },
-                  { kabupaten: "Humbang Hasundutan", value: 2200, provinsi: "Sumatera Utara" },
-                  { kabupaten: "Kota Sibolga", value: 2096, provinsi: "Sumatera Utara" },
-                ]
+                {pengungsiData
                 .filter(item => selectedPengungsiTab === 'Semua' || item.provinsi === selectedPengungsiTab)
                 .map((item, idx) => (
                   <div key={idx} className="flex justify-between items-center bg-white/10 rounded-lg px-3 py-2">
@@ -667,7 +739,7 @@ export default function Home() {
               </div>
               <div className="mt-4 text-center bg-white/20 rounded-lg py-3">
                 <p className="text-sm opacity-80">Total Pengungsi</p>
-                <p className="text-3xl font-black">± 891 ribu <span className="text-lg font-normal">jiwa</span></p>
+                <p className="text-3xl font-black">± {(totalPengungsi / 1000).toFixed(0)} ribu <span className="text-lg font-normal">jiwa</span></p>
               </div>
             </div>
 
@@ -680,31 +752,31 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-2">
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Rumah Rusak</p>
-                  <p className="text-lg font-bold">157,9 ribu</p>
+                  <p className="text-lg font-bold">{rumahRusak.toLocaleString('id-ID')}</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Rumah Ibadah</p>
-                  <p className="text-lg font-bold">423</p>
+                  <p className="text-lg font-bold">{rumahIbadah.toLocaleString('id-ID')}</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Fasilitas Umum</p>
-                  <p className="text-lg font-bold">1,2 ribu</p>
+                  <p className="text-lg font-bold">{fasilitasUmum.toLocaleString('id-ID')}</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Gedung/Kantor</p>
-                  <p className="text-lg font-bold">287</p>
+                  <p className="text-lg font-bold">{gedungKantor.toLocaleString('id-ID')}</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Fas. Kesehatan</p>
-                  <p className="text-lg font-bold">215</p>
+                  <p className="text-lg font-bold">{fasKesehatan.toLocaleString('id-ID')}</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">Jembatan</p>
-                  <p className="text-lg font-bold">498</p>
+                  <p className="text-lg font-bold">{jembatan.toLocaleString('id-ID')}</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2 col-span-2">
                   <p className="text-xs opacity-70">Fasilitas Pendidikan</p>
-                  <p className="text-lg font-bold">584</p>
+                  <p className="text-lg font-bold">{fasPendidikan.toLocaleString('id-ID')}</p>
                 </div>
               </div>
             </div>
@@ -712,8 +784,13 @@ export default function Home() {
         </div>
 
         <p className="text-center text-sm opacity-60 mt-6" style={{ fontFamily: 'Arial, sans-serif' }}>
-          Sumber: <a href="https://gis.bnpb.go.id/BANSORSUMATERA2025/" target="_blank" rel="noopener noreferrer" className="font-semibold underline hover:text-white/80 transition-colors">Data BNPB, 9 Desember 2025 →</a>
+          Sumber: <a href="https://gis.bnpb.go.id/BANSORSUMATERA2025/" target="_blank" rel="noopener noreferrer" className="font-semibold underline hover:text-white/80 transition-colors">Data BNPB →</a>
         </p>
+        {lastUpdate && (
+          <p className="text-center text-sm opacity-60 mt-2" style={{ fontFamily: 'Arial, sans-serif' }}>
+            Last update: {lastUpdate}
+          </p>
+        )}
       </section>
 
       {/* Langkah Terkini Pemerintah Section */}
