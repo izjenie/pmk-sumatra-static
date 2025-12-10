@@ -53,232 +53,173 @@ const newsData = [
   },
 ];
 
-// Data Logistik Stok PMI (sumber: pmi.or.id/dashboard/stock - 9 Desember 2025 pukul 15.24)
-// Total: 215 item
-const pmiStockData = [
-  { id: 1, name: 'Abon', icon: 'fa-box', quantity: '2.196 KARTON' },
-  { id: 2, name: 'Air Mineral', icon: 'fa-bottle-water', quantity: '6.478 KARTON' },
-  { id: 3, name: 'Alkohol Swab', icon: 'fa-box', quantity: '6 BOX' },
-  { id: 4, name: 'Apron', icon: 'fa-shirt', quantity: '12.690 PCS' },
-  { id: 5, name: 'Baby Kit', icon: 'fa-baby', quantity: '1.935 BOX' },
-  { id: 6, name: 'Bantal', icon: 'fa-bed', quantity: '244 UNIT' },
-  { id: 7, name: 'Baterai', icon: 'fa-battery-full', quantity: '42 PCS' },
-  { id: 8, name: 'Bedak Bayi', icon: 'fa-baby', quantity: '12 BOX' },
-  { id: 9, name: 'Benang Jahit', icon: 'fa-scissors', quantity: '8 BOX' },
-  { id: 10, name: 'Bendera PMI', icon: 'fa-flag', quantity: '6.750 PCS' },
-  { id: 11, name: 'Beras', icon: 'fa-bowl-rice', quantity: '780.261 KG' },
-  { id: 12, name: 'Biscuit', icon: 'fa-cookie', quantity: '9.553 KARTON' },
-  { id: 13, name: 'Bubur Bayi', icon: 'fa-baby', quantity: '272 KARTON' },
-  { id: 14, name: 'Bubur Instan', icon: 'fa-bowl-food', quantity: '9.396 PCS' },
-  { id: 15, name: 'Bumbu Instan', icon: 'fa-jar', quantity: '102 KARTON' },
-  { id: 16, name: 'Cairan Infus', icon: 'fa-syringe', quantity: '4 BOX' },
-  { id: 17, name: 'Cangkul', icon: 'fa-hammer', quantity: '167 UNIT' },
-  { id: 18, name: 'Caramantel', icon: 'fa-link', quantity: '14 ROL' },
-  { id: 19, name: 'Celana Dalam Pria', icon: 'fa-shirt', quantity: '2.935 PCS' },
-  { id: 20, name: 'Celana Dalam Wanita', icon: 'fa-shirt', quantity: '950 PCS' },
-  { id: 21, name: 'Celana Panjang Wanita', icon: 'fa-shirt', quantity: '3.224 PCS' },
-  { id: 22, name: 'Cleaning Kit', icon: 'fa-broom', quantity: '2.162 BAG' },
-  { id: 23, name: 'Cover Tenda Rub Hall', icon: 'fa-campground', quantity: '2 PCS' },
-  { id: 24, name: 'Daging Kaleng', icon: 'fa-drumstick-bite', quantity: '76 KALENG' },
-  { id: 25, name: 'Daster', icon: 'fa-shirt', quantity: '3.500 UNIT' },
-  { id: 26, name: 'Deodorant', icon: 'fa-spray-can', quantity: '1 BOX' },
-  { id: 27, name: 'Ember', icon: 'fa-bucket', quantity: '20 PCS' },
-  { id: 28, name: 'Ember Plastik', icon: 'fa-bucket', quantity: '17 PCS' },
-  { id: 29, name: 'Emergency Kit', icon: 'fa-kit-medical', quantity: '35 UNIT' },
-  { id: 30, name: 'Face Shield Kit', icon: 'fa-head-side-mask', quantity: '12.140 PCS' },
-  { id: 31, name: 'Family Kit', icon: 'fa-people-roof', quantity: '4.148 BOX' },
-  { id: 32, name: 'Family Kit D2025', icon: 'fa-people-roof', quantity: '800 BAG' },
-  { id: 33, name: 'Filter Air', icon: 'fa-filter', quantity: '38 UNIT' },
-  { id: 34, name: 'Folding Bed', icon: 'fa-bed', quantity: '91 UNIT' },
-  { id: 35, name: 'Garam', icon: 'fa-jar', quantity: '21 KARTON' },
-  { id: 36, name: 'Garment Produk', icon: 'fa-shirt', quantity: '20.890 PCS' },
-  { id: 37, name: 'Genset', icon: 'fa-car-battery', quantity: '4 UNIT' },
-  { id: 38, name: 'Genset Portable', icon: 'fa-car-battery', quantity: '15 UNIT' },
-  { id: 39, name: 'Gergaji Besi', icon: 'fa-hammer', quantity: '4 UNIT' },
-  { id: 40, name: 'Gerobak Dorong', icon: 'fa-cart-shopping', quantity: '2 UNIT' },
-  { id: 41, name: 'Gula', icon: 'fa-cubes', quantity: '743 KARTON' },
-  { id: 42, name: 'Hand Sanitizer', icon: 'fa-pump-soap', quantity: '94 KARTON' },
-  { id: 43, name: 'Hand Sirine Besar', icon: 'fa-bullhorn', quantity: '23 UNIT' },
-  { id: 44, name: 'Hand Sirine Kecil', icon: 'fa-bullhorn', quantity: '10 UNIT' },
-  { id: 45, name: 'Hand Spayer 16 LT', icon: 'fa-spray-can', quantity: '20 UNIT' },
-  { id: 46, name: 'Handuk', icon: 'fa-bath', quantity: '134 BALE' },
-  { id: 47, name: 'Handuk Besar', icon: 'fa-bath', quantity: '2.005 PCS' },
-  { id: 48, name: 'Handy Talky Motorola', icon: 'fa-walkie-talkie', quantity: '98 UNIT' },
-  { id: 49, name: 'Hazmat', icon: 'fa-shield-virus', quantity: '2.571 PCS' },
-  { id: 50, name: 'Head Cap', icon: 'fa-hard-hat', quantity: '50.000 PCS' },
-  { id: 51, name: 'Head Immobilization', icon: 'fa-head-side', quantity: '3 UNIT' },
-  { id: 52, name: 'Head Lamp', icon: 'fa-lightbulb', quantity: '33 UNIT' },
-  { id: 53, name: 'Helm', icon: 'fa-helmet-safety', quantity: '267 UNIT' },
-  { id: 54, name: 'Hygiene and Disinfektan Kit', icon: 'fa-spray-can', quantity: '2.305 BOX' },
-  { id: 55, name: 'Hygiene Kit', icon: 'fa-soap', quantity: '9.166 BOX' },
-  { id: 56, name: 'Ikan Kaleng', icon: 'fa-fish', quantity: '201 KALENG' },
-  { id: 57, name: 'Isolation Gowns', icon: 'fa-user-doctor', quantity: '7.600 UNIT' },
-  { id: 58, name: 'Jaket', icon: 'fa-vest', quantity: '4 BALE' },
-  { id: 59, name: 'Jas Hujan', icon: 'fa-cloud-rain', quantity: '682 PCS' },
-  { id: 60, name: 'Jerigen 10 L', icon: 'fa-jug-detergent', quantity: '9.733 PCS' },
-  { id: 61, name: 'Jerigen 20 L', icon: 'fa-jug-detergent', quantity: '2.880 PCS' },
-  { id: 62, name: 'Jerry Can Foldable', icon: 'fa-jug-detergent', quantity: '1.000 UNIT' },
-  { id: 63, name: 'Kacamata', icon: 'fa-glasses', quantity: '5.678 PCS' },
-  { id: 64, name: 'Kantong Mayat', icon: 'fa-box-archive', quantity: '2.420 PCS' },
-  { id: 65, name: 'Kaos Kaki', icon: 'fa-socks', quantity: '100 KARTON' },
-  { id: 66, name: 'Karbol', icon: 'fa-bottle-droplet', quantity: '10 KARTON' },
-  { id: 67, name: 'Kasur C2025', icon: 'fa-bed', quantity: '558 UNIT' },
-  { id: 68, name: 'Kasur Lantai', icon: 'fa-bed', quantity: '854 UNIT' },
-  { id: 69, name: 'Kecap Manis', icon: 'fa-bottle-droplet', quantity: '16 KARTON' },
-  { id: 70, name: 'Kelambu', icon: 'fa-bed', quantity: '10.615 PCS' },
-  { id: 71, name: 'Kerudung', icon: 'fa-user', quantity: '14 BOX' },
-  { id: 72, name: 'Ketel Pack', icon: 'fa-box', quantity: '249 UNIT' },
-  { id: 73, name: 'Kitchen Kit', icon: 'fa-utensils', quantity: '2.550 BOX' },
-  { id: 74, name: 'Knapack', icon: 'fa-suitcase', quantity: '24 UNIT' },
-  { id: 75, name: 'Kompas', icon: 'fa-compass', quantity: '169 UNIT' },
-  { id: 76, name: 'Kopi Sachet', icon: 'fa-mug-hot', quantity: '33 KARTON' },
-  { id: 77, name: 'Kornet', icon: 'fa-box', quantity: '8.555 KALENG' },
-  { id: 78, name: 'Kurma', icon: 'fa-bowl-food', quantity: '90 BOX' },
-  { id: 79, name: 'Lampu Badai Lentera', icon: 'fa-lightbulb', quantity: '2.000 UNIT' },
-  { id: 80, name: 'Lamp Emergency', icon: 'fa-lightbulb', quantity: '15.336 UNIT' },
-  { id: 81, name: 'Lotion Anti Nyamuk', icon: 'fa-spray-can', quantity: '188 BOX' },
-  { id: 82, name: 'Madu', icon: 'fa-jar', quantity: '120 PCS' },
-  { id: 83, name: 'Makanan Kaleng', icon: 'fa-box', quantity: '5.874 KALENG' },
-  { id: 84, name: 'Makanan Ringan', icon: 'fa-cookie', quantity: '129.284 KARTON' },
-  { id: 85, name: 'Makanan Siap Saji', icon: 'fa-bowl-food', quantity: '7 KARTON' },
-  { id: 86, name: 'Masker Kain', icon: 'fa-mask-face', quantity: '129.082 PCS' },
-  { id: 87, name: 'Masker Medis', icon: 'fa-mask-face', quantity: '290.465 PCS' },
-  { id: 88, name: 'Masker N95', icon: 'fa-mask-face', quantity: '5.386 PCS' },
-  { id: 89, name: 'Masker Respirator', icon: 'fa-mask-face', quantity: '317 PCS' },
-  { id: 90, name: 'Mastras', icon: 'fa-bed', quantity: '1.473 PCS' },
-  { id: 91, name: 'Media Filter Zeolit', icon: 'fa-filter', quantity: '4 UNIT' },
-  { id: 92, name: 'Menstrual Hygiene Management Kit', icon: 'fa-box', quantity: '4 BOX' },
-  { id: 93, name: 'Mie Instan', icon: 'fa-bowl-rice', quantity: '11.399 KARTON' },
-  { id: 94, name: 'Minuman Energy', icon: 'fa-bottle-water', quantity: '7.282 PCS' },
-  { id: 95, name: 'Minuman Kaleng', icon: 'fa-bottle-water', quantity: '12 KARTON' },
-  { id: 96, name: 'Minuman Kemasan Botol', icon: 'fa-bottle-water', quantity: '331 KARTON' },
-  { id: 97, name: 'Minuman Sachet', icon: 'fa-mug-hot', quantity: '78 KARTON' },
-  { id: 98, name: 'Minyak Goreng 1 L', icon: 'fa-bottle-droplet', quantity: '806 KARTON' },
-  { id: 99, name: 'Minyak Kayu Putih', icon: 'fa-bottle-droplet', quantity: '1.381 PCS' },
-  { id: 100, name: 'Modul Komunikasi Starlink', icon: 'fa-satellite-dish', quantity: '10 UNIT' },
-  { id: 101, name: 'Nesting', icon: 'fa-utensils', quantity: '47 UNIT' },
-  { id: 102, name: 'Obat-Obatan', icon: 'fa-pills', quantity: '930 KARTON' },
-  { id: 103, name: 'Oxygen Concentrator', icon: 'fa-lungs', quantity: '10 UNIT' },
-  { id: 104, name: 'Oxymeter', icon: 'fa-heart-pulse', quantity: '270 PCS' },
-  { id: 105, name: 'Pakaian Anak', icon: 'fa-shirt', quantity: '5.942 PCS' },
-  { id: 106, name: 'Pakaian Dalam Wanita', icon: 'fa-shirt', quantity: '3.340 PCS' },
-  { id: 107, name: 'Pakaian Dewasa', icon: 'fa-shirt', quantity: '25.631 PCS' },
-  { id: 108, name: 'Paket Sembako', icon: 'fa-box', quantity: '4.335 BAG' },
-  { id: 109, name: 'Palu', icon: 'fa-hammer', quantity: '249 UNIT' },
-  { id: 110, name: 'Pasta Gigi', icon: 'fa-tooth', quantity: '60 KARTON' },
-  { id: 111, name: 'Pelastik Roll', icon: 'fa-scroll', quantity: '12 ROL' },
-  { id: 112, name: 'Pembalut Wanita', icon: 'fa-box', quantity: '956 KARTON' },
-  { id: 113, name: 'Pembalut Wanita', icon: 'fa-box', quantity: '24 UNIT' },
-  { id: 114, name: 'Pembersih Lantai', icon: 'fa-broom', quantity: '3 KARTON' },
-  { id: 115, name: 'Perahu Karet', icon: 'fa-ship', quantity: '2 UNIT' },
-  { id: 116, name: 'Peralatan Dapur', icon: 'fa-utensils', quantity: '68 BOX' },
-  { id: 117, name: 'Peralatan Mandi', icon: 'fa-shower', quantity: '30 BOX' },
-  { id: 118, name: 'Perlengkapan Bayi', icon: 'fa-baby', quantity: '30 PACK' },
-  { id: 119, name: 'Perlengkapan Dapur Umum', icon: 'fa-utensils', quantity: '155 UNIT' },
-  { id: 120, name: 'Perlengkapan Ibadah', icon: 'fa-mosque', quantity: '102 BALE' },
-  { id: 121, name: 'Perlengkapan SAR', icon: 'fa-life-ring', quantity: '1 BAG' },
-  { id: 122, name: 'Perlengkapan Sekolah', icon: 'fa-school', quantity: '201 BAG' },
-  { id: 123, name: 'PHBS', icon: 'fa-hand-sparkles', quantity: '96 PCS' },
-  { id: 124, name: 'Pisau Lipat', icon: 'fa-scissors', quantity: '118 PCS' },
-  { id: 125, name: 'Plastik Sampah', icon: 'fa-trash', quantity: '25 PACK' },
-  { id: 126, name: 'Pompa Air', icon: 'fa-faucet', quantity: '7 UNIT' },
-  { id: 127, name: 'Popok Anak', icon: 'fa-baby', quantity: '2.263 KARTON' },
-  { id: 128, name: 'Popok Dewasa', icon: 'fa-box', quantity: '295 KARTON' },
-  { id: 129, name: 'Portable Toilet', icon: 'fa-toilet', quantity: '6 UNIT' },
-  { id: 130, name: 'Rendang Kaleng', icon: 'fa-box', quantity: '1.175 KALENG' },
-  { id: 131, name: 'Rompi Biru', icon: 'fa-vest', quantity: '142 PCS' },
-  { id: 132, name: 'Rompi Merah', icon: 'fa-vest', quantity: '1.363 PCS' },
-  { id: 133, name: 'Rompi Merah', icon: 'fa-vest', quantity: '25 UNIT' },
-  { id: 134, name: 'Sabun Bayi', icon: 'fa-soap', quantity: '3 BOX' },
-  { id: 135, name: 'Sabun Cuci Piring', icon: 'fa-soap', quantity: '15 KARTON' },
-  { id: 136, name: 'Sabun Mandi', icon: 'fa-soap', quantity: '1.200 BOX' },
-  { id: 137, name: 'Sambal Botol', icon: 'fa-bottle-droplet', quantity: '1 KARTON' },
-  { id: 138, name: 'Sandal Jepit', icon: 'fa-shoe-prints', quantity: '100 PCS' },
-  { id: 139, name: 'Sarden', icon: 'fa-fish', quantity: '1.611 KARTON' },
-  { id: 140, name: 'Sarung', icon: 'fa-shirt', quantity: '32.164 PCS' },
-  { id: 141, name: 'Sarung Tangan Kain', icon: 'fa-hand', quantity: '523 PCS' },
-  { id: 142, name: 'Sarung Tangan Karet', icon: 'fa-hand', quantity: '845 PCS' },
-  { id: 143, name: 'Sarung Tangan Kulit', icon: 'fa-hand', quantity: '246 PCS' },
-  { id: 144, name: 'Sarung Tangan Latex', icon: 'fa-hand', quantity: '2.770 PCS' },
-  { id: 145, name: 'Sarung Tangan Medis', icon: 'fa-hand', quantity: '5 UNIT' },
-  { id: 146, name: 'School Kit', icon: 'fa-school', quantity: '200 BAG' },
-  { id: 147, name: 'School Kit', icon: 'fa-school', quantity: '3.045 BAG' },
-  { id: 148, name: 'Sekop', icon: 'fa-hammer', quantity: '701 PCS' },
-  { id: 149, name: 'Sekop', icon: 'fa-hammer', quantity: '71 UNIT' },
-  { id: 150, name: 'Sekop Lipat', icon: 'fa-hammer', quantity: '249 PCS' },
-  { id: 151, name: 'Selang Filter', icon: 'fa-filter', quantity: '1 UNIT' },
-  { id: 152, name: 'Selang Kompresor', icon: 'fa-wind', quantity: '140 PCS' },
-  { id: 153, name: 'Selimut', icon: 'fa-bed', quantity: '17 BALE' },
-  { id: 154, name: 'Selimut', icon: 'fa-bed', quantity: '11.429 PCS' },
-  { id: 155, name: 'Selimut A2025', icon: 'fa-bed', quantity: '3.817 PCS' },
-  { id: 156, name: 'Seng Gelombang', icon: 'fa-layer-group', quantity: '46.969 PCS' },
-  { id: 157, name: 'Senter LED', icon: 'fa-lightbulb', quantity: '13 UNIT' },
-  { id: 158, name: 'Sepatu Boot', icon: 'fa-shoe-prints', quantity: '864 PCS' },
-  { id: 159, name: 'Sepeda', icon: 'fa-bicycle', quantity: '16 UNIT' },
-  { id: 160, name: 'Shampo', icon: 'fa-pump-soap', quantity: '2.196 BOTOL' },
-  { id: 161, name: 'Shelter Kit', icon: 'fa-house', quantity: '145 BAG' },
-  { id: 162, name: 'Shelter Tool Kit', icon: 'fa-toolbox', quantity: '1.100 BAG' },
-  { id: 163, name: 'Sikat Gigi', icon: 'fa-tooth', quantity: '47 KARTON' },
-  { id: 164, name: 'Skop', icon: 'fa-hammer', quantity: '12 UNIT' },
-  { id: 165, name: 'Sleeping Bag', icon: 'fa-bed', quantity: '40 PCS' },
-  { id: 166, name: 'Sosis', icon: 'fa-hotdog', quantity: '52 KARTON' },
-  { id: 167, name: 'Sprayer Manual', icon: 'fa-spray-can', quantity: '1.362 UNIT' },
-  { id: 168, name: 'Spray Gun', icon: 'fa-spray-can', quantity: '166 UNIT' },
-  { id: 169, name: 'Starlink', icon: 'fa-satellite', quantity: '90 UNIT' },
-  { id: 170, name: 'Stiker', icon: 'fa-note-sticky', quantity: '4.000 LEMBAR' },
-  { id: 171, name: 'Susu Bubuk', icon: 'fa-mug-hot', quantity: '193 KARTON' },
-  { id: 172, name: 'Susu Kaleng', icon: 'fa-mug-hot', quantity: '234 KALENG' },
-  { id: 173, name: 'Susu Kotak', icon: 'fa-mug-hot', quantity: '3.026 KARTON' },
-  { id: 174, name: 'Susu Sachet', icon: 'fa-mug-hot', quantity: '40 KARTON' },
-  { id: 175, name: 'Tabung Filter', icon: 'fa-filter', quantity: '8 UNIT' },
-  { id: 176, name: 'Tabung Gas 17 KG', icon: 'fa-fire', quantity: '1 UNIT' },
-  { id: 177, name: 'Tabung Oksigen 10 L', icon: 'fa-lungs', quantity: '3 UNIT' },
-  { id: 178, name: 'Tali Twist Rope', icon: 'fa-link', quantity: '457 ROL' },
-  { id: 179, name: 'Tambang', icon: 'fa-link', quantity: '8 ROL' },
-  { id: 180, name: 'Tandon Air 300 L', icon: 'fa-droplet', quantity: '4 UNIT' },
-  { id: 181, name: 'Tandu Basket', icon: 'fa-bed-pulse', quantity: '4 UNIT' },
-  { id: 182, name: 'Tandu Lipat', icon: 'fa-bed-pulse', quantity: '5 UNIT' },
-  { id: 183, name: 'Tandu Scope', icon: 'fa-bed-pulse', quantity: '5 UNIT' },
-  { id: 184, name: 'Tarpaulin', icon: 'fa-square', quantity: '1.383 PCS' },
-  { id: 185, name: 'Tarpaulin', icon: 'fa-square', quantity: '1.419 UNIT' },
-  { id: 186, name: 'Tas Evakuasi', icon: 'fa-suitcase', quantity: '249 PCS' },
-  { id: 187, name: 'Tas Pinggang', icon: 'fa-suitcase', quantity: '247 PCS' },
-  { id: 188, name: 'Teh Celup', icon: 'fa-mug-hot', quantity: '75 KARTON' },
-  { id: 189, name: 'Teh Celup', icon: 'fa-mug-hot', quantity: '38 PACK' },
-  { id: 190, name: 'Telur', icon: 'fa-egg', quantity: '570 KG' },
-  { id: 191, name: 'Telur Asin', icon: 'fa-egg', quantity: '35 KARTON' },
-  { id: 192, name: 'Tenda', icon: 'fa-campground', quantity: '13 UNIT' },
-  { id: 193, name: 'Tenda Alas', icon: 'fa-campground', quantity: '12 UNIT' },
-  { id: 194, name: 'Tenda Emergency', icon: 'fa-campground', quantity: '1 UNIT' },
-  { id: 195, name: 'Tenda Family', icon: 'fa-campground', quantity: '286 BAG' },
-  { id: 196, name: 'Tenda Gulung C2025', icon: 'fa-campground', quantity: '800 UNIT' },
-  { id: 197, name: 'Tenda Individu', icon: 'fa-campground', quantity: '71 UNIT' },
-  { id: 198, name: 'Tenda Modular', icon: 'fa-campground', quantity: '450 UNIT' },
-  { id: 199, name: 'Tenda Oval', icon: 'fa-campground', quantity: '2 UNIT' },
-  { id: 200, name: 'Tenda Peleton', icon: 'fa-campground', quantity: '3 UNIT' },
-  { id: 201, name: 'Tenda Peleton', icon: 'fa-campground', quantity: '5 UNIT' },
-  { id: 202, name: 'Tenda Personil', icon: 'fa-campground', quantity: '10 UNIT' },
-  { id: 203, name: 'Tenda Regu', icon: 'fa-campground', quantity: '1 UNIT' },
-  { id: 204, name: 'Tenda Relawan', icon: 'fa-campground', quantity: '2 UNIT' },
-  { id: 205, name: 'Tenda Serbaguna', icon: 'fa-campground', quantity: '2 UNIT' },
-  { id: 206, name: 'Tensi Digital', icon: 'fa-heart-pulse', quantity: '1 UNIT' },
-  { id: 207, name: 'Terpal Roll', icon: 'fa-scroll', quantity: '40 ROL' },
-  { id: 208, name: 'Thermometer Infrared', icon: 'fa-thermometer', quantity: '285 PCS' },
-  { id: 209, name: 'Tikar', icon: 'fa-square', quantity: '800 PCS' },
-  { id: 210, name: 'Tissue', icon: 'fa-box-tissue', quantity: '96 KARTON' },
-  { id: 211, name: 'Tisu Basah', icon: 'fa-box-tissue', quantity: '2 KARTON' },
-  { id: 212, name: 'Tolak Angin', icon: 'fa-pills', quantity: '255 KARTON' },
-  { id: 213, name: 'Topi Kupluk PMI', icon: 'fa-hat-cowboy', quantity: '47 PCS' },
-  { id: 214, name: 'Topi Rimba PMI', icon: 'fa-hat-cowboy', quantity: '37 PCS' },
-  { id: 215, name: 'Tripod', icon: 'fa-camera', quantity: '3 UNIT' },
-  { id: 216, name: 'Veldples', icon: 'fa-bottle-water', quantity: '47 PCS' },
-  { id: 217, name: 'Vertical Rescue', icon: 'fa-life-ring', quantity: '1 BOX' },
-  { id: 218, name: 'Vitamin C', icon: 'fa-pills', quantity: '889 KARTON' },
-  { id: 219, name: 'Water Bladder', icon: 'fa-droplet', quantity: '15 UNIT' },
-  { id: 220, name: 'Water Tank 6 M3', icon: 'fa-droplet', quantity: '1 UNIT' },
-  { id: 221, name: 'Watertank Kit Flexible Onion 5 M3', icon: 'fa-droplet', quantity: '28 UNIT' },
-  { id: 222, name: 'Watertank Kit Flexible Onion 10 M3', icon: 'fa-droplet', quantity: '1 UNIT' },
-];
+// Data Logistik Stok PMI (sumber: pmi.or.id/dashboard/stock - 9 Desember 2025 pukul 22.59)
+const pmiStockCategories = {
+  'Makanan': [
+    { name: 'Abon', quantity: '2.196 KARTON' },
+    { name: 'Bubur Bayi', quantity: '277 KARTON' },
+    { name: 'Bubur Instan', quantity: '9.396 PCS' },
+    { name: 'Gula', quantity: '758 KARTON' },
+    { name: 'Ikan Kaleng', quantity: '201 KALENG' },
+    { name: 'Kopi Sachet', quantity: '41 KARTON' },
+    { name: 'Kornet', quantity: '8.855 KALENG' },
+    { name: 'Makanan Kaleng', quantity: '5.874 KALENG' },
+    { name: 'Makanan Ringan', quantity: '129.284 KARTON' },
+    { name: 'Makanan Siap Saji', quantity: '7 KARTON' },
+    { name: 'Mie Instan', quantity: '11.999 KARTON' },
+    { name: 'Rendang Kaleng', quantity: '1.175 KALENG' },
+    { name: 'Sarden', quantity: '2.221 KARTON' },
+    { name: 'Sosis', quantity: '52 KARTON' },
+    { name: 'Susu Bubuk', quantity: '193 KARTON' },
+    { name: 'Susu Kaleng', quantity: '234 KALENG' },
+    { name: 'Susu Kotak', quantity: '3.071 KARTON' },
+    { name: 'Susu Sachet', quantity: '40 KARTON' },
+    { name: 'Telur', quantity: '570 KG' },
+    { name: 'Telur Asin', quantity: '35 KARTON' },
+  ],
+  'Minuman': [
+    { name: 'Air Mineral', quantity: '6.586 KARTON' },
+    { name: 'Minuman Energy', quantity: '7.282 PCS' },
+    { name: 'Minuman Kaleng', quantity: '12 KARTON' },
+    { name: 'Minuman Kemasan Botol', quantity: '332 KARTON' },
+    { name: 'Minuman Sachet', quantity: '143 KARTON' },
+  ],
+  'Sembako': [
+    { name: 'Beras', quantity: '783.535 Kg' },
+    { name: 'Bumbu Instan', quantity: '102 KARTON' },
+    { name: 'Garam', quantity: '21 KARTON' },
+    { name: 'Kecap Manis', quantity: '16 KARTON' },
+    { name: 'Kurma', quantity: '90 BOX' },
+    { name: 'Madu', quantity: '120 PCS' },
+    { name: 'Minyak Goreng 1L', quantity: '814 KARTON' },
+    { name: 'Minyak Kayu Putih', quantity: '1.382 PCS' },
+    { name: 'Sambal Botol', quantity: '1 KARTON' },
+    { name: 'Teh Celup', quantity: '75 KARTON + 38 PACK' },
+  ],
+  'Pakaian': [
+    { name: 'Celana Dalam Pria', quantity: '2.935 PCS' },
+    { name: 'Celana Dalam Wanita', quantity: '950 PCS' },
+    { name: 'Celana Panjang Wanita', quantity: '3.224 PCS' },
+    { name: 'Daster', quantity: '3.500 UNIT' },
+    { name: 'Garment Produk', quantity: '20.890 Pcs' },
+    { name: 'Handuk', quantity: '134 BALE + 2.432 PCS' },
+    { name: 'Jaket', quantity: '4 BALE' },
+    { name: 'Jas Hujan', quantity: '682 PCS' },
+    { name: 'Kaos Kaki', quantity: '100 KARTON' },
+    { name: 'Kerudung', quantity: '14 BOX' },
+    { name: 'Pakaian Anak', quantity: '5.942 PCS' },
+    { name: 'Pakaian Dewasa', quantity: '25.631 PCS' },
+    { name: 'Rompi Biru', quantity: '142 PCS' },
+    { name: 'Rompi Merah', quantity: '1.363 PCS + 25 UNIT' },
+    { name: 'Sarung', quantity: '32.164 PCS' },
+    { name: 'Sandal Jepit', quantity: '100 PCS' },
+    { name: 'Sepatu Boot', quantity: '864 PCS' },
+    { name: 'Seragam Sekolah', quantity: '932 PCS' },
+    { name: 'Shoes Cover', quantity: '625 PCS' },
+  ],
+  'Perlengkapan Bayi': [
+    { name: 'Baby Kit', quantity: '1.935 BOX' },
+    { name: 'Bedak Bayi', quantity: '12 BOX' },
+    { name: 'Biskuit Bayi', quantity: '62 KARTON' },
+    { name: 'Perlengkapan Bayi', quantity: '30 PACK + 10 BALE' },
+    { name: 'Popok Anak', quantity: '2.283 KARTON' },
+    { name: 'Popok Dewasa', quantity: '295 KARTON' },
+    { name: 'Sabun Bayi', quantity: '4 BOX' },
+  ],
+  'Kesehatan': [
+    { name: 'Alkohol Swab', quantity: '6 BOX' },
+    { name: 'Apron', quantity: '12.690 PCS' },
+    { name: 'Cairan Infus', quantity: '4 BOX' },
+    { name: 'Face Shield', quantity: '12.140 PCS' },
+    { name: 'Hazmat', quantity: '2.571 PCS' },
+    { name: 'Head Cap', quantity: '50.000 PCS' },
+    { name: 'Hygiene Kit', quantity: '9.166 BOX' },
+    { name: 'Isolation Gowns', quantity: '7.600 UNIT' },
+    { name: 'Kantong Mayat', quantity: '2.420 PCS' },
+    { name: 'Kelambu', quantity: '10.615 PCS' },
+    { name: 'Masker Kain', quantity: '129.082 PCS' },
+    { name: 'Masker Medis', quantity: '290.465 PCS' },
+    { name: 'Masker N95', quantity: '5.386 PCS' },
+    { name: 'Obat-obatan', quantity: '930 KARTON' },
+    { name: 'Oximeter', quantity: '270 PCS' },
+    { name: 'Oxygen Concentrator', quantity: '10 UNIT' },
+    { name: 'Pembalut Wanita', quantity: '957 KARTON + 3.397 PCS' },
+    { name: 'Sarung Tangan Latex', quantity: '2.770 PCS' },
+    { name: 'Thermometer Infrared', quantity: '285 PCS' },
+    { name: 'Vitamin C', quantity: '889 KARTON' },
+  ],
+  'Tenda': [
+    { name: 'Cover Tenda Rub Hall', quantity: '2 PCS' },
+    { name: 'Tenda', quantity: '13 UNIT' },
+    { name: 'Tenda Emergency', quantity: '1 UNIT' },
+    { name: 'Tenda Family', quantity: '286 BAG' },
+    { name: 'Tenda Gulung 2025', quantity: '800 UNIT' },
+    { name: 'Tenda Individu', quantity: '71 UNIT' },
+    { name: 'Tenda Modular', quantity: '450 UNIT' },
+    { name: 'Tenda Oval', quantity: '2 UNIT' },
+    { name: 'Tenda Peleton', quantity: '8 UNIT' },
+    { name: 'Tenda Personil', quantity: '10 UNIT' },
+    { name: 'Tenda Regu', quantity: '1 UNIT' },
+    { name: 'Tenda Relawan', quantity: '2 UNIT' },
+    { name: 'Tenda Serbaguna', quantity: '2 UNIT' },
+    { name: 'Tenda Alas', quantity: '12 UNIT' },
+  ],
+  'Evakuasi': [
+    { name: 'Hand Sirine Besar', quantity: '23 UNIT' },
+    { name: 'Hand Sirine Kecil', quantity: '10 UNIT' },
+    { name: 'Helm', quantity: '267 UNIT' },
+    { name: 'Perahu Karet', quantity: '2 UNIT' },
+    { name: 'Perlengkapan SAR', quantity: '1 BAG' },
+    { name: 'Tali Twist Rope', quantity: '457 ROL' },
+    { name: 'Tambang', quantity: '8 ROL' },
+    { name: 'Tandu Basket', quantity: '4 UNIT' },
+    { name: 'Tandu Lipat', quantity: '5 UNIT' },
+    { name: 'Tandu Scoope', quantity: '5 UNIT' },
+    { name: 'Tas Evakuasi', quantity: '249 PCS' },
+    { name: 'Vertical Rescue', quantity: '1 BOX' },
+  ],
+  'Alat Kebutuhan': [
+    { name: 'Bantal', quantity: '244 UNIT' },
+    { name: 'Folding Bed', quantity: '91 UNIT' },
+    { name: 'Genset', quantity: '4 UNIT' },
+    { name: 'Genset Portable', quantity: '15 UNIT' },
+    { name: 'Handy Talky Motorola', quantity: '98 UNIT' },
+    { name: 'Jerigen 10L', quantity: '9.733 PCS' },
+    { name: 'Jerigen 20L', quantity: '2.880 PCS' },
+    { name: 'Kasur', quantity: '854 UNIT' },
+    { name: 'Kitchen Kit', quantity: '2.550 BOX' },
+    { name: 'Lampu Emergency', quantity: '15.336 UNIT' },
+    { name: 'Matras', quantity: '1.473 PCS' },
+    { name: 'Modul Starlink', quantity: '10 UNIT' },
+    { name: 'School Kit', quantity: '3.245 BAG' },
+    { name: 'Selimut', quantity: '417 BALE + 15.256 PCS' },
+    { name: 'Shelter Kit', quantity: '145 BAG' },
+    { name: 'Shelter Tool Kit', quantity: '1.100 BAG' },
+    { name: 'Starlink', quantity: '90 UNIT' },
+    { name: 'Tarpaulin', quantity: '1.383 PCS + 1.419 UNIT' },
+    { name: 'Terpal Roll', quantity: '40 ROL' },
+    { name: 'Tikar', quantity: '800 PCS' },
+  ],
+  'Air & Sanitasi': [
+    { name: 'Cleaning Kit', quantity: '2.162 BAG' },
+    { name: 'Filter Air', quantity: '38 UNIT' },
+    { name: 'Hand Sanitizer', quantity: '94 KARTON' },
+    { name: 'Hand Sprayer 16L', quantity: '20 UNIT' },
+    { name: 'Pompa Air', quantity: '7 UNIT' },
+    { name: 'Sabun Cuci', quantity: '31 KARTON' },
+    { name: 'Sabun Cuci Piring', quantity: '15 KARTON' },
+    { name: 'Sabun Mandi', quantity: '1.201 BOX' },
+    { name: 'Sabun Mandi Cair', quantity: '1.176 PCS' },
+    { name: 'Seng Gelombang', quantity: '46.969 PCS' },
+    { name: 'Shampo', quantity: '2.246 BOTOL' },
+    { name: 'Water Bladder', quantity: '15 UNIT' },
+    { name: 'Water Tank 6M3', quantity: '1 UNIT' },
+    { name: 'Watertank Onion 5M3', quantity: '28 UNIT' },
+    { name: 'Watertank Onion 10M3', quantity: '1 UNIT' },
+  ],
+};
+
+const pmiCategoryList = Object.keys(pmiStockCategories);
 
 // Data Pos Pengungsian
 const posPengungsianData = {
@@ -337,12 +278,12 @@ const posPengungsianData = {
 };
 
 export default function Home() {
-  const [searchStockTerm, setSearchStockTerm] = useState('');
-  const [selectedNews, setSelectedNews] = useState<typeof newsData[0] | null>(null);
+    const [selectedNews, setSelectedNews] = useState<typeof newsData[0] | null>(null);
   const [searchPosTerm, setSearchPosTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState<string>('Aceh');
   const [selectedEmergencyTab, setSelectedEmergencyTab] = useState<string>('Sumatera Barat');
   const [selectedPengungsiTab, setSelectedPengungsiTab] = useState<string>('Semua');
+  const [selectedPmiCategory, setSelectedPmiCategory] = useState<string>('Semua');
   const [pengungsiData, setPengungsiData] = useState<{kabupaten: string; value: number; provinsi: string}[]>([]);
   const [totalPengungsi, setTotalPengungsi] = useState<number>(0);
   
@@ -437,10 +378,6 @@ export default function Home() {
       .then(text => setLastUpdate(text.trim()))
       .catch(err => console.error('Failed to load last update:', err));
   }, []);
-
-  const filteredPmiStock = pmiStockData.filter(item =>
-    item.name.toLowerCase().includes(searchStockTerm.toLowerCase())
-  );
 
   const getFilteredPos = () => {
     const regions = selectedRegion === 'Semua' 
@@ -1178,22 +1115,55 @@ export default function Home() {
               </h2>
             </div>
             <p className="text-sm text-gray-500">
-              Pembaruan Terakhir: <span className="font-semibold">9 Desember 2025 pukul 15.24</span>
+              Pembaruan Terakhir: <span className="font-semibold">9 Desember 2025 pukul 22.59</span>
             </p>
           </div>
 
           <div className="bg-white text-black rounded-xl shadow-xl p-6">
-            <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
-              <div>
-                <label className="font-semibold text-gray-700 mr-2">Cari:</label>
-                <input
-                  type="text"
-                  value={searchStockTerm}
-                  onChange={(e) => setSearchStockTerm(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:border-[#D22730] focus:ring-2 focus:ring-[#D22730]/25 outline-none transition"
-                  placeholder="Cari item..."
-                />
+            {/* Category Tabs */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {pmiCategoryList.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedPmiCategory(category)}
+                  className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
+                    selectedPmiCategory === category
+                      ? 'bg-[#D22730] text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+
+            {/* Stock List */}
+            <div className="border border-gray-200 rounded-xl overflow-hidden">
+              <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex justify-between items-center">
+                <h3 className="font-bold text-gray-800">{selectedPmiCategory}</h3>
+                <span className="text-sm text-gray-500">
+                  {pmiStockCategories[selectedPmiCategory as keyof typeof pmiStockCategories]?.length || 0} item
+                </span>
               </div>
+              <div className="max-h-[400px] overflow-y-auto">
+                <table className="w-full">
+                  <tbody>
+                    {(pmiStockCategories[selectedPmiCategory as keyof typeof pmiStockCategories] || []).map((item, idx) => (
+                      <tr key={idx} className="border-b border-gray-100 hover:bg-gray-50">
+                        <td className="py-3 px-4">
+                          <span className="font-medium text-gray-800">{item.name}</span>
+                        </td>
+                        <td className="py-3 px-4 text-right">
+                          <span className="font-mono font-bold text-[#D22730]">{item.quantity}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div className="mt-4 text-center">
               <a 
                 href="https://pmi.or.id/dashboard/stock" 
                 target="_blank" 
@@ -1202,37 +1172,6 @@ export default function Home() {
               >
                 Sumber: pmi.or.id/dashboard/stock →
               </a>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="sticky top-0 bg-gray-50">
-                  <tr className="border-b-2 border-gray-200">
-                    <th className="text-left py-3 px-4 font-semibold">Nama Barang</th>
-                    <th className="text-right py-3 px-4 font-semibold">Jumlah Stok</th>
-                  </tr>
-                </thead>
-              </table>
-              <div className="max-h-[600px] overflow-y-auto">
-                <table className="w-full">
-                  <tbody>
-                    {filteredPmiStock.map((item) => (
-                      <tr key={item.id} className="border-b border-gray-100 hover:bg-gray-50">
-                        <td className="py-3 px-4">
-                          <div className="flex items-center gap-3">
-                            <i className={`fas ${item.icon} text-xl text-[#D22730] w-6 text-center`}></i>
-                            <span className="font-semibold">{item.name}</span>
-                          </div>
-                        </td>
-                        <td className="py-3 px-4 text-right font-mono text-lg">{item.quantity}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <div className="text-center text-sm text-gray-500 mt-4">
-                Menampilkan {filteredPmiStock.length} item
-              </div>
             </div>
           </div>
         </div>
