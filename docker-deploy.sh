@@ -9,12 +9,12 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "🔨 Building Docker image..."
-docker-compose build
+docker compose build
 
 if [ $? -eq 0 ]; then
     echo "✅ Build successful"
     echo "🚀 Starting containers..."
-    docker-compose up -d
+    docker compose up -d
     
     if [ $? -eq 0 ]; then
         echo "✅ Containers running: http://localhost:8080"
