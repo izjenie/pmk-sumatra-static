@@ -3,50 +3,50 @@
 import { useState, useEffect } from 'react';
 // Static data - no database connection needed
 const newsData = [
-  { 
-    id: 1, 
-    title: 'Pimpin Ratas Penanganan Bencana, Presiden Instruksikan Penyaluran Bantuan Lebih Teliti dan Tepat Waktu', 
-    category: 'Pemerintahan', 
+  {
+    id: 1,
+    title: 'Pimpin Ratas Penanganan Bencana, Presiden Instruksikan Penyaluran Bantuan Lebih Teliti dan Tepat Waktu',
+    category: 'Pemerintahan',
     image: '/news/1.jpg',
     date: '2025-12-08',
     content: 'Presiden Prabowo Subianto memimpin langsung Rapat Terbatas (Ratas) terkait penanganan dan pemulihan bencana alam di Aceh. Dalam rapat tersebut, Presiden memerintahkan jajarannya untuk segera menindaklanjuti temuan lapangan dan arahan-arahan yang telah disampaikan. Beliau menegaskan bahwa kekompakan seluruh unsur pemerintah, relawan, dan masyarakat merupakan kekuatan terbesar dalam mempercepat pemulihan wilayah yang terdampak bencana.\n\nDalam arahannya, Presiden menekankan pentingnya penyaluran bantuan yang lebih teliti dan tepat waktu agar segera sampai ke tangan warga yang membutuhkan. Operasi terpadu yang melibatkan TNI, Polri, Basarnas, dan BNPB serta pemerintah daerah diminta untuk diperkuat dalam mempercepat distribusi logistik dan memulihkan konektivitas antardaerah yang terputus.'
   },
-  { 
-    id: 2, 
-    title: 'Tinjau Jembatan Bireuen-Takengon, Presiden Tunjuk KSAD Jenderal Maruli Simanjuntak Komandoi Perbaikan Infrastruktur', 
-    category: 'Infrastruktur', 
+  {
+    id: 2,
+    title: 'Tinjau Jembatan Bireuen-Takengon, Presiden Tunjuk KSAD Jenderal Maruli Simanjuntak Komandoi Perbaikan Infrastruktur',
+    category: 'Infrastruktur',
     image: '/news/2.jpg',
     date: '2025-12-08',
     content: 'Usai meninjau pengerjaan jembatan di ruas vital Bireuen–Takengon, Kabupaten Bireuen, Presiden Prabowo berdialog langsung dengan warga dan petugas lapangan. Presiden melihat langsung kerja keras personel TNI, Polri, tim teknik PUPR, dan relawan dalam memulihkan akses yang terputus. Kunjungan ini menegaskan komitmen pemerintah untuk memastikan kebutuhan masyarakat terpenuhi dan isolasi wilayah segera berakhir.\n\nSebagai langkah percepatan strategis, Presiden menunjuk Kepala Staf Angkatan Darat (KSAD), Jenderal TNI Maruli Simanjuntak, sebagai komandan percepatan perbaikan infrastruktur. Penunjukan ini diharapkan dapat mengoptimalkan pengerahan alat berat dan personel untuk memperbaiki akses jalan dan jembatan yang rusak parah.'
   },
-  { 
-    id: 3, 
-    title: 'Pastikan Stok Pangan Aman, Presiden: Bantuan Dikirim dari Berbagai Daerah untuk Warga Aceh', 
-    category: 'Sosial', 
+  {
+    id: 3,
+    title: 'Pastikan Stok Pangan Aman, Presiden: Bantuan Dikirim dari Berbagai Daerah untuk Warga Aceh',
+    category: 'Sosial',
     image: '/news/3.jpg',
     date: '2025-12-08',
     content: 'Presiden Prabowo memastikan bahwa ketersediaan bahan pangan bagi warga terdampak bencana di Aceh telah diantisipasi dengan matang. Dalam keterangannya di Kabupaten Bireuen, Presiden menyebutkan bahwa bantuan tidak hanya mengandalkan stok lokal, tetapi juga akan dikirimkan dari berbagai daerah lain untuk menjamin tidak ada kekurangan logistik bagi para pengungsi maupun warga yang terisolir.\n\nPemerintah berkomitmen penuh untuk memastikan seluruh proses pemulihan berjalan cepat, terkoordinasi, dan sesuai dengan standar keselamatan. Tujuan utamanya adalah menjamin masyarakat Aceh dapat kembali beraktivitas dengan aman, lancar, dan normal sesegera mungkin.'
   },
-  { 
-    id: 4, 
-    title: 'Presiden Prabowo Kembali ke Aceh, Tinjau Langsung Kerusakan Banjir dan Percepatan Penanganan Darurat', 
-    category: 'Nasional', 
+  {
+    id: 4,
+    title: 'Presiden Prabowo Kembali ke Aceh, Tinjau Langsung Kerusakan Banjir dan Percepatan Penanganan Darurat',
+    category: 'Nasional',
     image: '/news/4.jpg',
     date: '2025-12-08',
     content: 'Presiden Prabowo Subianto kembali melakukan kunjungan kerja ke Aceh untuk meninjau penanganan bencana alam secara langsung. Fokus utama kunjungan kali ini adalah melihat sejumlah lokasi yang mengalami kerusakan parah akibat banjir dan memastikan percepatan penanganan darurat berjalan efektif. Presiden ingin memastikan proses pemulihan di wilayah terdampak mendapatkan atensi maksimal dari pemerintah pusat.\n\nBapak Presiden juga melakukan pengecekan terhadap penyaluran bantuan dan proses evakuasi warga yang masih terjebak. Upaya pembukaan akses jalan yang terputus menjadi prioritas utama untuk memastikan isolasi wilayah dapat segera diakhiri dan bantuan logistik dapat masuk ke seluruh pelosok daerah bencana.'
   },
-  { 
-    id: 5, 
-    title: 'Tinjau Posko Terpadu Lanud Sultan Iskandar Muda, Pemerintah Pastikan Arus Logistik Bantuan Terus Mengalir', 
-    category: 'Nasional', 
+  {
+    id: 5,
+    title: 'Tinjau Posko Terpadu Lanud Sultan Iskandar Muda, Pemerintah Pastikan Arus Logistik Bantuan Terus Mengalir',
+    category: 'Nasional',
     image: '/news/5.jpg',
     date: '2025-12-08',
     content: 'Menteri Koordinator Bidang Pembangunan Manusia dan Kebudayaan (Menko PMK), Pratikno, meninjau Posko Terpadu penanganan bencana alam Aceh di Lanud Sultan Iskandar Muda. Tempat ini difungsikan sebagai gudang logistik utama sebelum bantuan didistribusikan ke wilayah terdampak. Kunjungan ini memastikan kesiapan stok dan kelancaran rantai pasok bantuan kemanusiaan.\n\nSesuai arahan Bapak Presiden, bantuan tambahan akan terus dikirimkan dan berbagai langkah pemulihan akan dipercepat untuk memastikan masyarakat mendapatkan penanganan yang layak dan segera keluar dari masa tanggap darurat.'
   },
-  { 
-    id: 6, 
-    title: 'PLN Berhasil Pulihkan 100% Sistem Kelistrikan Sumatra Utara Pasca Banjir dan Longsor', 
-    category: 'Energi', 
+  {
+    id: 6,
+    title: 'PLN Berhasil Pulihkan 100% Sistem Kelistrikan Sumatra Utara Pasca Banjir dan Longsor',
+    category: 'Energi',
     image: '/news/6.jpg',
     date: '2025-12-08',
     content: 'PT PLN (Persero) mengumumkan keberhasilan memulihkan 100% sistem kelistrikan yang terdampak banjir dan longsor di Sumatra Utara. Pemulihan total tercapai pada hari Minggu, di mana 103 jaringan distribusi yang sebelumnya rusak kini telah beroperasi kembali. Keberhasilan ini menjadi kabar baik bagi warga yang sempat mengalami pemadaman total akibat bencana alam.\n\nProses pemulihan ini merupakan hasil sinergi antara PLN, TNI, Polri, BNPB, pemerintah daerah, dan masyarakat setempat. Dalam waktu lima hari, tim gabungan berhasil memperbaiki infrastruktur listrik yang rusak di seluruh 33 kota/kabupaten yang terdampak.'
@@ -278,22 +278,22 @@ const posPengungsianData = {
 };
 
 export default function Home() {
-    const [selectedNews, setSelectedNews] = useState<typeof newsData[0] | null>(null);
+  const [selectedNews, setSelectedNews] = useState<typeof newsData[0] | null>(null);
   const [searchPosTerm, setSearchPosTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState<string>('Aceh');
   const [selectedEmergencyTab, setSelectedEmergencyTab] = useState<string>('Aceh');
   const [selectedPengungsiTab, setSelectedPengungsiTab] = useState<string>('Semua');
   const [selectedPmiCategory, setSelectedPmiCategory] = useState<string>('Makanan');
   const [selectedPoskoTab, setSelectedPoskoTab] = useState<string>('Aceh');
-  const [pengungsiData, setPengungsiData] = useState<{kabupaten: string; value: number; provinsi: string}[]>([]);
+  const [pengungsiData, setPengungsiData] = useState<{ kabupaten: string; value: number; provinsi: string }[]>([]);
   const [totalPengungsi, setTotalPengungsi] = useState<number>(0);
-  
+
   // Situasi Darurat states
   const [meninggal, setMeninggal] = useState<number>(0);
   const [hilang, setHilang] = useState<number>(0);
   const [terluka, setTerluka] = useState<number>(0);
   const [kabTerdampak, setKabTerdampak] = useState<number>(0);
-  
+
   // Kerusakan states
   const [rumahRusak, setRumahRusak] = useState<number>(0);
   const [fasilitasUmum, setFasilitasUmum] = useState<number>(0);
@@ -381,12 +381,12 @@ export default function Home() {
   }, []);
 
   const getFilteredPos = () => {
-    const regions = selectedRegion === 'Semua' 
-      ? Object.keys(posPengungsianData) 
+    const regions = selectedRegion === 'Semua'
+      ? Object.keys(posPengungsianData)
       : [selectedRegion];
-    
+
     const result: { region: string; posts: typeof posPengungsianData['Aceh'] }[] = [];
-    
+
     regions.forEach(region => {
       const posts = posPengungsianData[region as keyof typeof posPengungsianData]?.filter(post =>
         post.name.toLowerCase().includes(searchPosTerm.toLowerCase()) ||
@@ -397,88 +397,12 @@ export default function Home() {
         result.push({ region, posts });
       }
     });
-    
+
     return result;
   };
 
   return (
     <div className="bg-white text-[#1B1B1B]">
-      <header className="py-6 bg-[#1B1B1B] shadow text-white">
-        <div className="container mx-auto ">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8 place-items-center">
-            <div className="container mx-auto text-center">
-              <img src="/logo.png" className="h-20 mx-auto" alt="Logo" />
-              <p className="text-s mt-2 text-white leading-tight font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>
-                KEMENTERIAN KOORDINATOR <br />
-                BIDANG PEMBANGUNAN MANUSIA DAN KEBUDAYAAN <br />
-                REPUBLIK INDONESIA
-              </p>
-            </div>
-            <div className="pt-1">
-              <p className="text-center text-sm text-gray-400 mb-6">Didukung oleh:</p>
-              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-3">
-                {/* BNPB */}
-                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
-                    <img src="/logos/bnpb.png" alt="BNPB" className="w-full h-full object-contain" />
-                  </div>
-                  <span className="text-xs text-gray-400">BNPB</span>
-                </div>
-                {/* BASARNAS */}
-                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
-                    <img src="/logos/basarnas.png" alt="BASARNAS" className="w-full h-full object-contain" />
-                  </div>
-                  <span className="text-xs text-gray-400">BASARNAS</span>
-                </div>
-                {/* PMI */}
-                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
-                    <img src="/logos/pmi.png" alt="PMI" className="w-full h-full object-contain" />
-                  </div>
-                  <span className="text-xs text-gray-400">PMI</span>
-                </div>
-                {/* Badan Pangan Nasional */}
-                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
-                    <img src="/logos/bapanas.png" alt="Badan Pangan Nasional" className="w-full h-full object-contain" />
-                  </div>
-                  <span className="text-xs text-gray-400">Bapanas</span>
-                </div>
-                {/* Badan Komunikasi Pemerintah RI */}
-                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
-                    <img src="/logos/bakom.png" alt="Badan Komunikasi Pemerintah" className="w-full h-full object-contain" />
-                  </div>
-                  <span className="text-xs text-gray-400">Bakom RI</span>
-                </div>
-                {/* Kementerian Kesehatan */}
-                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
-                    <img src="/logos/kemenkes.png" alt="Kementerian Kesehatan" className="w-full h-full object-contain" />
-                  </div>
-                  <span className="text-xs text-gray-400">Kemenkes</span>
-                </div>
-                {/* Kementerian Dalam Negeri */}
-                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
-                    <img src="/logos/kemendagri.png" alt="Kementerian Dalam Negeri" className="w-full h-full object-contain" />
-                  </div>
-                  <span className="text-xs text-gray-400">Kemendagri</span>
-                </div>
-                {/* BMKG */}
-                <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
-                    <img src="/logos/bmkg.png" alt="BMKG" className="w-full h-full object-contain" />
-                  </div>
-                  <span className="text-xs text-gray-400">BMKG</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
       {/* Nomor Darurat Bencana Section */}
       <section className="py-16 bg-gradient-to-b from-[#1B1B1B] to-[#2d4a6d]">
         <div className="container mx-auto px-4 sm:px-6 md:px-10">
@@ -520,11 +444,10 @@ export default function Home() {
               <button
                 key={tab}
                 onClick={() => setSelectedEmergencyTab(tab)}
-                className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${
-                  selectedEmergencyTab === tab
+                className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${selectedEmergencyTab === tab
                     ? 'bg-white text-[#1B1B1B] shadow-xl'
                     : 'bg-white/10 text-white hover:bg-white/20 border border-white/30'
-                }`}
+                  }`}
               >
                 {tab}
               </button>
@@ -566,8 +489,8 @@ export default function Home() {
                     ].map((item, idx) => (
                       <div key={idx} className="bg-gray-50 rounded-xl p-4 border border-gray-200">
                         <p className="font-semibold text-gray-800 mb-2">{item.name}</p>
-                        <a 
-                          href={`tel:${item.phone.replace(/[^0-9]/g, '')}`} 
+                        <a
+                          href={`tel:${item.phone.replace(/[^0-9]/g, '')}`}
                           className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white px-4 py-2 rounded-lg font-bold transition-colors"
                         >
                           <i className="fas fa-phone text-sm"></i>
@@ -589,8 +512,8 @@ export default function Home() {
                     ].map((item, idx) => (
                       <div key={idx} className="bg-gray-50 rounded-xl p-4 border border-gray-200">
                         <p className="font-semibold text-gray-800 mb-2">{item.name}</p>
-                        <a 
-                          href={`tel:${item.phone.replace(/[^0-9]/g, '')}`} 
+                        <a
+                          href={`tel:${item.phone.replace(/[^0-9]/g, '')}`}
                           className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white px-4 py-2 rounded-lg font-bold transition-colors"
                         >
                           <i className="fas fa-phone text-sm"></i>
@@ -619,8 +542,8 @@ export default function Home() {
                     ].map((item, idx) => (
                       <div key={idx} className="bg-gray-50 rounded-xl p-4 border border-gray-200">
                         <p className="font-semibold text-gray-800 mb-2">{item.name}</p>
-                        <a 
-                          href={`tel:${item.phone.replace(/[^0-9]/g, '')}`} 
+                        <a
+                          href={`tel:${item.phone.replace(/[^0-9]/g, '')}`}
                           className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white px-4 py-2 rounded-lg font-bold transition-colors"
                         >
                           <i className="fas fa-phone text-sm"></i>
@@ -651,7 +574,7 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-10 max-w-7xl">
           {/* Main Stats Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-            
+
             {/* Total Korban */}
             <div className="bg-gradient-to-br from-[#D22730] to-[#8B0000] rounded-2xl p-6 shadow-xl">
               <div className="flex items-center gap-2 mb-4">
@@ -684,18 +607,17 @@ export default function Home() {
                 <span className="text-2xl">🎯</span>
                 <h3 className="text-xl font-bold">Pengungsi</h3>
               </div>
-              
+
               {/* Tab Buttons */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {['Semua', 'Aceh', 'Sumatera Utara', 'Sumatera Barat'].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setSelectedPengungsiTab(tab)}
-                    className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
-                      selectedPengungsiTab === tab
+                    className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${selectedPengungsiTab === tab
                         ? 'bg-white text-[#D22730]'
                         : 'bg-white/20 text-white hover:bg-white/30'
-                    }`}
+                      }`}
                   >
                     {tab}
                   </button>
@@ -704,13 +626,13 @@ export default function Home() {
 
               <div className="space-y-2 max-h-[200px] overflow-y-auto custom-scroll">
                 {pengungsiData
-                .filter(item => selectedPengungsiTab === 'Semua' || item.provinsi === selectedPengungsiTab)
-                .map((item, idx) => (
-                  <div key={idx} className="flex justify-between items-center bg-white/10 rounded-lg px-3 py-2">
-                    <span className="text-sm">{item.kabupaten}</span>
-                    <span className="text-sm font-bold">{item.value.toLocaleString('id-ID')} <span className="text-xs font-normal">jiwa</span></span>
-                  </div>
-                ))}
+                  .filter(item => selectedPengungsiTab === 'Semua' || item.provinsi === selectedPengungsiTab)
+                  .map((item, idx) => (
+                    <div key={idx} className="flex justify-between items-center bg-white/10 rounded-lg px-3 py-2">
+                      <span className="text-sm">{item.kabupaten}</span>
+                      <span className="text-sm font-bold">{item.value.toLocaleString('id-ID')} <span className="text-xs font-normal">jiwa</span></span>
+                    </div>
+                  ))}
               </div>
               <div className="mt-4 text-center bg-white/20 rounded-lg py-3">
                 <p className="text-sm opacity-80">Total Pengungsi</p>
@@ -763,94 +685,10 @@ export default function Home() {
         </p>
         {lastUpdate && (
           <p className="text-center text-sm opacity-60 mt-2" style={{ fontFamily: 'Arial, sans-serif' }}>
-            Last update: {lastUpdate}
+            Pembaruan Terakhir: {lastUpdate}
           </p>
         )}
       </section>
-
-      {/* Langkah Terkini Pemerintah Section */}
-      <section className="container mx-auto bg-white px-4 sm:px-10 lg:px-32 xl:px-44 py-16">
-        <h2 className="text-center text-3xl font-bold mb-14 tracking-wide">
-          Langkah Terkini Pemerintah
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {newsData.map((item) => (
-            <div 
-              key={item.id}
-              onClick={() => setSelectedNews(item)}
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer hover:scale-[1.02]"
-            >
-              <div className="relative h-48 bg-gray-200 overflow-hidden">
-                <img 
-                  src={item.image} 
-                  alt={item.title}
-                  className="w-full h-full object-cover"
-                />
-                <span className="absolute bottom-3 left-3 bg-[#D22730] text-white text-xs font-semibold px-3 py-1 rounded">
-                  {item.category}
-                </span>
-              </div>
-              <div className="p-5 space-y-2">
-                <p className="text-xs text-gray-400">
-                  {item.date ? new Date(item.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}
-                </p>
-                <h3 className="font-semibold text-base leading-snug hover:text-[#D22730] transition line-clamp-2">
-                  {item.title}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* News Modal */}
-      {selectedNews && (
-        <div 
-          className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedNews(null)}
-        >
-          <div 
-            className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal Header with Close Button */}
-            <div className="sticky top-0 bg-white p-4 border-b flex justify-between items-center">
-              <span className="bg-[#D22730] text-white text-xs font-semibold px-3 py-1 rounded">
-                {selectedNews.category}
-              </span>
-              <button 
-                onClick={() => setSelectedNews(null)}
-                className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition"
-              >
-                <i className="fas fa-times text-gray-600"></i>
-              </button>
-            </div>
-            
-            {/* Modal Image */}
-            <div className="h-64 bg-gray-200 overflow-hidden">
-              <img 
-                src={selectedNews.image} 
-                alt={selectedNews.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            {/* Modal Content */}
-            <div className="p-6 space-y-4">
-              <p className="text-sm text-gray-400">
-                {selectedNews.date ? new Date(selectedNews.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}
-              </p>
-              <h2 className="text-2xl font-bold text-[#1B1B1B]">
-                {selectedNews.title}
-              </h2>
-              <p className="text-gray-600 leading-relaxed whitespace-pre-line">
-                {selectedNews.content}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Daftar Posko Tanggap Darurat Section */}
       <section className="py-16 bg-gray-50">
@@ -869,11 +707,10 @@ export default function Home() {
               <button
                 key={tab}
                 onClick={() => setSelectedPoskoTab(tab)}
-                className={`px-4 py-2 rounded-full font-semibold text-sm transition-all ${
-                  selectedPoskoTab === tab
+                className={`px-4 py-2 rounded-full font-semibold text-sm transition-all ${selectedPoskoTab === tab
                     ? 'bg-[#D22730] text-white shadow-lg'
                     : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
-                }`}
+                  }`}
               >
                 {tab}
               </button>
@@ -883,7 +720,7 @@ export default function Home() {
           <div className="overflow-y-auto max-h-[500px] pr-2" style={{ scrollbarWidth: 'thin' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {(() => {
-                const poskoData: Record<string, {kota: string; lokasi: string; nama: string; jabatan: string; kontak: string[]}[]> = {
+                const poskoData: Record<string, { kota: string; lokasi: string; nama: string; jabatan: string; kontak: string[] }[]> = {
                   'Aceh': [
                     { kota: "Bener Meriah", lokasi: "Pusat Perkantoran Bener Meriah / Kantor Bupati", nama: "Riswandika", jabatan: "Sekda Bener Meriah", kontak: ["085277761777"] },
                     { kota: "Langsa", lokasi: "BPBD Langsa", nama: "Nursal", jabatan: "Kepala Pelaksana BPBD", kontak: ["08116777776"] },
@@ -948,7 +785,7 @@ export default function Home() {
                       </div>
                       <div className="flex flex-wrap gap-2 pt-2">
                         {posko.kontak.map((no, idx) => (
-                          <a 
+                          <a
                             key={idx}
                             href={`tel:${no}`}
                             className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#1da851] text-white px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors"
@@ -995,7 +832,7 @@ export default function Home() {
               { nama: "PMI", kontak: "0852 6612 2520", icon: "fa-first-aid", color: "from-red-500 to-red-700" },
               { nama: "DAMKAR Medan", kontak: "0811 6566 113", icon: "fa-fire-extinguisher", color: "from-orange-600 to-red-600" },
             ].map((item, index) => (
-              <a 
+              <a
                 key={index}
                 href={`tel:${item.kontak.replace(/\s/g, '')}`}
                 className={`bg-gradient-to-br ${item.color} rounded-xl p-4 text-center hover:scale-105 transition-transform shadow-lg`}
@@ -1021,7 +858,7 @@ export default function Home() {
               </div>
               <div className="flex flex-wrap gap-3">
                 {["0852 0787 2962", "0851 9179 5579", "0812 7818 6376"].map((no, idx) => (
-                  <a 
+                  <a
                     key={idx}
                     href={`tel:${no.replace(/\s/g, '')}`}
                     className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg font-mono font-bold transition-colors"
@@ -1071,7 +908,7 @@ export default function Home() {
                         <p className="text-white font-medium text-sm truncate">{contact.nama}</p>
                         {contact.jabatan && <p className="text-gray-400 text-xs">{contact.jabatan}</p>}
                       </div>
-                      <a 
+                      <a
                         href={`tel:${contact.no.replace(/\s/g, '')}`}
                         className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#1da851] text-white px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors whitespace-nowrap"
                       >
@@ -1116,11 +953,10 @@ export default function Home() {
               <button
                 key={region}
                 onClick={() => setSelectedRegion(region)}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all ${
-                  selectedRegion === region
+                className={`px-6 py-3 rounded-xl font-semibold transition-all ${selectedRegion === region
                     ? 'bg-[#1B4D89] text-white shadow-lg'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
+                  }`}
               >
                 {region}
                 <span className="ml-2 text-sm opacity-75">
@@ -1180,21 +1016,21 @@ export default function Home() {
               post.lokasi.toLowerCase().includes(searchPosTerm.toLowerCase()) ||
               post.kabupaten.toLowerCase().includes(searchPosTerm.toLowerCase())
             ).length === 0 && (
-            <div className="text-center py-12 text-gray-500">
-              <i className="fas fa-search text-4xl mb-4 opacity-50"></i>
-              <p>Tidak ada pos pengungsian yang ditemukan</p>
-            </div>
-          )}
+              <div className="text-center py-12 text-gray-500">
+                <i className="fas fa-search text-4xl mb-4 opacity-50"></i>
+                <p>Tidak ada pos pengungsian yang ditemukan</p>
+              </div>
+            )}
         </div>
       </section>
 
       {/* Logistik Stok PMI Section */}
-      <section className="bg-gray-100 py-16">
+      <section className="py-16 bg-[#1B1B1B]">
         <div className="container mx-auto px-4 sm:px-6 md:px-10">
-          <div className="flex flex-col items-center mb-10">
-            <div className="flex items-center gap-4 mb-2">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#D22730] to-[#B71C1C] px-6 py-3 rounded-xl mb-4">
               <img src="/logos/pmi.png" alt="PMI" className="w-12 h-12 object-contain" />
-              <h2 className="text-3xl font-bold text-center">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
                 Logistik Stok PMI
               </h2>
             </div>
@@ -1210,11 +1046,10 @@ export default function Home() {
                 <button
                   key={category}
                   onClick={() => setSelectedPmiCategory(category)}
-                  className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
-                    selectedPmiCategory === category
+                  className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${selectedPmiCategory === category
                       ? 'bg-[#D22730] text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
+                    }`}
                 >
                   {category}
                 </button>
@@ -1248,9 +1083,9 @@ export default function Home() {
             </div>
 
             <div className="mt-4 text-center">
-              <a 
-                href="https://pmi.or.id/dashboard/stock" 
-                target="_blank" 
+              <a
+                href="https://pmi.or.id/dashboard/stock"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-[#D22730] hover:underline"
               >
@@ -1262,14 +1097,14 @@ export default function Home() {
       </section>
 
       {/* Layanan BAZNAS Section */}
-      <section className="bg-[#1B1B1B] text-white py-16">
+      <section className="bg-gray-100 py-16">
         <div className="container mx-auto px-4 sm:px-6 md:px-10">
           <div className="bg-gradient-to-br from-[#FFF8E7] to-[#FFE4B5] rounded-2xl shadow-2xl overflow-hidden max-w-4xl mx-auto">
             {/* Header with Image */}
             <div className="relative h-56 md:h-72 overflow-hidden">
-              <img 
-                src="/images/baznas-logistik.png" 
-                alt="Paket Logistik BAZNAS" 
+              <img
+                src="/images/baznas-logistik.png"
+                alt="Paket Logistik BAZNAS"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#FFF8E7] via-transparent to-transparent"></div>
@@ -1289,8 +1124,8 @@ export default function Home() {
                 <p className="text-[#8B4513] font-semibold text-lg mb-2">
                   Pusdalops BAZNAS Tanggap Bencana
                 </p>
-                <a 
-                  href="tel:08180777211" 
+                <a
+                  href="tel:08180777211"
                   className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105"
                 >
                   <div className="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center">
@@ -1305,19 +1140,19 @@ export default function Home() {
                 <h3 className="text-[#D22730] font-bold text-lg mb-4">
                   Dompet Bencana & Kemanusiaan BAZNAS
                 </h3>
-                
+
                 <div className="space-y-3">
                   <div className="flex items-center justify-center gap-4 flex-wrap">
                     <div className="bg-[#1A4D2E] text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
                       <svg viewBox="0 0 100 40" className="h-6 w-auto">
-                        <rect width="100" height="40" rx="4" fill="white"/>
+                        <rect width="100" height="40" rx="4" fill="white" />
                         <text x="50" y="26" textAnchor="middle" fill="#1A4D2E" fontSize="16" fontWeight="bold">BSI</text>
                       </svg>
                       <span>9000.055.740</span>
                     </div>
                     <div className="bg-[#003D79] text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
                       <svg viewBox="0 0 100 40" className="h-6 w-auto">
-                        <rect width="100" height="40" rx="4" fill="white"/>
+                        <rect width="100" height="40" rx="4" fill="white" />
                         <text x="50" y="26" textAnchor="middle" fill="#003D79" fontSize="14" fontWeight="bold">BCA</text>
                       </svg>
                       <span>686.073.7777</span>
@@ -1338,73 +1173,226 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Peta Operasi Section */}
-      <section className="bg-gray-100 py-16">
-        <div className="container mx-auto px-4 sm:px-6 md:px-10">
-        <div className="flex flex-col items-center mb-10">
-          <div className="flex items-center gap-4 mb-2">
-            <h2 className="text-3xl font-bold text-center">
-              Peta Operasi
+      {/* Langkah Terkini Pemerintah Section */}
+      <section className=" mx-auto bg-[#1B1B1B] px-4 sm:px-10 lg:px-32 xl:px-44 py-16">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#D22730] to-[#B71C1C] px-6 py-3 rounded-xl mb-4">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+              Langkah Terkini Pemerintah
             </h2>
           </div>
         </div>
 
-        <div className="bg-white text-black rounded-xl shadow-xl p-3 h-200">
-          <iframe
-            id="ifrSafe-widget_22"
-            className="w-full h-full"
-            allowFullScreen
-            allow="geolocation"
-            data-testid="embedSafe"
-            src="https://gis.bnpb.go.id/arcgis/apps/experiencebuilder/experience/?id=fdfd2c15e4124a1a90cf1e1686ae0e4c">
-          </iframe>
-        </div>
-      </div>
-      </section>
-
-      <footer className="bg-[#1B1B1B] text-white pt-16 pb-10">
-        <div className="container mx-auto px-6 md:px-20">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div className="md:col-span-2 flex flex-col">
-              <div className="flex items-center gap-4 mb-4">
-                <img src="/logo.png" alt="Logo Kemenko PMK" className="w-16 h-16 object-contain" />
-                <h3 className="font-bold text-lg leading-tight">
-                  KEMENKO PMK <br />
-                  <span className="text-sm font-normal text-gray-300">
-                    Kementerian Koordinator Bidang Pembangunan Manusia dan Kebudayaan
-                  </span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {newsData.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => setSelectedNews(item)}
+              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer hover:scale-[1.02]"
+            >
+              <div className="relative h-48 bg-gray-200 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+                <span className="absolute bottom-3 left-3 bg-[#D22730] text-white text-xs font-semibold px-3 py-1 rounded">
+                  {item.category}
+                </span>
+              </div>
+              <div className="p-5 space-y-2">
+                <p className="text-xs text-gray-400">
+                  {item.date ? new Date(item.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}
+                </p>
+                <h3 className="font-semibold text-base leading-snug hover:text-[#D22730] transition line-clamp-2">
+                  {item.title}
                 </h3>
               </div>
             </div>
+          ))}
+        </div>
+      </section>
 
-            <div className="flex flex-col space-y-4">
-              <div className="flex items-start gap-3">
-                <i className="fas fa-envelope text-[#D22730] mt-1"></i>
-                <span className="text-sm text-gray-300">roinfhumasp@kemenkopmk.go.id</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <i className="fas fa-envelope text-[#D22730] mt-1"></i>
-                <span className="text-sm text-gray-300">kearsipan@kemenkopmk.go.id</span>
-              </div>
+      {/* News Modal */}
+      {selectedNews && (
+        <div
+          className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedNews(null)}
+        >
+          <div
+            className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header with Close Button */}
+            <div className="sticky top-0 bg-white p-4 border-b flex justify-between items-center">
+              <span className="bg-[#D22730] text-white text-xs font-semibold px-3 py-1 rounded">
+                {selectedNews.category}
+              </span>
+              <button
+                onClick={() => setSelectedNews(null)}
+                className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition"
+              >
+                <i className="fas fa-times text-gray-600"></i>
+              </button>
             </div>
 
-            <div className="flex flex-col space-y-4">
-              <div className="flex items-start gap-3">
-                <i className="fas fa-phone text-[#D22730] mt-1"></i>
-                <span className="text-sm text-gray-300">(+62) 21 345 9444</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <i className="fas fa-map-marker-alt text-[#D22730] mt-1"></i>
-                <span className="text-sm text-gray-300 leading-relaxed">
-                  Jl. Medan Merdeka Barat No. 3<br />
-                  Jakarta Pusat, Indonesia
-                </span>
-              </div>
+            {/* Modal Image */}
+            <div className="h-64 bg-gray-200 overflow-hidden">
+              <img
+                src={selectedNews.image}
+                alt={selectedNews.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6 space-y-4">
+              <p className="text-sm text-gray-400">
+                {selectedNews.date ? new Date(selectedNews.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}
+              </p>
+              <h2 className="text-2xl font-bold text-[#1B1B1B]">
+                {selectedNews.title}
+              </h2>
+              <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+                {selectedNews.content}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Peta Operasi Section */}
+      <section className="bg-gray-100 py-16">
+        <div className="container mx-auto px-4 sm:px-6 md:px-10">
+          <div className="flex flex-col items-center mb-10">
+            <div className="flex items-center gap-4 mb-2">
+              <h2 className="text-3xl font-bold text-center">
+                Peta Operasi
+              </h2>
             </div>
           </div>
 
-          <div className="border-t border-[#2A2A2A] mt-8 pt-6 text-center text-xs text-gray-400">
-            © 2025 Kementerian Koordinator Bidang Pembangunan Manusia dan Kebudayaan
+          <div className="bg-white text-black rounded-xl shadow-xl p-3 h-200">
+            <iframe
+              id="ifrSafe-widget_22"
+              className="w-full h-full"
+              allowFullScreen
+              allow="geolocation"
+              data-testid="embedSafe"
+              src="https://gis.bnpb.go.id/arcgis/apps/experiencebuilder/experience/?id=fdfd2c15e4124a1a90cf1e1686ae0e4c">
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-[#1B1B1B] text-white pt-16 pb-10">
+        <div className="py-6 bg-[#1B1B1B] shadow text-white">
+          <div className="container mx-auto ">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8 place-items-center">
+              <div className="flex flex-col gap-6 mt-10 p-2">
+                <div className="flex items-center gap-4">
+                  <img
+                    src="/logo.png"
+                    alt="Logo Kemenko PMK"
+                    className="w-16 h-16 object-contain"
+                  />
+                  <h3 className="font-bold text-lg leading-tight">
+                    KEMENKO PMK <br />
+                    <span className="text-sm font-normal text-gray-300">
+                      Kementerian Koordinator Bidang Pembangunan Manusia dan Kebudayaan
+                    </span>
+                  </h3>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-300">
+                  <div className="flex flex-col space-y-4">
+                    <div className="flex items-start gap-3">
+                      <i className="fas fa-envelope text-[#D22730] mt-1"></i>
+                      <span className="text-sm">roinfhumasp@kemenkopmk.go.id</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <i className="fas fa-envelope text-[#D22730] mt-1"></i>
+                      <span className="text-sm">kearsipan@kemenkopmk.go.id</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col space-y-4">
+                    <div className="flex items-start gap-3">
+                      <i className="fas fa-phone text-[#D22730] mt-1"></i>
+                      <span className="text-sm">(+62) 21 345 9444</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <i className="fas fa-map-marker-alt text-[#D22730] mt-1"></i>
+                      <span className="text-sm leading-relaxed">
+                        Jl. Medan Merdeka Barat No. 3<br />
+                        Jakarta Pusat, Indonesia
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div className="pt-1">
+                <p className="text-center text-sm text-gray-400 mb-6">Didukung oleh:</p>
+                <div className="flex flex-wrap justify-center items-center gap-6 md:gap-3">
+                  {/* BNPB */}
+                  <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                      <img src="/logos/bnpb.png" alt="BNPB" className="w-full h-full object-contain" />
+                    </div>
+                    <span className="text-xs text-gray-400">BNPB</span>
+                  </div>
+                  {/* BASARNAS */}
+                  <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                      <img src="/logos/basarnas.png" alt="BASARNAS" className="w-full h-full object-contain" />
+                    </div>
+                    <span className="text-xs text-gray-400">BASARNAS</span>
+                  </div>
+                  {/* PMI */}
+                  <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                      <img src="/logos/pmi.png" alt="PMI" className="w-full h-full object-contain" />
+                    </div>
+                    <span className="text-xs text-gray-400">PMI</span>
+                  </div>
+                  {/* Badan Pangan Nasional */}
+                  <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                      <img src="/logos/bapanas.png" alt="Badan Pangan Nasional" className="w-full h-full object-contain" />
+                    </div>
+                    <span className="text-xs text-gray-400">Bapanas</span>
+                  </div>
+                  {/* Badan Komunikasi Pemerintah RI */}
+                  <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                      <img src="/logos/bakom.png" alt="Badan Komunikasi Pemerintah" className="w-full h-full object-contain" />
+                    </div>
+                    <span className="text-xs text-gray-400">Bakom RI</span>
+                  </div>
+                  {/* Kementerian Kesehatan */}
+                  <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                      <img src="/logos/kemenkes.png" alt="Kementerian Kesehatan" className="w-full h-full object-contain" />
+                    </div>
+                    <span className="text-xs text-gray-400">Kemenkes</span>
+                  </div>
+                  {/* Kementerian Dalam Negeri */}
+                  <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                      <img src="/logos/kemendagri.png" alt="Kementerian Dalam Negeri" className="w-full h-full object-contain" />
+                    </div>
+                    <span className="text-xs text-gray-400">Kemendagri</span>
+                  </div>
+                  {/* BMKG */}
+                  <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                      <img src="/logos/bmkg.png" alt="BMKG" className="w-full h-full object-contain" />
+                    </div>
+                    <span className="text-xs text-gray-400">BMKG</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
