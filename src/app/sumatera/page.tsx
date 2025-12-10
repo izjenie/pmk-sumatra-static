@@ -281,7 +281,7 @@ export default function Home() {
     const [selectedNews, setSelectedNews] = useState<typeof newsData[0] | null>(null);
   const [searchPosTerm, setSearchPosTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState<string>('Aceh');
-  const [selectedEmergencyTab, setSelectedEmergencyTab] = useState<string>('Sumatera Barat');
+  const [selectedEmergencyTab, setSelectedEmergencyTab] = useState<string>('Aceh');
   const [selectedPengungsiTab, setSelectedPengungsiTab] = useState<string>('Semua');
   const [selectedPmiCategory, setSelectedPmiCategory] = useState<string>('Makanan');
   const [selectedPoskoTab, setSelectedPoskoTab] = useState<string>('Aceh');
@@ -515,8 +515,8 @@ export default function Home() {
           </div>
 
           {/* Tab Buttons */}
-          <div className="flex justify-center gap-4 mb-8">
-            {['Sumatera Barat', 'Sumatera Utara'].map((tab) => (
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            {['Aceh', 'Sumatera Barat', 'Sumatera Utara'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setSelectedEmergencyTab(tab)}
@@ -539,7 +539,44 @@ export default function Home() {
                   Kontak Darurat Provinsi {selectedEmergencyTab}
                 </h4>
               </div>
-              <div className="p-6">
+              <div className="p-6 max-h-[400px] overflow-y-auto" style={{ scrollbarWidth: 'thin' }}>
+                {selectedEmergencyTab === 'Aceh' && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {[
+                      { name: 'BPBD Aceh', phone: '(0651)34783' },
+                      { name: 'Basaras Wilayah Aceh', phone: '(0651) 33876' },
+                      { name: 'PMI Aceh', phone: '0852 2315 0090' },
+                      { name: 'BPBD Aceh Besar (Emergency)', phone: '0811 6713 113' },
+                      { name: 'BPBD Aceh Besar (Emergency)', phone: '(0651) 92071' },
+                      { name: 'Pusdalops BPBD Aceh Tengah', phone: '0812 6425 7378' },
+                      { name: 'BPBD Aceh Tengah', phone: '(0643) 23113' },
+                      { name: 'BPBD Aceh Utara (Kantor)', phone: '(0645) 31710' },
+                      { name: 'UDD PMI Aceh Utara (Darah)', phone: '0823 7998 1593' },
+                      { name: 'BPBD Pidie (Kantor)', phone: '(0653) 7829567' },
+                      { name: 'BPBD Aceh Barat', phone: '(0655) 7551413' },
+                      { name: 'BPBD Kota Banda Aceh (WhatsApp)', phone: '0822 7670 5800' },
+                      { name: 'BPBD Aceh Timur', phone: '0823 2466 8545' },
+                      { name: 'BPBD Aceh Jaya', phone: '0811 6899 113' },
+                      { name: 'Damkar BPBK Aceh Jaya', phone: '0811 6792 113' },
+                      { name: 'BPBD Langsa', phone: '(0641) 20113113' },
+                      { name: 'BPBD Bireun', phone: '(0644) 323535' },
+                      { name: 'BPBD Gayo Lues', phone: '(0642) 21390' },
+                      { name: 'BPBD Aceh Tenggara', phone: '(0629) 21741' },
+                      { name: 'BPBD Kota Lhokseumawe', phone: '0851 0500 4113' },
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                        <p className="font-semibold text-gray-800 mb-2">{item.name}</p>
+                        <a 
+                          href={`tel:${item.phone.replace(/[^0-9]/g, '')}`} 
+                          className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white px-4 py-2 rounded-lg font-bold transition-colors"
+                        >
+                          <i className="fas fa-phone text-sm"></i>
+                          {item.phone}
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                )}
                 {selectedEmergencyTab === 'Sumatera Barat' && (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
