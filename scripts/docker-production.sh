@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Script untuk build dan run Docker production
+# by izjenie, Dec 2025
+
 echo "🔨 Building Docker image..."
 docker-compose build
 

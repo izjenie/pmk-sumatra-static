@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Script untuk scheduled update data dan rebuild
+# by izjenie, Dec 2025
 # Jalankan dengan cron atau manual
 
 cd /home/admin/pmk-sumatra-static
@@ -11,7 +12,7 @@ echo ""
 
 # 1. Ambil data terbaru dari BNPB
 echo "Step 1: Mengambil data dari BNPB..."
-./darurat-data-retrieve.sh
+./scripts/darurat-data-retrieve.sh
 echo ""
 
 # 2. Build aplikasi
@@ -21,7 +22,7 @@ echo ""
 
 # 3. Jalankan Docker production
 echo "Step 3: Menjalankan Docker production..."
-sudo ./docker-production.sh
+sudo ./scripts/docker-production.sh
 echo ""
 
 echo "=== Scheduled Update Completed ==="

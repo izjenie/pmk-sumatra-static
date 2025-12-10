@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Script untuk mengambil data dari BNPB GIS Server
+# by izjenie, Dec 2025
 # dan menyimpan ke public/data/
 
 DATA_DIR="public/data"
