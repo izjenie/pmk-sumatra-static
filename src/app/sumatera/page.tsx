@@ -278,7 +278,7 @@ export default function Home() {
       <section className="py-16 bg-gradient-to-b from-[#1B1B1B] to-[#2d4a6d]">
         <div className="container mx-auto px-4 sm:px-6 md:px-10">
           <p className="text-center text-xl md:text-2xl text-white/80 mb-4">
-            Kawal informasi seputar bencana Sumatera secara tepat dan akurat
+            KITA TANGGUH - Informasi seputar bencana Sumatera
           </p>
           <h2 className="text-center text-3xl md:text-4xl font-extrabold text-white mb-2">
             NOMOR DARURAT
@@ -728,7 +728,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex flex-wrap gap-3">
-                {["0852 0787 2962", "0851 9179 5579", "0812 7818 6376"].map((no, idx) => (
+                {["0852 0787 2962", "0812 7818 6376"].map((no, idx) => (
                   <a
                     key={idx}
                     href={`tel:${no.replace(/\s/g, '')}`}
@@ -745,13 +745,13 @@ export default function Home() {
           {/* Kab/Kota Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { kota: "Tapanuli Selatan", contacts: [{ nama: "Idham", jabatan: "Kabid Darlog", no: "0813 6155 8157" }, { nama: "Call Center", jabatan: "", no: "0811 6217 115" }] },
+              { kota: "Tapanuli Selatan", contacts: [{ nama: "Idham", jabatan: "Kabid Darlog", no: "0813 6155 8157" }] },
               { kota: "Tapanuli Utara", contacts: [{ nama: "Kabid Darlog", jabatan: "", no: "0823 6596 6554" }, { nama: "Septian", jabatan: "Staff", no: "0823 6280 5391" }] },
               { kota: "Tapanuli Tengah", contacts: [{ nama: "Rahman Siregar", jabatan: "Kalaksa", no: "0812 6497 1117" }, { nama: "Erianto Tambunan", jabatan: "Kabid Darlog", no: "0822 7719 4959" }] },
               { kota: "Mandailing Natal", contacts: [{ nama: "Mukshin", jabatan: "Kalaksa", no: "0812 6368 9444" }, { nama: "Ibrahim", jabatan: "Kabid Darlog", no: "0822 7709 3939" }] },
               { kota: "Padang Sidimpuan", contacts: [{ nama: "Arfan", jabatan: "Kalaksa", no: "0812 6797 5913" }, { nama: "Nazaruddin", jabatan: "Kabid Darlog", no: "0821 6605 4989" }] },
-              { kota: "Medan", contacts: [{ nama: "Call Center", jabatan: "", no: "0813 7080 0880" }] },
-              { kota: "Deli Serdang", contacts: [{ nama: "Arif Tarigan", jabatan: "Kabid Darlog", no: "0812 6066 4433" }, { nama: "Call Center", jabatan: "", no: "0811 6782 022" }] },
+              { kota: "Medan", contacts: [{ nama: "BPBD", jabatan: "", no: "0813 7080 0880" }] },
+              { kota: "Deli Serdang", contacts: [{ nama: "Arif Tarigan", jabatan: "Kabid Darlog", no: "0812 6066 4433" }, { nama: "BPBD", jabatan: "", no: "0811 6782 022" }] },
               { kota: "Tebing Tinggi", contacts: [{ nama: "Iman Hebat", jabatan: "Kabid Darlog", no: "0821 6559 1206" }] },
               { kota: "Serdang Bedagai", contacts: [{ nama: "Marnaggok", jabatan: "Kabid Darlog", no: "0813 7012 5284" }] },
               { kota: "Langkat", contacts: [{ nama: "Call Center", jabatan: "", no: "0811 6571 117" }] },
@@ -763,7 +763,6 @@ export default function Home() {
               { kota: "Gunung Sitoli", contacts: [{ nama: "Eqoatur Jaya Daili", jabatan: "Kalaksa", no: "0812 6066 1771" }, { nama: "Adiman", jabatan: "Sekretaris", no: "0813 6215 8333" }] },
               { kota: "Asahan", contacts: [{ nama: "BPBD", jabatan: "", no: "0822 1181 4212" }] },
               { kota: "Batu Bara", contacts: [{ nama: "BPBD", jabatan: "", no: "0821 6662 3813" }] },
-              { kota: "DAMKAR Binjai", contacts: [{ nama: "Call Center", jabatan: "", no: "061 882 1935" }] },
             ].map((item, index) => (
               <div key={index} className="bg-[#2A2A2A] rounded-xl overflow-hidden border border-gray-700 hover:border-[#D22730] transition-colors">
                 <div className="bg-gradient-to-r from-[#3A3A3A] to-[#2A2A2A] px-4 py-3 border-b border-gray-700">
