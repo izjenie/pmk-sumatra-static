@@ -109,6 +109,14 @@ def extract_and_save_cropped(input_dir: str, output_dir: str = "output/screensho
     # Create output directory
     os.makedirs(output_dir, exist_ok=True)
     
+    # Save header from first image (the cropped top part)
+    if header_height > 0:
+        header_img = img1[:header_height, left_width:, :]
+        header_rgb = cv2.cvtColor(header_img, cv2.COLOR_BGR2RGB)
+        header_path = os.path.join(output_dir, "header_pmi.png")
+        Image.fromarray(header_rgb).save(header_path)
+        print(f"💾 Saved header → header_pmi.png ({header_img.shape[1]}x{header_img.shape[0]} pixels)\n")
+    
     # Save all images with top and left cropped
     print(f"✂️ Cropping top {header_height}px and left {left_width}px from all images...\n")
     for i, filepath in enumerate(files, 1):
@@ -322,7 +330,7 @@ def find_overlap_height(top_img: np.ndarray, bottom_img: np.ndarray, max_overlap
     return top_img_overlap, bottom_img_overlap
 
 
-def combine_vertical(input_dir: str = "output/screenshots/overlap", output_path: str = "output/screenshots/result/final_pmi.png"):
+def combine_vertical(input_dir: str = "output/screenshots/overlap", output_path: str = "output/result/final_pmi.png"):
     """
     Step 3: Combine all images in overlap folder vertically (simple stack, no overlap detection).
     Images are already processed to have no overlaps.
@@ -376,6 +384,14 @@ def combine_vertical(input_dir: str = "output/screenshots/overlap", output_path:
     pdf_path = output_path.replace(".png", ".pdf")
     pil_image.convert("RGB").save(pdf_path, "PDF")
     print(f"✅ Saved PDF → {pdf_path}")
+    
+    # Save 2x resized version
+    new_width = pil_image.width * 2
+    new_height = pil_image.height * 2
+    pil_image_2x = pil_image.resize((new_width, new_height), Image.Resampling.LANCZOS)
+    output_2x_path = output_path.replace(".png", "_2x.png")
+    pil_image_2x.save(output_2x_path)
+    print(f"✅ Saved 2x image → {output_2x_path} ({new_width}x{new_height})")
 
 
 def process_overlap_iterative(input_dir: str = "output/screenshots/top-slice", output_dir: str = "output/screenshots/overlap"):
@@ -431,7 +447,9 @@ def process_overlap_iterative(input_dir: str = "output/screenshots/top-slice", o
         # Find overlap between bottom of overlap_prev and top of top_next
         overlap_height, _ = find_overlap_height(overlap_prev, top_next)
         
-        if overlap_height > 0:
+        img_height = overlap_prev.shape[0]
+        
+        if overlap_height > 0 and overlap_height < img_height:
             print(f"  📐 Overlap detected: {overlap_height}px")
             
             # Crop bottom of overlap_prev
@@ -439,6 +457,8 @@ def process_overlap_iterative(input_dir: str = "output/screenshots/top-slice", o
             cropped_rgb = cv2.cvtColor(cropped, cv2.COLOR_BGR2RGB)
             Image.fromarray(cropped_rgb).save(overlap_prev_path)
             print(f"  ✂️ Cropped overlap_{i:02d}.png → {cropped.shape[1]}x{cropped.shape[0]} pixels")
+        elif overlap_height >= img_height:
+            print(f"  ⚠️ Overlap ({overlap_height}px) >= image height ({img_height}px), keeping overlap_{i:02d}.png as is")
         else:
             print(f"  ⚠️ No overlap found, keeping overlap_{i:02d}.png as is")
         

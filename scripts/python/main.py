@@ -29,12 +29,12 @@ def screenshot_full_page(url: str, output_dir: str = "output/screenshots"):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
     with sync_playwright() as p:
-        # browser = p.chromium.launch(headless=True)
+        # browser = p.chromium.launch(headless=False)
         browser = p.chromium.launch(
                 headless=True,
                 args=["--no-sandbox", "--disable-dev-shm-usage"]
         )
-        page = browser.new_page(viewport={"width": 1280, "height": 900})
+        page = browser.new_page(viewport={"width": 2560, "height": 900})
         
         print(f"Navigating to {url}...")
         page.goto(url, wait_until="domcontentloaded", timeout=60000)
@@ -42,6 +42,10 @@ def screenshot_full_page(url: str, output_dir: str = "output/screenshots"):
         # Tunggu konten loading selesai
         print("Waiting for page to fully load...")
         time.sleep(10)
+        
+        # Zoom halaman ke 125%
+        print("Zooming page to 125%...")
+        page.evaluate("document.body.style.zoom = '125%'")
         
         viewport_height = 900
         screenshot_count = 1
