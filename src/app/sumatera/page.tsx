@@ -644,7 +644,7 @@ export default function Home() {
 
           {/* Tab Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {['Aceh', 'Sumatera Barat', 'Sumatera Utara'].map((tab) => (
+            {['Aceh', 'Sumatera Utara', 'Sumatera Barat'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setSelectedEmergencyTab(tab)}
