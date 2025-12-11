@@ -42,9 +42,35 @@ def find_exact_header_height(img1: np.ndarray, img2: np.ndarray, max_height: int
     return header_height
 
 
-def extract_and_save_top_slice(input_dir: str, output_dir: str = "output/screenshots/top-slice"):
+def find_exact_left_width(img1: np.ndarray, img2: np.ndarray) -> int:
     """
-    Step 1: Detect identical top region between images, then save all images with top cropped.
+    Find exact pixel width where left regions are identical between two images.
+    Returns the width in pixels. No max_width limit - checks until columns differ.
+    """
+    h1, w1 = img1.shape[:2]
+    h2, w2 = img2.shape[:2]
+    h = min(h1, h2)
+    w = min(w1, w2)
+    
+    # Convert to grayscale for comparison
+    gray1 = cv2.cvtColor(img1[:h, :w, :], cv2.COLOR_BGR2GRAY)
+    gray2 = cv2.cvtColor(img2[:h, :w, :], cv2.COLOR_BGR2GRAY)
+    
+    # Find column-by-column where they differ
+    left_width = 0
+    for col in range(w):
+        diff = np.abs(gray1[:, col].astype(int) - gray2[:, col].astype(int))
+        if np.mean(diff) < 5:  # Allow small tolerance for compression artifacts
+            left_width = col + 1
+        else:
+            break
+    
+    return left_width
+
+
+def extract_and_save_cropped(input_dir: str, output_dir: str = "output/screenshots/top-slice"):
+    """
+    Step 1: Detect identical top and left regions between images, then save all images with both cropped.
     """
     # Collect images
     files = sorted([
@@ -55,33 +81,40 @@ def extract_and_save_top_slice(input_dir: str, output_dir: str = "output/screens
     
     if len(files) < 2:
         print("❌ Need at least 2 images to compare")
-        return 0
+        return 0, 0
     
     print(f"📸 Found {len(files)} images")
-    print(f"🔍 Comparing first two images to find identical top region...\n")
+    print(f"🔍 Comparing first two images to find identical regions...\n")
     
     # Load first two images
     img1 = load_as_cv2(files[0])
     img2 = load_as_cv2(files[1])
     
-    # Find exact header height
+    # Find exact header height (top)
     header_height = find_exact_header_height(img1, img2)
     
-    if header_height == 0:
-        print("❌ No identical top region found")
-        return 0
+    # Find exact left width
+    left_width = find_exact_left_width(img1, img2)
     
-    print(f"✅ Found identical top region: {header_height} pixels\n")
+    if header_height == 0 and left_width == 0:
+        print("❌ No identical top or left region found")
+        return 0, 0
+    
+    if header_height > 0:
+        print(f"✅ Found identical top region: {header_height} pixels")
+    if left_width > 0:
+        print(f"✅ Found identical left region: {left_width} pixels")
+    print()
     
     # Create output directory
     os.makedirs(output_dir, exist_ok=True)
     
-    # Save all images with top cropped
-    print(f"✂️ Cropping top {header_height}px from all images...\n")
+    # Save all images with top and left cropped
+    print(f"✂️ Cropping top {header_height}px and left {left_width}px from all images...\n")
     for i, filepath in enumerate(files, 1):
         img = load_as_cv2(filepath)
-        # Crop top part
-        cropped = img[header_height:, :, :]
+        # Crop top and left
+        cropped = img[header_height:, left_width:, :]
         cropped_rgb = cv2.cvtColor(cropped, cv2.COLOR_BGR2RGB)
         
         # Save with numbered filename
@@ -91,7 +124,7 @@ def extract_and_save_top_slice(input_dir: str, output_dir: str = "output/screens
     
     print(f"\n✅ Saved {len(files)} cropped images to {output_dir}")
     
-    return header_height
+    return header_height, left_width
 
 
 def detect_static_header_footer(img1: np.ndarray, img2: np.ndarray, region_height: int = 100, threshold: float = 0.95) -> tuple:
@@ -335,8 +368,14 @@ def combine_vertical(input_dir: str = "output/screenshots/overlap", output_path:
     # Save result
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     combined_rgb = cv2.cvtColor(combined, cv2.COLOR_BGR2RGB)
-    Image.fromarray(combined_rgb).save(output_path)
+    pil_image = Image.fromarray(combined_rgb)
+    pil_image.save(output_path)
     print(f"\n✅ Saved combined image → {output_path}")
+    
+    # Also save as PDF
+    pdf_path = output_path.replace(".png", ".pdf")
+    pil_image.convert("RGB").save(pdf_path, "PDF")
+    print(f"✅ Saved PDF → {pdf_path}")
 
 
 def process_overlap_iterative(input_dir: str = "output/screenshots/top-slice", output_dir: str = "output/screenshots/overlap"):
@@ -413,8 +452,8 @@ def process_overlap_iterative(input_dir: str = "output/screenshots/top-slice", o
 
 
 if __name__ == "__main__":
-    # Step 1: Extract and save top slice (crop header)
-    header_height = extract_and_save_top_slice(INPUT_DIR)
+    # Step 1: Extract and save cropped images (crop header and left)
+    header_height, left_width = extract_and_save_cropped(INPUT_DIR)
     
     print("\n" + "="*50 + "\n")
     
