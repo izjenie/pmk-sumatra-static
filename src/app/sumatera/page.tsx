@@ -560,29 +560,24 @@ export default function Home() {
       .then(data => {
         setPmiLastUpdate(data.last_update || '');
         const categoryMap: Record<string, string> = {
-          'makanan': 'Makanan',
-          'minuman': 'Minuman',
-          'sembako': 'Sembako',
-          'pakaian': 'Pakaian',
-          'perlengkapan_bayi': 'Perlengkapan Bayi',
-          'kesehatan': 'Kesehatan',
-          'logistik_tenda': 'Tenda',
-          'perlengkapan_evakuasi': 'Evakuasi',
-          'alat_kebutuhan': 'Alat Kebutuhan',
-          'air_dan_sanitasi': 'Air & Sanitasi',
+          'makanan_dan_minuman': 'Makanan & Minuman',
+          'pakaian_dan_textil': 'Pakaian & Tekstil',
+          'kesehatan_dan_kebersihan': 'Kesehatan & Kebersihan',
+          'perlengkapan_tenda_dan_shelter': 'Tenda & Shelter',
+          'peralatan_dan_perlengkapan_teknis': 'Peralatan Teknis',
         };
         const transformed: PmiStockCategories = {};
-        if (data.logistik) {
-          Object.entries(data.logistik).forEach(([key, items]) => {
+        if (data.data_stok) {
+          Object.entries(data.data_stok).forEach(([key, items]) => {
             const categoryName = categoryMap[key] || key;
-            transformed[categoryName] = Object.entries(items as Record<string, string>).map(([itemKey, quantity]) => ({
-              name: itemKey.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
-              quantity: quantity
+            transformed[categoryName] = (items as Array<{nama: string; qty: number; unit: string}>).map(item => ({
+              name: item.nama,
+              quantity: `${item.qty.toLocaleString('id-ID')} ${item.unit}`
             }));
           });
         }
         setPmiStockCategories(transformed);
-        if (Object.keys(transformed).length > 0 && !transformed['Makanan']) {
+        if (Object.keys(transformed).length > 0) {
           setSelectedPmiCategory(Object.keys(transformed)[0]);
         }
       })
