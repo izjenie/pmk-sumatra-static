@@ -6,7 +6,7 @@ from datetime import datetime
 from playwright.sync_api import sync_playwright
 
 
-def clear_screenshots(output_dir: str = "screenshots"):
+def clear_screenshots(output_dir: str = "output/screenshots"):
     """Hapus semua file di direktori screenshots."""
     if os.path.exists(output_dir):
         files = glob.glob(os.path.join(output_dir, "*.png"))
@@ -15,7 +15,7 @@ def clear_screenshots(output_dir: str = "screenshots"):
         print(f"Deleted {len(files)} files from '{output_dir}/'")
 
 
-def screenshot_full_page(url: str, output_dir: str = "screenshots"):
+def screenshot_full_page(url: str, output_dir: str = "output/screenshots"):
     """
     Browse ke URL, screenshot per viewport, scroll ke bawah, 
     dan screenshot lagi sampai halaman selesai.
