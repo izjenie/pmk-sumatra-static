@@ -1407,28 +1407,28 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {newsData.map((item) => (
+          {newsData.map((item, index) => (
             <div
               key={item.id}
-              onClick={() => setSelectedNews(item)}
+              onClick={() => setSelectedNews({...item, translatedTitle: t.news.items[index]?.title || item.title, translatedCategory: t.news.items[index]?.category || item.category, translatedContent: t.news.items[index]?.content || item.content})}
               className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer hover:scale-[1.02]"
             >
               <div className="relative h-48 bg-gray-200 overflow-hidden">
                 <img
                   src={item.image}
-                  alt={item.title}
+                  alt={t.news.items[index]?.title || item.title}
                   className="w-full h-full object-cover"
                 />
                 <span className="absolute bottom-3 left-3 bg-[#D22730] text-white text-xs font-semibold px-3 py-1 rounded">
-                  {item.category}
+                  {t.news.items[index]?.category || item.category}
                 </span>
               </div>
               <div className="p-5 space-y-2">
                 <p className="text-xs text-gray-400">
-                  {item.date ? new Date(item.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}
+                  {item.date ? new Date(item.date).toLocaleDateString(language === 'en' ? 'en-US' : 'id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}
                 </p>
                 <h3 className="font-semibold text-base leading-snug hover:text-[#D22730] transition line-clamp-2">
-                  {item.title}
+                  {t.news.items[index]?.title || item.title}
                 </h3>
               </div>
             </div>
@@ -1449,7 +1449,7 @@ export default function Home() {
             {/* Modal Header with Close Button */}
             <div className="sticky top-0 bg-white p-4 border-b flex justify-between items-center">
               <span className="bg-[#D22730] text-white text-xs font-semibold px-3 py-1 rounded">
-                {selectedNews.category}
+                {(selectedNews as typeof newsData[0] & {translatedCategory?: string}).translatedCategory || selectedNews.category}
               </span>
               <button
                 onClick={() => setSelectedNews(null)}
@@ -1463,7 +1463,7 @@ export default function Home() {
             <div className="h-64 bg-gray-200 overflow-hidden">
               <img
                 src={selectedNews.image}
-                alt={selectedNews.title}
+                alt={(selectedNews as typeof newsData[0] & {translatedTitle?: string}).translatedTitle || selectedNews.title}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -1471,13 +1471,13 @@ export default function Home() {
             {/* Modal Content */}
             <div className="p-6 space-y-4">
               <p className="text-sm text-gray-400">
-                {selectedNews.date ? new Date(selectedNews.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}
+                {selectedNews.date ? new Date(selectedNews.date).toLocaleDateString(language === 'en' ? 'en-US' : 'id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}
               </p>
               <h2 className="text-2xl font-bold text-[#1B1B1B]">
-                {selectedNews.title}
+                {(selectedNews as typeof newsData[0] & {translatedTitle?: string}).translatedTitle || selectedNews.title}
               </h2>
               <p className="text-gray-600 leading-relaxed whitespace-pre-line">
-                {selectedNews.content}
+                {(selectedNews as typeof newsData[0] & {translatedContent?: string}).translatedContent || selectedNews.content}
               </p>
             </div>
           </div>
