@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Disaster Information - Kemenko PMK",
-  description: "Kawal informasi seputar bencana Sumatera secara tepat dan akurat",
+  title: "KITA TANGGUH - Tanggap Bencana - Sumatera",
+  description: "KITA TANGGUH - Informasi seputar bencana Sumatera",
 };
 
 export default function RootLayout({
