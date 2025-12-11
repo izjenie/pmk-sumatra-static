@@ -111,6 +111,11 @@ export const translations = {
     tabs: {
       all: 'Semua',
     },
+    provinces: {
+      'Sumatera Utara': 'Sumatera Utara',
+      'Sumatera Barat': 'Sumatera Barat',
+      'Aceh': 'Aceh',
+    },
   },
   en: {
     header: {
@@ -221,6 +226,11 @@ export const translations = {
     },
     tabs: {
       all: 'All',
+    },
+    provinces: {
+      'Sumatera Utara': 'North Sumatra',
+      'Sumatera Barat': 'West Sumatra',
+      'Aceh': 'Aceh',
     },
   },
 };

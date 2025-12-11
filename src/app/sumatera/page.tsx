@@ -671,7 +671,7 @@ export default function Home() {
                     : 'bg-white/10 text-white hover:bg-white/20 border border-white/30'
                   }`}
               >
-                {tab}
+                {t.provinces[tab as keyof typeof t.provinces] || tab}
               </button>
             ))}
           </div>
@@ -681,7 +681,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
               <div className="bg-gradient-to-r from-[#1B4D89] to-[#2d6cb5] px-6 py-4">
                 <h4 className="text-xl font-bold text-white text-center">
-                  {t.callCenter.emergencyContacts} {selectedEmergencyTab}
+                  {t.callCenter.emergencyContacts} {t.provinces[selectedEmergencyTab as keyof typeof t.provinces] || selectedEmergencyTab}
                 </h4>
               </div>
               <div className="p-6 max-h-[400px] overflow-y-auto" style={{ scrollbarWidth: 'thin' }}>
@@ -841,7 +841,7 @@ export default function Home() {
                         : 'bg-white/20 text-white hover:bg-white/30'
                       }`}
                   >
-                    {tab}
+                    {tab === 'Semua' ? t.tabs.all : (t.provinces[tab as keyof typeof t.provinces] || tab)}
                   </button>
                 ))}
               </div>
@@ -934,7 +934,7 @@ export default function Home() {
                     : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
                   }`}
               >
-                {tab}
+                {t.provinces[tab as keyof typeof t.provinces] || tab}
               </button>
             ))}
           </div>
@@ -1179,7 +1179,7 @@ export default function Home() {
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
               >
-                {region}
+                {t.provinces[region as keyof typeof t.provinces] || region}
                 <span className="ml-2 text-sm opacity-75">
                   ({posPengungsianData[region as keyof typeof posPengungsianData]?.length || 0})
                 </span>
