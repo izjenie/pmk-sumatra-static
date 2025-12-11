@@ -455,7 +455,7 @@ export default function Home() {
   const [language, setLanguage] = useState<Language>('id');
   const t = getTranslation(language);
   
-  const [selectedNews, setSelectedNews] = useState<typeof newsData[0] | null>(null);
+  const [selectedNews, setSelectedNews] = useState<(typeof newsData[0] & { translatedTitle?: string; translatedCategory?: string; translatedContent?: string }) | null>(null);
   const [searchPosTerm, setSearchPosTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState<string>('Aceh');
   const [selectedEmergencyTab, setSelectedEmergencyTab] = useState<string>('Aceh');
