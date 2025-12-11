@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { Language, getTranslation } from './translations';
 // Static data - no database connection needed
 const newsData = [
   {
@@ -451,6 +452,9 @@ const posPengungsianData = {
 };
 
 export default function Home() {
+  const [language, setLanguage] = useState<Language>('id');
+  const t = getTranslation(language);
+  
   const [selectedNews, setSelectedNews] = useState<typeof newsData[0] | null>(null);
   const [searchPosTerm, setSearchPosTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState<string>('Aceh');
@@ -607,17 +611,31 @@ export default function Home() {
 
   return (
     <div className="bg-white text-[#1B1B1B]">
+      {/* Language Toggle - Fixed Top Right */}
+      <div className="fixed top-4 right-4 z-50">
+        <button
+          onClick={() => setLanguage(language === 'id' ? 'en' : 'id')}
+          className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg hover:shadow-xl transition-all border border-gray-200"
+        >
+          <span className={`text-sm font-semibold ${language === 'id' ? 'text-[#D22730]' : 'text-gray-400'}`}>ID</span>
+          <div className="w-10 h-6 bg-gray-200 rounded-full relative">
+            <div className={`absolute top-1 w-4 h-4 bg-[#D22730] rounded-full transition-all ${language === 'id' ? 'left-1' : 'left-5'}`}></div>
+          </div>
+          <span className={`text-sm font-semibold ${language === 'en' ? 'text-[#D22730]' : 'text-gray-400'}`}>EN</span>
+        </button>
+      </div>
+
       {/* Nomor Darurat Bencana Section */}
       <section className="py-16 bg-gradient-to-b from-[#1B1B1B] to-[#2d4a6d]">
         <div className="container mx-auto px-4 sm:px-6 md:px-10">
           <p className="text-center text-xl md:text-2xl text-white/80 mb-4">
-            KITA TANGGUH - Informasi seputar bencana Sumatera
+            {t.header.title}
           </p>
           <h2 className="text-center text-3xl md:text-4xl font-extrabold text-white mb-2">
-            NOMOR DARURAT
+            {t.header.emergency}
           </h2>
           <h3 className="text-center text-4xl md:text-5xl font-black text-white mb-10">
-            BENCANA
+            {t.header.disaster}
           </h3>
 
           {/* Call Center Utama */}
@@ -627,7 +645,7 @@ export default function Home() {
                 <i className="fas fa-phone text-white text-2xl"></i>
               </div>
               <div>
-                <p className="text-sm text-gray-600 font-medium">Call Center BNPB</p>
+                <p className="text-sm text-gray-600 font-medium">{t.callCenter.bnpb}</p>
                 <p className="text-4xl font-black text-[#1B1B1B]">117</p>
               </div>
             </a>
@@ -636,7 +654,7 @@ export default function Home() {
                 <i className="fas fa-phone text-white text-2xl"></i>
               </div>
               <div>
-                <p className="text-sm text-gray-600 font-medium">Call Center BASARNAS</p>
+                <p className="text-sm text-gray-600 font-medium">{t.callCenter.basarnas}</p>
                 <p className="text-4xl font-black text-[#1B1B1B]">115</p>
               </div>
             </a>
@@ -663,7 +681,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
               <div className="bg-gradient-to-r from-[#1B4D89] to-[#2d6cb5] px-6 py-4">
                 <h4 className="text-xl font-bold text-white text-center">
-                  Kontak Darurat Provinsi {selectedEmergencyTab}
+                  {t.callCenter.emergencyContacts} {selectedEmergencyTab}
                 </h4>
               </div>
               <div className="p-6 max-h-[400px] overflow-y-auto" style={{ scrollbarWidth: 'thin' }}>
@@ -763,7 +781,7 @@ export default function Home() {
 
           <p className="text-center text-white/60 text-sm mt-8">
             <i className="fas fa-info-circle mr-2"></i>
-            Klik nomor telepon untuk langsung menghubungi
+            {t.callCenter.clickToCall}
           </p>
         </div>
       </section>
@@ -771,7 +789,7 @@ export default function Home() {
       <section className="bg-gradient-to-br from-[#1B1B1B] via-[#2a2a2a] to-[#1B1B1B] text-white pt-16 pb-20 relative">
         <div className="text-center mb-12 px-6">
           <h1 className="text-3xl md:text-4xl font-bold mb-2 tracking-wide">
-            Situasi Darurat di Sumatera
+            {t.situation.title}
           </h1>
         </div>
 
@@ -783,23 +801,23 @@ export default function Home() {
             <div className="bg-gradient-to-br from-[#D22730] to-[#8B0000] rounded-2xl p-6 shadow-xl">
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-2xl">🎯</span>
-                <h3 className="text-xl font-bold">Total Korban</h3>
+                <h3 className="text-xl font-bold">{t.situation.totalVictims}</h3>
               </div>
               <div className="space-y-3">
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
-                  <span>Meninggal Dunia</span>
-                  <span className="text-2xl font-bold">{meninggal.toLocaleString('id-ID')} <span className="text-sm font-normal">jiwa</span></span>
+                  <span>{t.situation.deceased}</span>
+                  <span className="text-2xl font-bold">{meninggal.toLocaleString('id-ID')} <span className="text-sm font-normal">{t.situation.persons}</span></span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
-                  <span>Hilang</span>
-                  <span className="text-2xl font-bold">{hilang.toLocaleString('id-ID')} <span className="text-sm font-normal">jiwa</span></span>
+                  <span>{t.situation.missing}</span>
+                  <span className="text-2xl font-bold">{hilang.toLocaleString('id-ID')} <span className="text-sm font-normal">{t.situation.persons}</span></span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
-                  <span>Terluka</span>
-                  <span className="text-2xl font-bold">{terluka.toLocaleString('id-ID')} <span className="text-sm font-normal">jiwa</span></span>
+                  <span>{t.situation.injured}</span>
+                  <span className="text-2xl font-bold">{terluka.toLocaleString('id-ID')} <span className="text-sm font-normal">{t.situation.persons}</span></span>
                 </div>
                 <div className="flex justify-between items-center bg-white/10 rounded-lg px-4 py-2">
-                  <span>Kab/Kota Terdampak</span>
+                  <span>{t.situation.affectedAreas}</span>
                   <span className="text-2xl font-bold">{kabTerdampak.toLocaleString('id-ID')}</span>
                 </div>
               </div>
@@ -809,7 +827,7 @@ export default function Home() {
             <div className="bg-gradient-to-br from-[#FF6B35] to-[#D22730] rounded-2xl p-6 shadow-xl">
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-2xl">🎯</span>
-                <h3 className="text-xl font-bold">Pengungsi</h3>
+                <h3 className="text-xl font-bold">{t.situation.refugees}</h3>
               </div>
 
               {/* Tab Buttons */}
@@ -839,8 +857,8 @@ export default function Home() {
                   ))}
               </div>
               <div className="mt-4 text-center bg-white/20 rounded-lg py-3">
-                <p className="text-sm opacity-80">Total Pengungsi</p>
-                <p className="text-3xl font-black">± {(totalPengungsi / 1000).toFixed(0)} ribu <span className="text-lg font-normal">jiwa</span></p>
+                <p className="text-sm opacity-80">{t.situation.totalRefugees}</p>
+                <p className="text-3xl font-black">± {(totalPengungsi / 1000).toFixed(0)} {t.situation.thousand} <span className="text-lg font-normal">{t.situation.persons}</span></p>
               </div>
             </div>
 
@@ -848,35 +866,35 @@ export default function Home() {
             <div className="bg-gradient-to-br from-[#1B4D89] to-[#0D2E5C] rounded-2xl p-6 shadow-xl">
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-2xl">🎯</span>
-                <h3 className="text-xl font-bold">Kerusakan</h3>
+                <h3 className="text-xl font-bold">{t.situation.damage}</h3>
               </div>
               <div className="grid grid-cols-2 gap-2">
                 <div className="bg-white/10 rounded-lg px-3 py-2">
-                  <p className="text-xs opacity-70">Rumah Rusak</p>
+                  <p className="text-xs opacity-70">{t.situation.houseDamaged}</p>
                   <p className="text-lg font-bold">{rumahRusak.toLocaleString('id-ID')}</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
-                  <p className="text-xs opacity-70">Rumah Ibadah</p>
+                  <p className="text-xs opacity-70">{t.situation.worshipPlaces}</p>
                   <p className="text-lg font-bold">{rumahIbadah.toLocaleString('id-ID')}</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
-                  <p className="text-xs opacity-70">Fasilitas Umum</p>
+                  <p className="text-xs opacity-70">{t.situation.publicFacilities}</p>
                   <p className="text-lg font-bold">{fasilitasUmum.toLocaleString('id-ID')}</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
-                  <p className="text-xs opacity-70">Gedung/Kantor</p>
+                  <p className="text-xs opacity-70">{t.situation.officeBuildings}</p>
                   <p className="text-lg font-bold">{gedungKantor.toLocaleString('id-ID')}</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
-                  <p className="text-xs opacity-70">Fas. Kesehatan</p>
+                  <p className="text-xs opacity-70">{t.situation.healthFacilities}</p>
                   <p className="text-lg font-bold">{fasKesehatan.toLocaleString('id-ID')}</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
-                  <p className="text-xs opacity-70">Jembatan</p>
+                  <p className="text-xs opacity-70">{t.situation.bridges}</p>
                   <p className="text-lg font-bold">{jembatan.toLocaleString('id-ID')}</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2 col-span-2">
-                  <p className="text-xs opacity-70">Fasilitas Pendidikan</p>
+                  <p className="text-xs opacity-70">{t.situation.educationFacilities}</p>
                   <p className="text-lg font-bold">{fasPendidikan.toLocaleString('id-ID')}</p>
                 </div>
               </div>
@@ -885,11 +903,11 @@ export default function Home() {
         </div>
 
         <p className="text-center text-sm opacity-60 mt-6" style={{ fontFamily: 'Arial, sans-serif' }}>
-          Sumber: <a href="https://gis.bnpb.go.id/BANSORSUMATERA2025/" target="_blank" rel="noopener noreferrer" className="font-semibold underline hover:text-white/80 transition-colors">Data BNPB →</a>
+          {t.situation.source}: <a href="https://gis.bnpb.go.id/BANSORSUMATERA2025/" target="_blank" rel="noopener noreferrer" className="font-semibold underline hover:text-white/80 transition-colors">Data BNPB →</a>
         </p>
         {lastUpdate && (
           <p className="text-center text-sm opacity-60 mt-2" style={{ fontFamily: 'Arial, sans-serif' }}>
-            Pembaruan Terakhir: {lastUpdate}
+            {t.situation.lastUpdate}: {lastUpdate}
           </p>
         )}
       </section>
@@ -901,7 +919,7 @@ export default function Home() {
             <div className="inline-flex items-center justify-center gap-3 bg-[#D22730] px-6 py-3 rounded-xl mb-4">
               <i className="fas fa-map-marker-alt text-white text-2xl"></i>
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                Daftar Posko Tanggap Darurat
+                {t.posko.title}
               </h2>
             </div>
           </div>
@@ -1009,7 +1027,7 @@ export default function Home() {
           <div className="text-center mt-8">
             <p className="text-gray-500 text-sm">
               <i className="fas fa-info-circle mr-2"></i>
-              Klik nomor telepon untuk langsung menghubungi posko
+              {t.posko.clickToCall}
             </p>
           </div>
         </div>
@@ -1022,10 +1040,10 @@ export default function Home() {
             <div className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#D22730] to-[#B71C1C] px-6 py-3 rounded-xl mb-4">
               <i className="fas fa-headset text-white text-2xl"></i>
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                Call Center BPBD Sumatera Utara
+                {t.callCenterSumut.title}
               </h2>
             </div>
-            <p className="text-gray-400 text-lg">Kabupaten/Kota & Instansi Terkait</p>
+            <p className="text-gray-400 text-lg">{t.callCenterSumut.subtitle}</p>
           </div>
 
           {/* Main BPBD & Emergency Services */}
@@ -1057,7 +1075,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-bold text-white text-xl">BASARNAS</h3>
-                  <p className="text-blue-200 text-sm">Badan SAR Nasional</p>
+                  <p className="text-blue-200 text-sm">{t.callCenterSumut.nationalSar}</p>
                 </div>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -1143,11 +1161,11 @@ export default function Home() {
                 <i className="fas fa-campground text-white text-xl"></i>
               </div>
               <h2 className="text-3xl font-bold text-center text-[#1B1B1B]">
-                Pos Pengungsian
+                {t.shelter.title}
               </h2>
             </div>
             <p className="text-sm text-gray-500">
-              Lokasi pos pengungsian di wilayah terdampak bencana
+              {t.shelter.subtitle}
             </p>
           </div>
 
@@ -1173,7 +1191,7 @@ export default function Home() {
             <i className="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
             <input
               type="text"
-              placeholder="Cari pos pengungsian..."
+              placeholder={t.shelter.search}
               value={searchPosTerm}
               onChange={(e) => setSearchPosTerm(e.target.value)}
               className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-300 focus:border-[#1B4D89] focus:ring-2 focus:ring-[#1B4D89]/20 outline-none transition-all"
@@ -1208,7 +1226,7 @@ export default function Home() {
                     className="mt-3 inline-flex items-center gap-2 text-sm text-[#1B4D89] hover:text-[#D22730] font-medium transition-colors"
                   >
                     <i className="fas fa-map"></i>
-                    Buka di Google Maps
+                    {t.shelter.openMaps}
                     <i className="fas fa-external-link-alt text-xs"></i>
                   </a>
                 </div>
@@ -1222,7 +1240,7 @@ export default function Home() {
             ).length === 0 && (
               <div className="text-center py-12 text-gray-500">
                 <i className="fas fa-search text-4xl mb-4 opacity-50"></i>
-                <p>Tidak ada pos pengungsian yang ditemukan</p>
+                <p>{t.shelter.notFound}</p>
               </div>
             )}
           </div>
@@ -1236,11 +1254,11 @@ export default function Home() {
             <div className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#D22730] to-[#B71C1C] px-6 py-3 rounded-xl mb-4">
               <img src="/logos/pmi.png" alt="PMI" className="w-12 h-12 object-contain" />
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                Logistik Stok PMI
+                {t.pmiStock.title}
               </h2>
             </div>
             <p className="text-sm text-gray-500">
-              Pembaruan Terakhir: <span className="font-semibold">{pmiLastUpdate || 'Memuat...'}</span>
+              {t.pmiStock.lastUpdate}: <span className="font-semibold">{pmiLastUpdate || t.pmiStock.loading}</span>
             </p>
           </div>
 
@@ -1266,7 +1284,7 @@ export default function Home() {
               <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex justify-between items-center">
                 <h3 className="font-bold text-gray-800">{selectedPmiCategory}</h3>
                 <span className="text-sm text-gray-500">
-                  {pmiStockCategories[selectedPmiCategory]?.length || 0} item
+                  {pmiStockCategories[selectedPmiCategory]?.length || 0} {t.pmiStock.item}
                 </span>
               </div>
               <div className="max-h-[400px] overflow-y-auto">
@@ -1294,7 +1312,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="text-sm text-[#D22730] hover:underline"
               >
-                Sumber: pmi.or.id/dashboard/stock →
+                {t.pmiStock.source}: pmi.or.id/dashboard/stock →
               </a>
             </div>
           </div>
@@ -1316,7 +1334,7 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <div className="inline-block bg-[#D22730] px-6 py-2 rounded-lg shadow-lg">
                   <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                    Layanan BAZNAS
+                    {t.baznas.title}
                   </h2>
                 </div>
               </div>
@@ -1327,7 +1345,7 @@ export default function Home() {
               {/* Hotline */}
               <div className="mb-6">
                 <p className="text-[#8B4513] font-semibold text-lg mb-2">
-                  Pusdalops BAZNAS Tanggap Bencana
+                  {t.baznas.hotline}
                 </p>
                 <a
                   href="tel:08180777211"
@@ -1343,7 +1361,7 @@ export default function Home() {
               {/* Donation Info */}
               <div className="bg-white/80 backdrop-blur rounded-xl p-6 shadow-inner">
                 <h3 className="text-[#D22730] font-bold text-lg mb-4">
-                  Dompet Bencana & Kemanusiaan BAZNAS
+                  {t.baznas.donationTitle}
                 </h3>
 
                 <div className="space-y-3">
@@ -1364,14 +1382,14 @@ export default function Home() {
                     </div>
                   </div>
                   <p className="text-gray-600 text-sm">
-                    a.n. <span className="font-semibold">Badan Amil Zakat Nasional</span>
+                    a.n. <span className="font-semibold">{t.baznas.accountName}</span>
                   </p>
                 </div>
               </div>
 
               {/* Source */}
               <p className="mt-6 text-sm text-[#8B4513]/70">
-                Sumber: <span className="font-semibold">Sitrep BAZNAS</span>
+                {t.baznas.source}: <span className="font-semibold">Sitrep BAZNAS</span>
               </p>
             </div>
           </div>
@@ -1383,7 +1401,7 @@ export default function Home() {
         <div className="text-center mb-10">
           <div className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#D22730] to-[#B71C1C] px-6 py-3 rounded-xl mb-4">
             <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-              Langkah Terkini Pemerintah
+              {t.news.title}
             </h2>
           </div>
         </div>
@@ -1472,7 +1490,7 @@ export default function Home() {
           <div className="flex flex-col items-center mb-10">
             <div className="flex items-center gap-4 mb-2">
               <h2 className="text-3xl font-bold text-center">
-                Peta Operasi
+                {t.map.title}
               </h2>
             </div>
           </div>
@@ -1502,9 +1520,9 @@ export default function Home() {
                     className="w-16 h-16 object-contain"
                   />
                   <h3 className="font-bold text-lg leading-tight">
-                    KEMENKO PMK <br />
+                    {t.footer.ministry} <br />
                     <span className="text-sm font-normal text-gray-300">
-                      Kementerian Koordinator Bidang Pembangunan Manusia dan Kebudayaan
+                      {t.footer.ministryFull}
                     </span>
                   </h3>
                 </div>
@@ -1537,7 +1555,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="pt-1">
-                <p className="text-center text-sm text-gray-400 mb-6">Didukung oleh:</p>
+                <p className="text-center text-sm text-gray-400 mb-6">{t.footer.supportedBy}</p>
                 <div className="flex flex-wrap justify-center items-center gap-6 md:gap-3">
                   {/* BNPB */}
                   <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
