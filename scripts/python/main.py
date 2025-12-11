@@ -29,7 +29,11 @@ def screenshot_full_page(url: str, output_dir: str = "screenshots"):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        # browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(
+                headless=True,
+                args=["--no-sandbox", "--disable-dev-shm-usage"]
+        )
         page = browser.new_page(viewport={"width": 1280, "height": 900})
         
         print(f"Navigating to {url}...")
