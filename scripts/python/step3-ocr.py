@@ -1,3 +1,5 @@
+# by izjenie, December 2025
+
 import pytesseract
 from PIL import Image
 import json

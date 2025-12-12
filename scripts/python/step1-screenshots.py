@@ -1,3 +1,5 @@
+# by izjenie, December 2025
+
 import os
 import glob
 import time

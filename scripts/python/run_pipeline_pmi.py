@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# by izjenie, December 2025
 """
 PMI Stock Data Pipeline
 =======================

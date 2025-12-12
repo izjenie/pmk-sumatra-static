@@ -1,3 +1,5 @@
+# by izjenie, December 2025
+
 import os
 from typing import List
 from PIL import Image

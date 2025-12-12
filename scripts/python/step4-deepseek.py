@@ -1,3 +1,5 @@
+# by izjenie, December 2025
+
 import json
 import os
 from openai import OpenAI
