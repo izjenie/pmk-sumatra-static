@@ -379,19 +379,6 @@ def combine_vertical(input_dir: str = "output/screenshots/overlap", output_path:
     pil_image = Image.fromarray(combined_rgb)
     pil_image.save(output_path)
     print(f"\n✅ Saved combined image → {output_path}")
-    
-    # Also save as PDF
-    pdf_path = output_path.replace(".png", ".pdf")
-    pil_image.convert("RGB").save(pdf_path, "PDF")
-    print(f"✅ Saved PDF → {pdf_path}")
-    
-    # Save 2x resized version
-    new_width = pil_image.width * 2
-    new_height = pil_image.height * 2
-    pil_image_2x = pil_image.resize((new_width, new_height), Image.Resampling.LANCZOS)
-    output_2x_path = output_path.replace(".png", "_2x.png")
-    pil_image_2x.save(output_2x_path)
-    print(f"✅ Saved 2x image → {output_2x_path} ({new_width}x{new_height})")
 
 
 def process_overlap_iterative(input_dir: str = "output/screenshots/top-slice", output_dir: str = "output/screenshots/overlap"):

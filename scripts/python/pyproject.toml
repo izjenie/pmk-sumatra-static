@@ -8,6 +8,7 @@ dependencies = [
     "openai>=2.9.0",
     "pillow>=12.0.0",
     "playwright>=1.57.0",
+    "pytesseract>=0.3.13",
     "python-dotenv>=1.2.1",
 ]
 
