@@ -1,1 +1,0 @@
-{"displayFieldName":"","fieldAliases":{"value":"value"},"fields":[{"name":"value","type":"esriFieldTypeBigInteger","alias":"value"}],"features":[{"attributes":{"value":212}}]}
