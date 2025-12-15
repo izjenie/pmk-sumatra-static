@@ -569,6 +569,9 @@ export default function Home() {
           'kesehatan_dan_kebersihan': 'Kesehatan & Kebersihan',
           'perlengkapan_tenda_dan_shelter': 'Tenda & Shelter',
           'peralatan_dan_perlengkapan_teknis': 'Peralatan Teknis',
+          'pakaian_dan_perlengkapan_pribadi': 'Pakaian & Perlengkapan Pribadi',
+          'perlengkapan_dan_peralatan': 'Perlengkapan & Peralatan',
+          'paket_dan_kit_khusus': 'Paket & Kit Khusus',
         };
         const transformed: PmiStockCategories = {};
         if (data.data_stok) {
@@ -689,7 +692,7 @@ export default function Home() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
                       { name: 'BPBD Aceh', phone: '(0651)34783' },
-                      { name: 'Basaras Wilayah Aceh', phone: '(0651) 33876' },
+                      { name: 'Basarnas Wilayah Aceh', phone: '(0651) 33876' },
                       { name: 'PMI Aceh', phone: '0852 2315 0090' },
                       { name: 'BPBD Aceh Besar (Emergency)', phone: '0811 6713 113' },
                       { name: 'BPBD Aceh Besar (Emergency)', phone: '(0651) 92071' },
