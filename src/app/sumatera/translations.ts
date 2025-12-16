@@ -40,7 +40,7 @@ export const translations = {
       clickToCall: 'Klik nomor telepon untuk langsung menghubungi posko',
     },
     callCenterSumut: {
-      title: 'Call Center BPBD Sumatera Utara',
+      title: 'Call Center BPBD',
       subtitle: 'Kabupaten/Kota & Instansi Terkait',
       nationalSar: 'Badan SAR Nasional',
     },
@@ -156,7 +156,7 @@ export const translations = {
       clickToCall: 'Click phone number to call the post directly',
     },
     callCenterSumut: {
-      title: 'North Sumatra BPBD Call Center',
+      title: 'BPBD Call Center',
       subtitle: 'Districts/Cities & Related Agencies',
       nationalSar: 'National Search and Rescue Agency',
     },

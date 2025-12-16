@@ -451,6 +451,73 @@ const posPengungsianData = {
   ],
 };
 
+const callCenterBPBD = {
+  'Aceh': [
+    { kota: "Aceh Barat", contacts: [{ nama: "BPBD", jabatan: "", no: "(0655) 7551413" }] },
+    { kota: "Aceh Besar", contacts: [{ nama: "BPBD", jabatan: "", no: "0811 6713 113" }] },
+    { kota: "Aceh Jaya", contacts: [{ nama: "BPBD", jabatan: "", no: "0811 6899 113" }] },
+    { kota: "Aceh Selatan", contacts: [{ nama: "BPBD", jabatan: "", no: "(0656) 322797 " }] },
+    { kota: "Aceh Tengah", contacts: [{ nama: "BPBD", jabatan: "", no: "0812 6425 7378" }] },
+    { kota: "Aceh Tenggara", contacts: [{ nama: "BPBD", jabatan: "", no: "(0629) 21741" }] },
+    { kota: "Aceh Timur", contacts: [{ nama: "BPBD", jabatan: "", no: "0823 2466 8545" }] },
+    { kota: "Aceh Utara", contacts: [{ nama: "BPBD", jabatan: "", no: "(0645) 31710" }] },
+    { kota: "Bireun", contacts: [{ nama: "BPBD", jabatan: "", no: "(0644) 323535" }] },
+    { kota: "Gayo Lues", contacts: [{ nama: "BPBD", jabatan: "", no: "(0642) 21390" }] },
+    { kota: "Kota Banda Aceh", contacts: [{ nama: "BPBD", jabatan: "", no: " 0822 7670 5800" }] },
+    { kota: "Kota Lhokseumawe", contacts: [{ nama: "BPBD", jabatan: "", no: " 0851 0500 4113" }] },
+    { kota: "Langsa", contacts: [{ nama: "BPBD", jabatan: "", no: "(0641) 20113113" }] },
+    { kota: "Pidie", contacts: [{ nama: "BPBD", jabatan: "", no: "(0653) 7829 567" }] },
+    { kota: "Aceh Singkil", contacts: [{ nama: "Pusdalops", jabatan: "", no: "0852 7691 3181" }] },
+  ],
+  'Sumatera Utara': [
+    { kota: "Tapanuli Selatan", contacts: [{ nama: "Idham", jabatan: "Kabid Darlog", no: "0813 6155 8157" }] },
+    { kota: "Tapanuli Utara", contacts: [{ nama: "Kabid Darlog", jabatan: "", no: "0823 6596 6554" }, { nama: "Septian", jabatan: "Staff", no: "0823 6280 5391" }] },
+    { kota: "Tapanuli Tengah", contacts: [{ nama: "Rahman Siregar", jabatan: "Kalaksa", no: "0812 6497 1117" }, { nama: "Erianto Tambunan", jabatan: "Kabid Darlog", no: "0822 7719 4959" }] },
+    { kota: "Mandailing Natal", contacts: [{ nama: "Mukshin", jabatan: "Kalaksa", no: "0812 6368 9444" }, { nama: "Ibrahim", jabatan: "Kabid Darlog", no: "0822 7709 3939" }] },
+    { kota: "Padang Sidimpuan", contacts: [{ nama: "Arfan", jabatan: "Kalaksa", no: "0812 6797 5913" }, { nama: "Nazaruddin", jabatan: "Kabid Darlog", no: "0821 6605 4989" }] },
+    { kota: "Medan", contacts: [{ nama: "BPBD", jabatan: "", no: "0813 7080 0880" }] },
+    { kota: "Deli Serdang", contacts: [{ nama: "Arif Tarigan", jabatan: "Kabid Darlog", no: "0812 6066 4433" }, { nama: "BPBD", jabatan: "", no: "0811 6782 022" }] },
+    { kota: "Tebing Tinggi", contacts: [{ nama: "Iman Hebat", jabatan: "Kabid Darlog", no: "0821 6559 1206" }] },
+    { kota: "Serdang Bedagai", contacts: [{ nama: "Marnaggok", jabatan: "Kabid Darlog", no: "0813 7012 5284" }] },
+    { kota: "Langkat", contacts: [{ nama: "Call Center", jabatan: "", no: "0811 6571 117" }] },
+    { kota: "Sibolga", contacts: [{ nama: "Dores", jabatan: "Kabid Darlog", no: "0823 9832 9981" }] },
+    { kota: "Phakpak Barat", contacts: [{ nama: "J. Jaloho", jabatan: "Kabid Darlog", no: "0821 6047 0067" }] },
+    { kota: "Nias Selatan", contacts: [{ nama: "Mission Laia", jabatan: "Sekretaris", no: "0821 6099 0000" }] },
+    { kota: "Humbang Hasundutan", contacts: [{ nama: "Sabar Purba", jabatan: "Kalaksa", no: "0812 6007 4314" }, { nama: "Marnok", jabatan: "Staff", no: "0812 6912 3313" }] },
+    { kota: "Binjai", contacts: [{ nama: "Mila", jabatan: "Kabid Darlog", no: "0812 6533 4355" }, { nama: "Call Center", jabatan: "", no: "0811 6116 113" }] },
+    { kota: "Gunung Sitoli", contacts: [{ nama: "Eqoatur Jaya Daili", jabatan: "Kalaksa", no: "0812 6066 1771" }, { nama: "Adiman", jabatan: "Sekretaris", no: "0813 6215 8333" }] },
+    { kota: "Asahan", contacts: [{ nama: "BPBD", jabatan: "", no: "0822 1181 4212" }] },
+    { kota: "Batu Bara", contacts: [{ nama: "BPBD", jabatan: "", no: "0821 6662 3813" }] },
+  ],
+  'Sumatera Barat': [
+    { kota: "Kota Padang", contacts: [{ nama: "BPBD", jabatan: "", no: "0858 9152 2181" }] },
+    { kota: "Padang Pariaman", contacts: [{ nama: "BPBD", jabatan: "", no: "0811 6662 114" }] },
+    { kota: "Pesisir Selatan", contacts: [{ nama: "BPBD", jabatan: "", no: "0852 6938 0950" }] },
+    { kota: "Provinsi Sumatera Barat", contacts: [{ nama: "BPBD", jabatan: "", no: "(0751) 890721" }] },
+  ],
+}
+
+const emergencyServices = {
+  'Aceh': [
+    { nama: "BNPB", kontak: "117", icon: "fa-shield-alt", color: "from-red-600 to-red-800" },
+    { nama: "PUSDALOPS BPBD Aceh Tengah", kontak: "0812 6425 7378", icon: "fa-broadcast-tower", color: "from-orange-500 to-orange-700" },
+    { nama: "PMI", kontak: "0852 6612 2520", icon: "fa-first-aid", color: "from-red-500 to-red-700" },
+    { nama: "Damkar BPBK Aceh Jaya", kontak: "0811 6792 113", icon: "fa-fire-extinguisher", color: "from-orange-600 to-red-600" }
+  ],
+  'Sumatera Utara': [
+    { nama: "BNPB", kontak: "117", icon: "fa-shield-alt", color: "from-red-600 to-red-800" },
+    { nama: "PUSDALOPS PB BPBD Sumut", kontak: "0811 6221 733", icon: "fa-broadcast-tower", color: "from-orange-500 to-orange-700" },
+    { nama: "PMI", kontak: "0852 6612 2520", icon: "fa-first-aid", color: "from-red-500 to-red-700" },
+    { nama: "Damkar Medan", kontak: "0811 6566 113", icon: "fa-fire-extinguisher", color: "from-orange-600 to-red-600" }
+  ],
+  'Sumatera Barat': [
+    { nama: "BNPB", kontak: "117", icon: "fa-shield-alt", color: "from-red-600 to-red-800" },
+    { nama: "PUSDALOPS PB BPBD Sumbar", kontak: "(0751) 890720", icon: "fa-broadcast-tower", color: "from-orange-500 to-orange-700" },
+    { nama: "PMI", kontak: "0852 6612 2520", icon: "fa-first-aid", color: "from-red-500 to-red-700" },
+    { nama: "Damkar Kota Padang", kontak: "0811 6606 113", icon: "fa-fire-extinguisher", color: "from-orange-600 to-red-600" }
+  ],
+}
+
 export default function Home() {
   const [language, setLanguage] = useState<Language>('id');
   const t = getTranslation(language);
@@ -1036,7 +1103,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Call Center BPBD Sumatera Utara Section */}
+      {/* Call Center BPBD Section */}
       <section className="py-16 bg-[#1B1B1B]">
         <div className="container mx-auto px-4 sm:px-6 md:px-10">
           <div className="text-center mb-10">
@@ -1047,26 +1114,6 @@ export default function Home() {
               </h2>
             </div>
             <p className="text-gray-400 text-lg">{t.callCenterSumut.subtitle}</p>
-          </div>
-
-          {/* Main BPBD & Emergency Services */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            {[
-              { nama: "BNPB", kontak: "117", icon: "fa-shield-alt", color: "from-red-600 to-red-800" },
-              { nama: "PUSDALOPS PB BPBD Sumut", kontak: "0811 6221 733", icon: "fa-broadcast-tower", color: "from-orange-500 to-orange-700" },
-              { nama: "PMI", kontak: "0852 6612 2520", icon: "fa-first-aid", color: "from-red-500 to-red-700" },
-              { nama: "DAMKAR Medan", kontak: "0811 6566 113", icon: "fa-fire-extinguisher", color: "from-orange-600 to-red-600" },
-            ].map((item, index) => (
-              <a
-                key={index}
-                href={`tel:${item.kontak.replace(/\s/g, '')}`}
-                className={`bg-gradient-to-br ${item.color} rounded-xl p-4 text-center hover:scale-105 transition-transform shadow-lg`}
-              >
-                <i className={`fas ${item.icon} text-3xl text-white mb-2`}></i>
-                <h3 className="font-bold text-white text-sm mb-1">{item.nama}</h3>
-                <p className="text-white/90 font-mono text-lg font-bold">{item.kontak}</p>
-              </a>
-            ))}
           </div>
 
           {/* BASARNAS Special */}
@@ -1096,54 +1143,70 @@ export default function Home() {
             </div>
           </div>
 
+          <div className="flex flex-wrap justify-center gap-2 mb-6">
+            {['Aceh', 'Sumatera Utara', 'Sumatera Barat'].map((region) => (
+              <button
+                key={region}
+                onClick={() => setSelectedRegion(region)}
+                className={`px-6 py-3 rounded-xl font-semibold transition-all ${selectedRegion === region
+                    ? 'bg-[#1B4D89] text-white shadow-lg'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  }`}
+              >
+                {t.provinces[region as keyof typeof t.provinces] || region}
+              </button>
+            ))}
+          </div>
+
+          {/* Main BPBD & Emergency Services */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            {(emergencyServices[selectedRegion as keyof typeof emergencyServices] || []).map((item, index) => (
+              <a
+                key={index}
+                href={`tel:${item.kontak.replace(/\s/g, '')}`}
+                className={`bg-gradient-to-br ${item.color} rounded-xl p-4 text-center hover:scale-105 transition-transform shadow-lg`}
+              >
+                <i className={`fas ${item.icon} text-3xl text-white mb-2`}></i>
+                <h3 className="font-bold text-white text-sm mb-1">{item.nama}</h3>
+                <p className="text-white/90 font-mono text-lg font-bold">{item.kontak}</p>
+              </a>
+            ))}
+          </div>
+
           {/* Kab/Kota Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { kota: "Tapanuli Selatan", contacts: [{ nama: "Idham", jabatan: "Kabid Darlog", no: "0813 6155 8157" }] },
-              { kota: "Tapanuli Utara", contacts: [{ nama: "Kabid Darlog", jabatan: "", no: "0823 6596 6554" }, { nama: "Septian", jabatan: "Staff", no: "0823 6280 5391" }] },
-              { kota: "Tapanuli Tengah", contacts: [{ nama: "Rahman Siregar", jabatan: "Kalaksa", no: "0812 6497 1117" }, { nama: "Erianto Tambunan", jabatan: "Kabid Darlog", no: "0822 7719 4959" }] },
-              { kota: "Mandailing Natal", contacts: [{ nama: "Mukshin", jabatan: "Kalaksa", no: "0812 6368 9444" }, { nama: "Ibrahim", jabatan: "Kabid Darlog", no: "0822 7709 3939" }] },
-              { kota: "Padang Sidimpuan", contacts: [{ nama: "Arfan", jabatan: "Kalaksa", no: "0812 6797 5913" }, { nama: "Nazaruddin", jabatan: "Kabid Darlog", no: "0821 6605 4989" }] },
-              { kota: "Medan", contacts: [{ nama: "BPBD", jabatan: "", no: "0813 7080 0880" }] },
-              { kota: "Deli Serdang", contacts: [{ nama: "Arif Tarigan", jabatan: "Kabid Darlog", no: "0812 6066 4433" }, { nama: "BPBD", jabatan: "", no: "0811 6782 022" }] },
-              { kota: "Tebing Tinggi", contacts: [{ nama: "Iman Hebat", jabatan: "Kabid Darlog", no: "0821 6559 1206" }] },
-              { kota: "Serdang Bedagai", contacts: [{ nama: "Marnaggok", jabatan: "Kabid Darlog", no: "0813 7012 5284" }] },
-              { kota: "Langkat", contacts: [{ nama: "Call Center", jabatan: "", no: "0811 6571 117" }] },
-              { kota: "Sibolga", contacts: [{ nama: "Dores", jabatan: "Kabid Darlog", no: "0823 9832 9981" }] },
-              { kota: "Phakpak Barat", contacts: [{ nama: "J. Jaloho", jabatan: "Kabid Darlog", no: "0821 6047 0067" }] },
-              { kota: "Nias Selatan", contacts: [{ nama: "Mission Laia", jabatan: "Sekretaris", no: "0821 6099 0000" }] },
-              { kota: "Humbang Hasundutan", contacts: [{ nama: "Sabar Purba", jabatan: "Kalaksa", no: "0812 6007 4314" }, { nama: "Marnok", jabatan: "Staff", no: "0812 6912 3313" }] },
-              { kota: "Binjai", contacts: [{ nama: "Mila", jabatan: "Kabid Darlog", no: "0812 6533 4355" }, { nama: "Call Center", jabatan: "", no: "0811 6116 113" }] },
-              { kota: "Gunung Sitoli", contacts: [{ nama: "Eqoatur Jaya Daili", jabatan: "Kalaksa", no: "0812 6066 1771" }, { nama: "Adiman", jabatan: "Sekretaris", no: "0813 6215 8333" }] },
-              { kota: "Asahan", contacts: [{ nama: "BPBD", jabatan: "", no: "0822 1181 4212" }] },
-              { kota: "Batu Bara", contacts: [{ nama: "BPBD", jabatan: "", no: "0821 6662 3813" }] },
-            ].map((item, index) => (
-              <div key={index} className="bg-[#2A2A2A] rounded-xl overflow-hidden border border-gray-700 hover:border-[#D22730] transition-colors">
-                <div className="bg-gradient-to-r from-[#3A3A3A] to-[#2A2A2A] px-4 py-3 border-b border-gray-700">
-                  <h3 className="font-bold text-white text-lg flex items-center gap-2">
-                    <i className="fas fa-map-marker-alt text-[#D22730] text-sm"></i>
-                    {item.kota}
-                  </h3>
-                </div>
-                <div className="p-4 space-y-3">
-                  {item.contacts.map((contact, idx) => (
-                    <div key={idx} className="flex items-center justify-between gap-3">
-                      <div className="flex-1 min-w-0">
-                        <p className="text-white font-medium text-sm truncate">{contact.nama}</p>
-                        {contact.jabatan && <p className="text-gray-400 text-xs">{contact.jabatan}</p>}
+          <div className="overflow-y-auto max-h-[500px] pr-2" style={{ scrollbarWidth: 'thin' }}>
+            <div className="overflow-y-auto max-h-[500px] pr-2" style={{ scrollbarWidth: 'thin' }}>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" >
+                {(callCenterBPBD[selectedRegion as keyof typeof callCenterBPBD] || [])
+                  .map((item, idx) => (
+                    <div key={idx} className="bg-[#2A2A2A] rounded-xl overflow-hidden border border-gray-700 hover:border-[#D22730] transition-colors">
+                      <div className="bg-gradient-to-r from-[#3A3A3A] to-[#2A2A2A] px-4 py-3 border-b border-gray-700">
+                        <h3 className="font-bold text-white text-lg flex items-center gap-2">
+                          <i className="fas fa-map-marker-alt text-[#D22730] text-sm"></i>
+                          {item.kota}
+                        </h3>
                       </div>
-                      <a
-                        href={`tel:${contact.no.replace(/\s/g, '')}`}
-                        className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#1da851] text-white px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors whitespace-nowrap"
-                      >
-                        <i className="fas fa-phone text-xs"></i>
-                        {contact.no}
-                      </a>
+                      <div className="p-4 space-y-3">
+                        {item.contacts.map((contact, idx) => (
+                          <div key={idx} className="flex items-center justify-between gap-3">
+                            <div className="flex-1 min-w-0">
+                              <p className="text-white font-medium text-sm truncate">{contact.nama}</p>
+                              {contact.jabatan && <p className="text-gray-400 text-xs">{contact.jabatan}</p>}
+                            </div>
+                            <a
+                              href={`tel:${contact.no.replace(/\s/g, '')}`}
+                              className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#1da851] text-white px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors whitespace-nowrap"
+                            >
+                              <i className="fas fa-phone text-xs"></i>
+                              {contact.no}
+                            </a>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   ))}
-                </div>
               </div>
-            ))}
+            </div>
           </div>
 
           <div className="text-center mt-8">
