@@ -1,5 +1,5 @@
 {
-  "last_update": "16 Desember 2025 pukul 20.34",
+  "last_update": "16 Desember 2025 pukul 14.38",
   "data_stok": {
     "makanan_dan_minuman": [
       {
@@ -9,22 +9,22 @@
       },
       {
         "nama": "AIR MINERAL",
-        "qty": 9729,
+        "qty": 9064,
         "unit": "KARTON"
       },
       {
         "nama": "BERAS",
-        "qty": 812624,
+        "qty": 810644,
         "unit": "KG"
       },
       {
         "nama": "BISKUIT",
-        "qty": 180353,
+        "qty": 179944,
         "unit": "KARTON"
       },
       {
         "nama": "BUBUR BAYI",
-        "qty": 519,
+        "qty": 522,
         "unit": "KARTON"
       },
       {
@@ -43,6 +43,11 @@
         "unit": "KALENG"
       },
       {
+        "nama": "ENERGEN",
+        "qty": 9,
+        "unit": "PACK"
+      },
+      {
         "nama": "GARAM",
         "qty": 50,
         "unit": "KARTON"
@@ -54,11 +59,11 @@
       },
       {
         "nama": "IKAN KALENG",
-        "qty": 225,
+        "qty": 255,
         "unit": "KALENG"
       },
       {
-        "nama": "KECAP MANIS",
+        "nama": "KACAP MANIS",
         "qty": 39,
         "unit": "KARTON"
       },
@@ -69,12 +74,12 @@
       },
       {
         "nama": "KORNET",
-        "qty": 9516,
+        "qty": 9468,
         "unit": "KALENG"
       },
       {
         "nama": "KURMA",
-        "qty": 57,
+        "qty": 95,
         "unit": "BOX"
       },
       {
@@ -89,22 +94,22 @@
       },
       {
         "nama": "MAKANAN RINGAN",
-        "qty": 129556,
+        "qty": 129602,
         "unit": "KARTON"
       },
       {
         "nama": "MAKANAN SIAP SAJI",
-        "qty": 44,
+        "qty": 45,
         "unit": "KARTON"
       },
       {
         "nama": "MIE INSTAN",
-        "qty": 16055,
+        "qty": 15719,
         "unit": "KARTON"
       },
       {
         "nama": "MINUMAN ENERGY",
-        "qty": 7347,
+        "qty": 7947,
         "unit": "PCS"
       },
       {
@@ -114,22 +119,22 @@
       },
       {
         "nama": "MINUMAN KEMASAN",
-        "qty": 7,
-        "unit": "KARTON"
-      },
-      {
-        "nama": "MINUMAN SACHET",
         "qty": 217,
         "unit": "KARTON"
       },
       {
-        "nama": "MINUMAN SEREAL INSTAN",
-        "qty": 872,
+        "nama": "MINUMAN SACHET",
+        "qty": 800,
         "unit": "PCS"
       },
       {
+        "nama": "MINUMAN SEREAL INSTAN",
+        "qty": 1513,
+        "unit": "KARTON"
+      },
+      {
         "nama": "MINYAK GORENG 1L",
-        "qty": 1626,
+        "qty": 1513,
         "unit": "KARTON"
       },
       {
@@ -149,22 +154,17 @@
       },
       {
         "nama": "SARDEN",
-        "qty": 2573,
-        "unit": "KARTON"
-      },
-      {
-        "nama": "SOSIS",
-        "qty": 557,
+        "qty": 2572,
         "unit": "KARTON"
       },
       {
         "nama": "SUSU BUBUK",
-        "qty": 441,
+        "qty": 297,
         "unit": "KARTON"
       },
       {
         "nama": "SUSU FORMULA",
-        "qty": 16,
+        "qty": 17,
         "unit": "KARTON"
       },
       {
@@ -179,7 +179,7 @@
       },
       {
         "nama": "SUSU KOTAK",
-        "qty": 4302,
+        "qty": 4278,
         "unit": "KARTON"
       },
       {
@@ -189,7 +189,7 @@
       },
       {
         "nama": "TEH CELUP",
-        "qty": 199,
+        "qty": 207,
         "unit": "KARTON"
       },
       {
@@ -245,8 +245,8 @@
         "unit": "PCS"
       },
       {
-        "nama": "HYGIENE AND DISINFEKTAN KIT",
-        "qty": 2305,
+        "nama": "HYGIENE KIT",
+        "qty": 9193,
         "unit": "BOX"
       },
       {
@@ -263,6 +263,11 @@
         "nama": "KARBOL",
         "qty": 10,
         "unit": "KARTON"
+      },
+      {
+        "nama": "KESET ANTI SLIP",
+        "qty": 800,
+        "unit": "PCS"
       },
       {
         "nama": "LOTION ANTI NYAMUK",
@@ -295,9 +300,14 @@
         "unit": "PCS"
       },
       {
+        "nama": "MEDIA FILTER ZEOLIT",
+        "qty": 4,
+        "unit": "UNIT"
+      },
+      {
         "nama": "MENSTRUAL HYGIENE",
-        "qty": 1272,
-        "unit": "PCS"
+        "qty": 4,
+        "unit": "BOX"
       },
       {
         "nama": "OBAT NYAMUK",
@@ -306,7 +316,7 @@
       },
       {
         "nama": "OBAT-OBATAN",
-        "qty": 1160,
+        "qty": 1159,
         "unit": "KARTON"
       },
       {
@@ -315,28 +325,23 @@
         "unit": "BOTOL"
       },
       {
-        "nama": "OXYGEN CONCENTRATOR",
-        "qty": 10,
-        "unit": "UNIT"
-      },
-      {
         "nama": "OXYMETER",
         "qty": 270,
         "unit": "PCS"
       },
       {
         "nama": "PASTA GIGI",
-        "qty": 64,
+        "qty": 62,
         "unit": "KARTON"
       },
       {
         "nama": "PASTA GIGI",
-        "qty": 10032,
+        "qty": 10060,
         "unit": "PCS"
       },
       {
         "nama": "PEMBALUT WANITA",
-        "qty": 1110,
+        "qty": 956,
         "unit": "KARTON"
       },
       {
@@ -346,7 +351,7 @@
       },
       {
         "nama": "PEMBALUT WANITA",
-        "qty": 7271,
+        "qty": 3472,
         "unit": "PCS"
       },
       {
@@ -360,14 +365,14 @@
         "unit": "KARTON"
       },
       {
-        "nama": "PEL LANTAI",
+        "nama": "PENGKI",
         "qty": 800,
         "unit": "PCS"
       },
       {
-        "nama": "PELUMAS KENDARAAN",
-        "qty": 50,
-        "unit": "PAIL"
+        "nama": "PERALATAN KEBERSIHAN",
+        "qty": 187,
+        "unit": "UNIT"
       },
       {
         "nama": "PHBS",
@@ -376,17 +381,17 @@
       },
       {
         "nama": "POPOK ANAK",
-        "qty": 3345,
+        "qty": 3329,
         "unit": "KARTON"
       },
       {
         "nama": "POPOK DEWASA",
-        "qty": 318,
+        "qty": 290,
         "unit": "KARTON"
       },
       {
         "nama": "SABUN BATANG",
-        "qty": 728,
+        "qty": 252,
         "unit": "PCS"
       },
       {
@@ -396,7 +401,7 @@
       },
       {
         "nama": "SABUN CUCI",
-        "qty": 43,
+        "qty": 22,
         "unit": "KARTON"
       },
       {
@@ -411,12 +416,22 @@
       },
       {
         "nama": "SABUN MANDI",
-        "qty": 1215,
+        "qty": 1250,
         "unit": "BOX"
       },
       {
         "nama": "SABUN MANDI CAIR",
         "qty": 1176,
+        "unit": "PCS"
+      },
+      {
+        "nama": "SAPU LANTAI",
+        "qty": 800,
+        "unit": "PCS"
+      },
+      {
+        "nama": "SAPU LIDI GAGANG KAYU",
+        "qty": 800,
         "unit": "PCS"
       },
       {
@@ -446,12 +461,17 @@
       },
       {
         "nama": "SHAMPO",
-        "qty": 3976,
+        "qty": 3993,
         "unit": "BOTOL"
       },
       {
         "nama": "SHOES COVER",
         "qty": 625,
+        "unit": "PCS"
+      },
+      {
+        "nama": "SIKAT GAGANG",
+        "qty": 800,
         "unit": "PCS"
       },
       {
@@ -461,8 +481,13 @@
       },
       {
         "nama": "SIKAT GIGI",
-        "qty": 10196,
+        "qty": 10484,
         "unit": "PCS"
+      },
+      {
+        "nama": "SOSIS",
+        "qty": 557,
+        "unit": "KARTON"
       }
     ],
     "pakaian_dan_perlengkapan_pribadi": [
@@ -488,17 +513,17 @@
       },
       {
         "nama": "CELANA DALAM ANAK",
-        "qty": 2,
-        "unit": "BALE"
+        "qty": 5021,
+        "unit": "PCS"
       },
       {
         "nama": "CELANA DALAM PRIA",
-        "qty": 5261,
+        "qty": 5021,
         "unit": "PCS"
       },
       {
         "nama": "CELANA DALAM WANITA",
-        "qty": 28434,
+        "qty": 28194,
         "unit": "PCS"
       },
       {
@@ -528,12 +553,12 @@
       },
       {
         "nama": "HANDUK",
-        "qty": 134,
+        "qty": 132,
         "unit": "BALE"
       },
       {
         "nama": "HANDUK",
-        "qty": 1159,
+        "qty": 1111,
         "unit": "PCS"
       },
       {
@@ -563,33 +588,13 @@
       },
       {
         "nama": "KAOS KAKI",
-        "qty": 219,
+        "qty": 220,
         "unit": "KARTON"
       },
       {
-        "nama": "KASUR C2025",
-        "qty": 783,
-        "unit": "UNIT"
-      },
-      {
-        "nama": "KASUR LANTAI",
-        "qty": 382,
-        "unit": "UNIT"
-      },
-      {
         "nama": "KERUDUNG",
-        "qty": 45,
+        "qty": 44,
         "unit": "BOX"
-      },
-      {
-        "nama": "KESET ANTI SLIP",
-        "qty": 800,
-        "unit": "PCS"
-      },
-      {
-        "nama": "KNAPACK",
-        "qty": 24,
-        "unit": "UNIT"
       },
       {
         "nama": "LAP KANEBO KENMASTER",
@@ -598,7 +603,7 @@
       },
       {
         "nama": "PAKAIAN",
-        "qty": 207,
+        "qty": 214,
         "unit": "BALE"
       },
       {
@@ -608,27 +613,32 @@
       },
       {
         "nama": "PAKAIAN DALAM WANITA",
-        "qty": 9658,
+        "qty": 9518,
         "unit": "PCS"
       },
       {
         "nama": "PAKAIAN DEWASA",
-        "qty": 35584,
+        "qty": 21934,
         "unit": "PCS"
       },
       {
         "nama": "SANDAL JEPIT",
-        "qty": 253,
+        "qty": 3,
         "unit": "PCS"
       },
       {
         "nama": "SARUNG",
-        "qty": 63165,
+        "qty": 62847,
         "unit": "PCS"
       },
       {
         "nama": "SELIMUT",
-        "qty": 7724,
+        "qty": 143,
+        "unit": "BALE"
+      },
+      {
+        "nama": "SELIMUT",
+        "qty": 7789,
         "unit": "PCS"
       },
       {
@@ -652,11 +662,6 @@
         "unit": "PCS"
       },
       {
-        "nama": "TAS EVAKUASI",
-        "qty": 249,
-        "unit": "PCS"
-      },
-      {
         "nama": "TAS PINGGANG",
         "qty": 247,
         "unit": "PCS"
@@ -665,7 +670,7 @@
     "perlengkapan_dan_peralatan": [
       {
         "nama": "ALAT TULIS",
-        "qty": 13,
+        "qty": 12,
         "unit": "BOX"
       },
       {
@@ -689,6 +694,11 @@
         "unit": "UNIT"
       },
       {
+        "nama": "COVER TENDA RUB HALL",
+        "qty": 2,
+        "unit": "PCS"
+      },
+      {
         "nama": "EMBER",
         "qty": 20,
         "unit": "PCS"
@@ -710,7 +720,7 @@
       },
       {
         "nama": "GENSET",
-        "qty": 2,
+        "qty": 4,
         "unit": "UNIT"
       },
       {
@@ -744,6 +754,11 @@
         "unit": "UNIT"
       },
       {
+        "nama": "HANDY TALKY MOTOROLA",
+        "qty": 98,
+        "unit": "UNIT"
+      },
+      {
         "nama": "HEAD IMMOBILIZATION",
         "qty": 3,
         "unit": "UNIT"
@@ -774,6 +789,16 @@
         "unit": "PCS"
       },
       {
+        "nama": "KASUR C2025",
+        "qty": 773,
+        "unit": "UNIT"
+      },
+      {
+        "nama": "KASUR LANTAI",
+        "qty": 324,
+        "unit": "UNIT"
+      },
+      {
         "nama": "KELAMBU",
         "qty": 10615,
         "unit": "PCS"
@@ -786,6 +811,11 @@
       {
         "nama": "KETEL PACK",
         "qty": 249,
+        "unit": "UNIT"
+      },
+      {
+        "nama": "KNAPACK",
+        "qty": 24,
         "unit": "UNIT"
       },
       {
@@ -809,14 +839,14 @@
         "unit": "UNIT"
       },
       {
-        "nama": "MANUAL WATER PURIFIER (HAND",
-        "qty": 8,
+        "nama": "MANUAL WATER PURIFIER (HAND PUMP)",
+        "qty": 1,
         "unit": "UNIT"
       },
       {
-        "nama": "MEDIA FILTER ZEOLIT",
-        "qty": 4,
-        "unit": "BOX"
+        "nama": "MATRAS",
+        "qty": 1373,
+        "unit": "PCS"
       },
       {
         "nama": "MESIN FOGGER",
@@ -824,23 +854,33 @@
         "unit": "UNIT"
       },
       {
-        "nama": "MODUL KOMUNIKASI STARLINK",
-        "qty": 47,
+        "nama": "MODUL KOMUNIKASI",
+        "qty": 10,
         "unit": "UNIT"
       },
       {
         "nama": "NESTING",
-        "qty": 3,
-        "unit": "TONG"
+        "qty": 47,
+        "unit": "UNIT"
       },
       {
-        "nama": "OLI",
+        "nama": "OXYGEN CONCENTRATOR",
         "qty": 10,
-        "unit": "DRUM"
+        "unit": "UNIT"
       },
       {
         "nama": "PACUL",
         "qty": 15,
+        "unit": "UNIT"
+      },
+      {
+        "nama": "PALET",
+        "qty": 26,
+        "unit": "UNIT"
+      },
+      {
+        "nama": "PALET KAYU",
+        "qty": 12,
         "unit": "UNIT"
       },
       {
@@ -854,9 +894,14 @@
         "unit": "ROL"
       },
       {
-        "nama": "PENGKI",
+        "nama": "PEL LANTAI",
         "qty": 800,
         "unit": "PCS"
+      },
+      {
+        "nama": "PELUMAS KENDARAAN",
+        "qty": 50,
+        "unit": "PAIL"
       },
       {
         "nama": "PERAHU KARET",
@@ -867,11 +912,6 @@
         "nama": "PERALATAN DAPUR",
         "qty": 60,
         "unit": "BOX"
-      },
-      {
-        "nama": "PERALATAN KEBERSIHAN",
-        "qty": 187,
-        "unit": "UNIT"
       },
       {
         "nama": "PERALATAN MAKAN",
@@ -885,7 +925,7 @@
       },
       {
         "nama": "PERLENGKAPAN DAPUR UMUM",
-        "qty": 5,
+        "qty": 1,
         "unit": "UNIT"
       },
       {
@@ -914,18 +954,38 @@
         "unit": "PCS"
       },
       {
-        "nama": "SAPU LANTAI",
-        "qty": 800,
+        "nama": "ROMPI BIRU",
+        "qty": 142,
         "unit": "PCS"
       },
       {
-        "nama": "SAPU LIDI GAGANG KAYU",
-        "qty": 800,
+        "nama": "ROMPI MERAH",
+        "qty": 1363,
         "unit": "PCS"
+      },
+      {
+        "nama": "ROMPI MERAH",
+        "qty": 25,
+        "unit": "UNIT"
       },
       {
         "nama": "SEKOP",
         "qty": 701,
+        "unit": "PCS"
+      },
+      {
+        "nama": "SEKOP LIPAT",
+        "qty": 249,
+        "unit": "PCS"
+      },
+      {
+        "nama": "SELANG FILTER",
+        "qty": 1,
+        "unit": "UNIT"
+      },
+      {
+        "nama": "SELANG KOMPRESOR",
+        "qty": 140,
         "unit": "PCS"
       },
       {
@@ -944,9 +1004,9 @@
         "unit": "UNIT"
       },
       {
-        "nama": "SIKAT GAGANG",
-        "qty": 800,
-        "unit": "PCS"
+        "nama": "SHELTER TOOL KIT",
+        "qty": 1100,
+        "unit": "BAG"
       },
       {
         "nama": "SKOP",
@@ -967,6 +1027,11 @@
         "nama": "STARLINK",
         "qty": 91,
         "unit": "UNIT"
+      },
+      {
+        "nama": "STIKER",
+        "qty": 4000,
+        "unit": "LEMBAR"
       },
       {
         "nama": "TABUNG FILTER",
@@ -1024,12 +1089,17 @@
         "unit": "UNIT"
       },
       {
+        "nama": "TAS EVAKUASI",
+        "qty": 249,
+        "unit": "PCS"
+      },
+      {
         "nama": "TENDA",
         "qty": 13,
         "unit": "UNIT"
       },
       {
-        "nama": "TENDA ALAS TENDA",
+        "nama": "TENDA ALAS",
         "qty": 12,
         "unit": "UNIT"
       },
@@ -1037,11 +1107,6 @@
         "nama": "TENDA EMERGENCY",
         "qty": 1,
         "unit": "UNIT"
-      },
-      {
-        "nama": "TENDA FAMILY",
-        "qty": 286,
-        "unit": "BAG"
       },
       {
         "nama": "TENDA GULUNG C2025",
@@ -1056,11 +1121,6 @@
       {
         "nama": "TENDA KELUARGA",
         "qty": 100,
-        "unit": "UNIT"
-      },
-      {
-        "nama": "TENDA MODULAR",
-        "qty": 450,
         "unit": "UNIT"
       }
     ],
@@ -1091,11 +1151,6 @@
         "unit": "BAG"
       },
       {
-        "nama": "HYGIENE KIT",
-        "qty": 9193,
-        "unit": "BOX"
-      },
-      {
         "nama": "KITCHEN KIT",
         "qty": 2950,
         "unit": "BOX"
@@ -1112,7 +1167,7 @@
       },
       {
         "nama": "PERLENGKAPAN BAYI",
-        "qty": 175,
+        "qty": 25,
         "unit": "BALE"
       },
       {
@@ -1122,7 +1177,7 @@
       },
       {
         "nama": "PERLENGKAPAN IBADAH",
-        "qty": 173,
+        "qty": 167,
         "unit": "BALE"
       },
       {
@@ -1132,7 +1187,7 @@
       },
       {
         "nama": "PERLENGKAPAN SEKOLAH",
-        "qty": 141,
+        "qty": 139,
         "unit": "BAG"
       },
       {
@@ -1146,15 +1201,15 @@
         "unit": "BAG"
       },
       {
-        "nama": "SHELTER TOOL KIT",
-        "qty": 1100,
+        "nama": "TENDA FAMILY",
+        "qty": 286,
         "unit": "BAG"
       }
     ],
     "lainnya": [
       {
         "nama": "AL-QURAN",
-        "qty": 5,
+        "qty": 11,
         "unit": "PCS"
       },
       {
@@ -1163,49 +1218,19 @@
         "unit": "PCS"
       },
       {
-        "nama": "COVER TENDA RUB HALL",
-        "qty": 2,
-        "unit": "PCS"
-      },
-      {
-        "nama": "HANDY TALKY MOTOROLA",
-        "qty": 98,
-        "unit": "UNIT"
-      },
-      {
         "nama": "MAINAN ANAK",
         "qty": 40,
         "unit": "PCS"
       },
       {
-        "nama": "PALET",
-        "qty": 26,
-        "unit": "UNIT"
+        "nama": "OU",
+        "qty": 10,
+        "unit": "DRUM"
       },
       {
-        "nama": "PALET KAYU",
-        "qty": 12,
-        "unit": "UNIT"
-      },
-      {
-        "nama": "ROMPI BIRU",
-        "qty": 142,
-        "unit": "PCS"
-      },
-      {
-        "nama": "ROMPI MERAH",
-        "qty": 1363,
-        "unit": "PCS"
-      },
-      {
-        "nama": "ROMPI MERAH",
-        "qty": 25,
-        "unit": "UNIT"
-      },
-      {
-        "nama": "STIKER",
-        "qty": 4000,
-        "unit": "LEMBAR"
+        "nama": "PERLENGKAPAN DAPUR",
+        "qty": 1,
+        "unit": "BAG"
       }
     ]
   }
