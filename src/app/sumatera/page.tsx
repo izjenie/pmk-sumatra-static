@@ -1014,7 +1014,7 @@ export default function Home() {
               {(() => {
                 const poskoData: Record<string, { kota: string; lokasi: string; nama: string; jabatan: string; kontak: string[] }[]> = {
                   'Aceh': [
-                    { kota: "Bener Meriah", lokasi: "Pusat Perkantoran Bener Meriah / Kantor Bupati", nama: "Riswandika", jabatan: "Sekda Bener Meriah", kontak: ["085277761777"] },
+                    // { kota: "Bener Meriah", lokasi: "Pusat Perkantoran Bener Meriah / Kantor Bupati", nama: "Riswandika", jabatan: "Sekda Bener Meriah", kontak: ["085277761777"] },
                     { kota: "Langsa", lokasi: "BPBD Langsa", nama: "Nursal", jabatan: "Kepala Pelaksana BPBD", kontak: ["08116777776"] },
                     { kota: "Pidie", lokasi: "BPBD Pidie", nama: "Rabiul", jabatan: "Kepala Pelaksana BPBD", kontak: ["0811687540"] },
                     { kota: "Aceh Tengah", lokasi: "Kantor Bupati", nama: "Kepala Pelaksana BPBD", jabatan: "", kontak: ["085312839906", "082272926272"] },
@@ -1117,7 +1117,7 @@ export default function Home() {
           </div>
 
           {/* BASARNAS Special */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-6 mb-8 shadow-lg">
+          {/* <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-6 mb-8 shadow-lg">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
@@ -1141,7 +1141,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="flex flex-wrap justify-center gap-2 mb-6">
             {['Aceh', 'Sumatera Utara', 'Sumatera Barat'].map((region) => (
@@ -1324,6 +1324,18 @@ export default function Home() {
               </h2>
             </div>
             <p className="text-sm text-gray-500">
+              <span className="font-semibold">
+                <a
+                  href="https://pmi.or.id/dashboard/stock"
+                  target="_blank"
+                  rel="noopener noreferrer"
+
+                >
+                  {t.pmiStock.source}: pmi.or.id/dashboard/stock →
+                </a>
+              </span>
+            </p>
+            <p className="text-sm text-gray-500">
               {t.pmiStock.lastUpdate}: <span className="font-semibold">{pmiLastUpdate || t.pmiStock.loading}</span>
             </p>
           </div>
@@ -1392,7 +1404,7 @@ export default function Home() {
             {/* Header with Image */}
             <div className="relative h-56 md:h-72 overflow-hidden">
               <img
-                src="/images/baznas-logistik.png"
+                src="/images/layanan-baznas.jpeg"
                 alt="Paket Logistik BAZNAS"
                 className="w-full h-full object-cover"
               />

@@ -52,7 +52,7 @@ export const translations = {
       notFound: 'Tidak ada pos pengungsian yang ditemukan',
     },
     pmiStock: {
-      title: 'Logistik Stok PMI',
+      title: 'Logistik Stok Penanganan Bencana',
       lastUpdate: 'Pembaruan Terakhir',
       loading: 'Memuat...',
       item: 'item',
@@ -168,7 +168,7 @@ export const translations = {
       notFound: 'No refugee camps found',
     },
     pmiStock: {
-      title: 'PMI Logistics Stock',
+      title: 'Disaster Relief Stock Logistics',
       lastUpdate: 'Last Update',
       loading: 'Loading...',
       item: 'items',
