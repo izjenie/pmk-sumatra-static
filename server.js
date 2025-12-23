@@ -84,7 +84,7 @@ function createSampleNews(id) {
 
 // Create sample categories if not exists
 function ensureCategoriesExist() {
-  const categoryPath = path.join(publicDir, 'category.json');
+  const categoryPath = path.join(newsDir, 'category.json');
   if (!fs.existsSync(categoryPath)) {
     const categories = [
       'Berita Utama',
@@ -121,7 +121,7 @@ function ensureImageExists(id) {
 // Get categories
 app.get('/api/categories', (req, res) => {
   ensureCategoriesExist();
-  const categoryPath = path.join(publicDir, 'category.json');
+  const categoryPath = path.join(newsDir, 'category.json');
   const categories = JSON.parse(fs.readFileSync(categoryPath, 'utf8'));
   res.json(categories);
 });
@@ -129,7 +129,7 @@ app.get('/api/categories', (req, res) => {
 // Get news by ID
 app.get('/api/news/:id', (req, res) => {
   const id = req.params.id;
-  const newsPath = path.join(publicDir, `news${id}.json`);
+  const newsPath = path.join(newsDir, `news${id}.json`);
 
   // Create sample data if file doesn't exist
   if (!fs.existsSync(newsPath)) {
@@ -145,7 +145,7 @@ app.get('/api/news/:id', (req, res) => {
 // Save news by ID
 app.post('/api/news/:id', (req, res) => {
   const id = req.params.id;
-  const newsPath = path.join(publicDir, `news${id}.json`);
+  const newsPath = path.join(newsDir, `news${id}.json`);
 
   try {
     fs.writeFileSync(newsPath, JSON.stringify(req.body, null, 2));
@@ -176,7 +176,7 @@ app.listen(PORT, () => {
   // Initialize sample data
   ensureCategoriesExist();
   for (let i = 1; i <= 6; i++) {
-    const newsPath = path.join(publicDir, `news${i}.json`);
+    const newsPath = path.join(newsDir, `news${i}.json`);
     if (!fs.existsSync(newsPath)) {
       const sampleData = createSampleNews(i);
       fs.writeFileSync(newsPath, JSON.stringify(sampleData, null, 2));
