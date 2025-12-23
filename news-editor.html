@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Editor</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+      --primary: 222.2 47.4% 11.2%;
+      --primary-foreground: 210 40% 98%;
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 222.2 84% 4.9%;
+      --radius: 0.5rem;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: hsl(var(--background));
+      color: hsl(var(--foreground));
+      line-height: 1.5;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      color: hsl(var(--muted-foreground));
+    }
+
+    .card {
+      background: hsl(var(--card));
+      border: 1px solid hsl(var(--border));
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid hsl(var(--border));
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-radius: calc(var(--radius) - 2px);
+      background: hsl(var(--secondary));
+      color: hsl(var(--secondary-foreground));
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      border: 1px solid hsl(var(--input));
+      border-radius: calc(var(--radius) - 2px);
+      background: hsl(var(--background));
+      transition: all 0.2s;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: hsl(var(--ring));
+      box-shadow: 0 0 0 3px hsl(var(--ring) / 0.1);
+    }
+
+    .form-textarea {
+      min-height: 150px;
+      resize: vertical;
+      font-family: inherit;
+    }
+
+    .image-upload-area {
+      border: 2px dashed hsl(var(--border));
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .image-upload-area:hover {
+      border-color: hsl(var(--ring));
+      background: hsl(var(--accent));
+    }
+
+    .image-upload-area input[type="file"] {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .image-preview {
+      max-width: 100%;
+      max-height: 300px;
+      margin-top: 1rem;
+      border-radius: var(--radius);
+      display: none;
+    }
+
+    .image-preview.show {
+      display: block;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-radius: calc(var(--radius) - 2px);
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      gap: 0.5rem;
+    }
+
+    .button-primary {
+      background: hsl(var(--primary));
+      color: hsl(var(--primary-foreground));
+    }
+
+    .button-primary:hover {
+      opacity: 0.9;
+    }
+
+    .button-secondary {
+      background: hsl(var(--secondary));
+      color: hsl(var(--secondary-foreground));
+    }
+
+    .button-secondary:hover {
+      background: hsl(var(--secondary) / 0.8);
+    }
+
+    .button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid hsl(var(--border));
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .alert {
+      padding: 1rem;
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      display: none;
+    }
+
+    .alert.show {
+      display: block;
+    }
+
+    .alert-success {
+      background: hsl(142.1 76.2% 36.3% / 0.1);
+      color: hsl(142.1 76.2% 36.3%);
+      border: 1px solid hsl(142.1 76.2% 36.3% / 0.2);
+    }
+
+    .alert-error {
+      background: hsl(var(--destructive) / 0.1);
+      color: hsl(var(--destructive));
+      border: 1px solid hsl(var(--destructive) / 0.2);
+    }
+
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: hsl(var(--muted-foreground));
+    }
+
+    .spinner {
+      border: 3px solid hsl(var(--border));
+      border-top: 3px solid hsl(var(--primary));
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .upload-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .upload-text {
+      color: hsl(var(--muted-foreground));
+      font-size: 0.875rem;
+    }
+
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      animation: fadeIn 0.2s ease-out;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+    }
+
+    .modal-content {
+      background: hsl(var(--card));
+      border-radius: var(--radius);
+      padding: 2rem;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      animation: slideIn 0.3s ease-out;
+      text-align: center;
+    }
+
+    .modal-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: hsl(var(--foreground));
+    }
+
+    .modal-message {
+      color: hsl(var(--muted-foreground));
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-button {
+      width: 100%;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📰 News Editor</h1>
+      <p>Kelola berita Anda dengan mudah</p>
+    </div>
+
+    <div id="alert" class="alert"></div>
+
+    <!-- Modal Dialog -->
+    <div id="modalOverlay" class="modal-overlay">
+      <div class="modal-content">
+        <div id="modalIcon" class="modal-icon"></div>
+        <h3 id="modalTitle" class="modal-title"></h3>
+        <p id="modalMessage" class="modal-message"></p>
+        <button id="modalButton" class="button button-primary modal-button">OK</button>
+      </div>
+    </div>
+
+
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Memuat data...</p>
+    </div>
+
+    <div id="editor" class="card" style="display: none;">
+      <div class="card-header">
+        <h2 class="card-title">Edit Berita</h2>
+        <span id="newsCounter" class="badge">News 1 of 6</span>
+      </div>
+
+      <form id="newsForm">
+        <div class="form-group">
+          <label class="form-label" for="title">Judul Berita</label>
+          <input type="text" id="title" class="form-input" placeholder="Masukkan judul berita" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="date">Tanggal</label>
+          <input type="text" id="date" class="form-input" placeholder="DD/MM/YYYY" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="category">Kategori</label>
+          <select id="category" class="form-select" required>
+            <option value="">Pilih kategori...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="content">Konten Berita</label>
+          <textarea id="content" class="form-textarea" placeholder="Tulis konten berita di sini..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Gambar</label>
+          <div class="image-upload-area" id="uploadArea">
+            <input type="file" id="imageInput" accept="image/*">
+            <div class="upload-icon">📷</div>
+            <div class="upload-text">Klik untuk upload gambar atau drag & drop</div>
+          </div>
+          <img id="imagePreview" class="image-preview" alt="Preview">
+        </div>
+
+        <button type="submit" class="button button-primary">
+          💾 Simpan Berita
+        </button>
+      </form>
+
+      <div class="navigation">
+        <div class="nav-buttons">
+          <button id="prevBtn" class="button button-secondary">
+            ← Sebelumnya
+          </button>
+          <button id="nextBtn" class="button button-secondary">
+            Selanjutnya →
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = 'http://localhost:3005/api';
+    let currentNewsId = 1;
+    let categories = [];
+    let currentImageFile = null;
+
+    // Initialize
+    async function init() {
+      try {
+        await loadCategories();
+        await loadNews(currentNewsId);
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('editor').style.display = 'block';
+      } catch (error) {
+        showModal('error', 'Gagal memuat data: ' + error.message);
+        document.getElementById('loading').style.display = 'none';
+      }
+    }
+
+    // Load categories
+    async function loadCategories() {
+      const response = await fetch(`${API_BASE}/categories`);
+      categories = await response.json();
+
+      const categorySelect = document.getElementById('category');
+      categorySelect.innerHTML = '<option value="">Pilih kategori...</option>';
+      categories.forEach(cat => {
+        const option = document.createElement('option');
+        option.value = cat;
+        option.textContent = cat;
+        categorySelect.appendChild(option);
+      });
+    }
+
+    // Load news
+    async function loadNews(id) {
+      try {
+        const response = await fetch(`${API_BASE}/news/${id}`);
+        const news = await response.json();
+
+        document.getElementById('title').value = news.title || '';
+        document.getElementById('date').value = news.date || getTodayDate();
+        document.getElementById('category').value = news.category || '';
+        document.getElementById('content').value = news.content || '';
+
+        // Load image
+        const imagePreview = document.getElementById('imagePreview');
+        const imagePath = `public/news/${news.image}`;
+
+        // Check if image is SVG or JPG
+        const svgPath = imagePath.replace('.jpg', '.svg');
+
+        // Try to load the image
+        const img = new Image();
+        img.onload = function () {
+          imagePreview.src = imagePath;
+          imagePreview.classList.add('show');
+        };
+        img.onerror = function () {
+          // Try SVG
+          const svgImg = new Image();
+          svgImg.onload = function () {
+            imagePreview.src = svgPath;
+            imagePreview.classList.add('show');
+          };
+          svgImg.onerror = function () {
+            imagePreview.classList.remove('show');
+          };
+          svgImg.src = svgPath;
+        };
+        img.src = imagePath;
+
+        updateCounter();
+        updateNavigationButtons();
+      } catch (error) {
+        showModal('error', 'Gagal memuat berita: ' + error.message);
+      }
+    }
+
+    // Save news
+    async function saveNews() {
+      try {
+        const newsData = {
+          title: document.getElementById('title').value,
+          date: document.getElementById('date').value,
+          category: document.getElementById('category').value,
+          content: document.getElementById('content').value,
+          image: `${currentNewsId}.jpg`
+        };
+
+        // Save news data
+        const response = await fetch(`${API_BASE}/news/${currentNewsId}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(newsData)
+        });
+
+        const result = await response.json();
+
+        // Upload image if selected
+        if (currentImageFile) {
+          const formData = new FormData();
+          formData.append('image', currentImageFile);
+
+          await fetch(`${API_BASE}/upload/${currentNewsId}`, {
+            method: 'POST',
+            body: formData
+          });
+        }
+
+        showModal('success', `News nomor ${currentNewsId} sudah berhasil disimpan!`);
+        currentImageFile = null;
+      } catch (error) {
+        showModal('error', 'Gagal menyimpan berita: ' + error.message);
+      }
+    }
+
+    // Get today's date in DD/MM/YYYY format
+    function getTodayDate() {
+      const today = new Date();
+      const day = String(today.getDate()).padStart(2, '0');
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const year = today.getFullYear();
+      return `${day}/${month}/${year}`;
+    }
+
+    // Update counter
+    function updateCounter() {
+      document.getElementById('newsCounter').textContent = `News ${currentNewsId} of 6`;
+    }
+
+    // Update navigation buttons
+    function updateNavigationButtons() {
+      document.getElementById('prevBtn').disabled = currentNewsId === 1;
+      document.getElementById('nextBtn').disabled = currentNewsId === 6;
+    }
+
+    // Show modal dialog
+    function showModal(type, message) {
+      const modal = document.getElementById('modalOverlay');
+      const icon = document.getElementById('modalIcon');
+      const title = document.getElementById('modalTitle');
+      const messageEl = document.getElementById('modalMessage');
+
+      if (type === 'success') {
+        icon.textContent = '✅';
+        title.textContent = 'Berhasil!';
+      } else {
+        icon.textContent = '❌';
+        title.textContent = 'Error!';
+      }
+
+      messageEl.textContent = message;
+      modal.classList.add('show');
+    }
+
+    // Close modal
+    function closeModal() {
+      const modal = document.getElementById('modalOverlay');
+      modal.classList.remove('show');
+    }
+
+
+    // Event Listeners
+    document.getElementById('newsForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      await saveNews();
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', async () => {
+      if (currentNewsId > 1) {
+        currentNewsId--;
+        await loadNews(currentNewsId);
+      }
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', async () => {
+      if (currentNewsId < 6) {
+        currentNewsId++;
+        await loadNews(currentNewsId);
+      }
+    });
+
+    document.getElementById('imageInput').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        currentImageFile = file;
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const imagePreview = document.getElementById('imagePreview');
+          imagePreview.src = e.target.result;
+          imagePreview.classList.add('show');
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Modal close event listeners
+    document.getElementById('modalButton').addEventListener('click', closeModal);
+    document.getElementById('modalOverlay').addEventListener('click', (e) => {
+      if (e.target.id === 'modalOverlay') {
+        closeModal();
+      }
+    });
+
+    // Auto-populate date on load
+    window.addEventListener('DOMContentLoaded', () => {
+      init();
+    });
+  </script>
+</body>
+
+</html>
