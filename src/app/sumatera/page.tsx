@@ -2,57 +2,18 @@
 
 import { useState, useEffect } from 'react';
 import { Language, getTranslation } from './translations';
-// Static data - no database connection needed
-const newsData = [
-  {
-    id: 1,
-    title: 'Pimpin Ratas Penanganan Bencana, Presiden Instruksikan Penyaluran Bantuan Lebih Teliti dan Tepat Waktu',
-    category: 'Pemerintahan',
-    image: '/news/1.jpg',
-    date: '2025-12-08',
-    content: 'Presiden Prabowo Subianto memimpin langsung Rapat Terbatas (Ratas) terkait penanganan dan pemulihan bencana alam di Aceh. Dalam rapat tersebut, Presiden memerintahkan jajarannya untuk segera menindaklanjuti temuan lapangan dan arahan-arahan yang telah disampaikan. Beliau menegaskan bahwa kekompakan seluruh unsur pemerintah, relawan, dan masyarakat merupakan kekuatan terbesar dalam mempercepat pemulihan wilayah yang terdampak bencana.\n\nDalam arahannya, Presiden menekankan pentingnya penyaluran bantuan yang lebih teliti dan tepat waktu agar segera sampai ke tangan warga yang membutuhkan. Operasi terpadu yang melibatkan TNI, Polri, Basarnas, dan BNPB serta pemerintah daerah diminta untuk diperkuat dalam mempercepat distribusi logistik dan memulihkan konektivitas antardaerah yang terputus.'
-  },
-  {
-    id: 2,
-    title: 'Tinjau Jembatan Bireuen-Takengon, Presiden Tunjuk KSAD Jenderal Maruli Simanjuntak Komandoi Perbaikan Infrastruktur',
-    category: 'Infrastruktur',
-    image: '/news/2.jpg',
-    date: '2025-12-08',
-    content: 'Usai meninjau pengerjaan jembatan di ruas vital Bireuen–Takengon, Kabupaten Bireuen, Presiden Prabowo berdialog langsung dengan warga dan petugas lapangan. Presiden melihat langsung kerja keras personel TNI, Polri, tim teknik PUPR, dan relawan dalam memulihkan akses yang terputus. Kunjungan ini menegaskan komitmen pemerintah untuk memastikan kebutuhan masyarakat terpenuhi dan isolasi wilayah segera berakhir.\n\nSebagai langkah percepatan strategis, Presiden menunjuk Kepala Staf Angkatan Darat (KSAD), Jenderal TNI Maruli Simanjuntak, sebagai komandan percepatan perbaikan infrastruktur. Penunjukan ini diharapkan dapat mengoptimalkan pengerahan alat berat dan personel untuk memperbaiki akses jalan dan jembatan yang rusak parah.'
-  },
-  {
-    id: 3,
-    title: 'Pastikan Stok Pangan Aman, Presiden: Bantuan Dikirim dari Berbagai Daerah untuk Warga Aceh',
-    category: 'Sosial',
-    image: '/news/3.jpg',
-    date: '2025-12-08',
-    content: 'Presiden Prabowo memastikan bahwa ketersediaan bahan pangan bagi warga terdampak bencana di Aceh telah diantisipasi dengan matang. Dalam keterangannya di Kabupaten Bireuen, Presiden menyebutkan bahwa bantuan tidak hanya mengandalkan stok lokal, tetapi juga akan dikirimkan dari berbagai daerah lain untuk menjamin tidak ada kekurangan logistik bagi para pengungsi maupun warga yang terisolir.\n\nPemerintah berkomitmen penuh untuk memastikan seluruh proses pemulihan berjalan cepat, terkoordinasi, dan sesuai dengan standar keselamatan. Tujuan utamanya adalah menjamin masyarakat Aceh dapat kembali beraktivitas dengan aman, lancar, dan normal sesegera mungkin.'
-  },
-  {
-    id: 4,
-    title: 'Presiden Prabowo Kembali ke Aceh, Tinjau Langsung Kerusakan Banjir dan Percepatan Penanganan Darurat',
-    category: 'Nasional',
-    image: '/news/4.jpg',
-    date: '2025-12-08',
-    content: 'Presiden Prabowo Subianto kembali melakukan kunjungan kerja ke Aceh untuk meninjau penanganan bencana alam secara langsung. Fokus utama kunjungan kali ini adalah melihat sejumlah lokasi yang mengalami kerusakan parah akibat banjir dan memastikan percepatan penanganan darurat berjalan efektif. Presiden ingin memastikan proses pemulihan di wilayah terdampak mendapatkan atensi maksimal dari pemerintah pusat.\n\nBapak Presiden juga melakukan pengecekan terhadap penyaluran bantuan dan proses evakuasi warga yang masih terjebak. Upaya pembukaan akses jalan yang terputus menjadi prioritas utama untuk memastikan isolasi wilayah dapat segera diakhiri dan bantuan logistik dapat masuk ke seluruh pelosok daerah bencana.'
-  },
-  {
-    id: 5,
-    title: 'Tinjau Posko Terpadu Lanud Sultan Iskandar Muda, Pemerintah Pastikan Arus Logistik Bantuan Terus Mengalir',
-    category: 'Nasional',
-    image: '/news/5.jpg',
-    date: '2025-12-08',
-    content: 'Menteri Koordinator Bidang Pembangunan Manusia dan Kebudayaan (Menko PMK), Pratikno, meninjau Posko Terpadu penanganan bencana alam Aceh di Lanud Sultan Iskandar Muda. Tempat ini difungsikan sebagai gudang logistik utama sebelum bantuan didistribusikan ke wilayah terdampak. Kunjungan ini memastikan kesiapan stok dan kelancaran rantai pasok bantuan kemanusiaan.\n\nSesuai arahan Bapak Presiden, bantuan tambahan akan terus dikirimkan dan berbagai langkah pemulihan akan dipercepat untuk memastikan masyarakat mendapatkan penanganan yang layak dan segera keluar dari masa tanggap darurat.'
-  },
-  {
-    id: 6,
-    title: 'PLN Berhasil Pulihkan 100% Sistem Kelistrikan Sumatra Utara Pasca Banjir dan Longsor',
-    category: 'Energi',
-    image: '/news/6.jpg',
-    date: '2025-12-08',
-    content: 'PT PLN (Persero) mengumumkan keberhasilan memulihkan 100% sistem kelistrikan yang terdampak banjir dan longsor di Sumatra Utara. Pemulihan total tercapai pada hari Minggu, di mana 103 jaringan distribusi yang sebelumnya rusak kini telah beroperasi kembali. Keberhasilan ini menjadi kabar baik bagi warga yang sempat mengalami pemadaman total akibat bencana alam.\n\nProses pemulihan ini merupakan hasil sinergi antara PLN, TNI, Polri, BNPB, pemerintah daerah, dan masyarakat setempat. Dalam waktu lima hari, tim gabungan berhasil memperbaiki infrastruktur listrik yang rusak di seluruh 33 kota/kabupaten yang terdampak.'
-  },
-];
+
+type NewsItem = {
+  id: number;
+  title: string;
+  title_en: string;
+  category: string;
+  category_en: string;
+  content: string;
+  content_en: string;
+  image: string;
+  date: string;
+};
 
 type PmiStockItem = { name: string; quantity: string };
 type PmiStockCategories = Record<string, PmiStockItem[]>;
@@ -522,7 +483,8 @@ export default function Home() {
   const [language, setLanguage] = useState<Language>('id');
   const t = getTranslation(language);
   
-  const [selectedNews, setSelectedNews] = useState<(typeof newsData[0] & { translatedTitle?: string; translatedCategory?: string; translatedContent?: string }) | null>(null);
+  const [newsData, setNewsData] = useState<NewsItem[]>([]);
+  const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
   const [searchPosTerm, setSearchPosTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState<string>('Aceh');
   const [selectedEmergencyTab, setSelectedEmergencyTab] = useState<string>('Aceh');
@@ -656,6 +618,32 @@ export default function Home() {
         }
       })
       .catch(err => console.error('Failed to load PMI stock data:', err));
+
+    // Fetch news data from JSON files
+    const fetchNewsData = async () => {
+      try {
+        const newsPromises = [1, 2, 3, 4, 5, 6].map(async (i) => {
+          const res = await fetch(`/news/news${i}.json`);
+          const data = await res.json();
+          return {
+            id: i,
+            title: data.title || '',
+            title_en: data.title_en || data.title || '',
+            category: data.category || '',
+            category_en: data.category_en || data.category || '',
+            content: data.content || '',
+            content_en: data.content_en || data.content || '',
+            image: `/news/${data.image || `${i}.jpg`}`,
+            date: data.date || '',
+          };
+        });
+        const newsItems = await Promise.all(newsPromises);
+        setNewsData(newsItems);
+      } catch (err) {
+        console.error('Failed to load news data:', err);
+      }
+    };
+    fetchNewsData();
   }, []);
 
   const getFilteredPos = () => {
@@ -1485,82 +1473,105 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {newsData.map((item, index) => (
-            <div
-              key={item.id}
-              onClick={() => setSelectedNews({...item, translatedTitle: t.news.items[index]?.title || item.title, translatedCategory: t.news.items[index]?.category || item.category, translatedContent: t.news.items[index]?.content || item.content})}
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer hover:scale-[1.02]"
-            >
-              <div className="relative h-48 bg-gray-200 overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={t.news.items[index]?.title || item.title}
-                  className="w-full h-full object-cover"
-                />
-                <span className="absolute bottom-3 left-3 bg-[#D22730] text-white text-xs font-semibold px-3 py-1 rounded">
-                  {t.news.items[index]?.category || item.category}
-                </span>
+          {newsData.map((item) => {
+            const parseDate = (dateStr: string) => {
+              const parts = dateStr.split('/');
+              if (parts.length === 3) {
+                return new Date(parseInt(parts[2]), parseInt(parts[1]) - 1, parseInt(parts[0]));
+              }
+              return new Date(dateStr);
+            };
+            const displayTitle = language === 'en' ? item.title_en : item.title;
+            const displayCategory = language === 'en' ? item.category_en : item.category;
+            return (
+              <div
+                key={item.id}
+                onClick={() => setSelectedNews(item)}
+                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer hover:scale-[1.02]"
+              >
+                <div className="relative h-48 bg-gray-200 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={displayTitle}
+                    className="w-full h-full object-cover"
+                  />
+                  <span className="absolute bottom-3 left-3 bg-[#D22730] text-white text-xs font-semibold px-3 py-1 rounded">
+                    {displayCategory}
+                  </span>
+                </div>
+                <div className="p-5 space-y-2">
+                  <p className="text-xs text-gray-400">
+                    {item.date ? parseDate(item.date).toLocaleDateString(language === 'en' ? 'en-US' : 'id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}
+                  </p>
+                  <h3 className="font-semibold text-base leading-snug hover:text-[#D22730] transition line-clamp-2">
+                    {displayTitle}
+                  </h3>
+                </div>
               </div>
-              <div className="p-5 space-y-2">
-                <p className="text-xs text-gray-400">
-                  {item.date ? new Date(item.date).toLocaleDateString(language === 'en' ? 'en-US' : 'id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}
-                </p>
-                <h3 className="font-semibold text-base leading-snug hover:text-[#D22730] transition line-clamp-2">
-                  {t.news.items[index]?.title || item.title}
-                </h3>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
       {/* News Modal */}
-      {selectedNews && (
-        <div
-          className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedNews(null)}
-        >
+      {selectedNews && (() => {
+        const parseDate = (dateStr: string) => {
+          const parts = dateStr.split('/');
+          if (parts.length === 3) {
+            return new Date(parseInt(parts[2]), parseInt(parts[1]) - 1, parseInt(parts[0]));
+          }
+          return new Date(dateStr);
+        };
+        const displayTitle = language === 'en' ? selectedNews.title_en : selectedNews.title;
+        const displayCategory = language === 'en' ? selectedNews.category_en : selectedNews.category;
+        const displayContent = language === 'en' ? selectedNews.content_en : selectedNews.content;
+        return (
           <div
-            className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedNews(null)}
           >
-            {/* Modal Header with Close Button */}
-            <div className="sticky top-0 bg-white p-4 border-b flex justify-between items-center">
-              <span className="bg-[#D22730] text-white text-xs font-semibold px-3 py-1 rounded">
-                {(selectedNews as typeof newsData[0] & {translatedCategory?: string}).translatedCategory || selectedNews.category}
-              </span>
-              <button
-                onClick={() => setSelectedNews(null)}
-                className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition"
-              >
-                <i className="fas fa-times text-gray-600"></i>
-              </button>
-            </div>
+            <div
+              className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header with Close Button */}
+              <div className="sticky top-0 bg-white p-4 border-b flex justify-between items-center">
+                <span className="bg-[#D22730] text-white text-xs font-semibold px-3 py-1 rounded">
+                  {displayCategory}
+                </span>
+                <button
+                  onClick={() => setSelectedNews(null)}
+                  className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition"
+                >
+                  <i className="fas fa-times text-gray-600"></i>
+                </button>
+              </div>
 
-            {/* Modal Image */}
-            <div className="h-64 bg-gray-200 overflow-hidden">
-              <img
-                src={selectedNews.image}
-                alt={(selectedNews as typeof newsData[0] & {translatedTitle?: string}).translatedTitle || selectedNews.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
+              {/* Modal Image */}
+              <div className="h-64 bg-gray-200 overflow-hidden">
+                <img
+                  src={selectedNews.image}
+                  alt={displayTitle}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-            {/* Modal Content */}
-            <div className="p-6 space-y-4">
-              <p className="text-sm text-gray-400">
-                {selectedNews.date ? new Date(selectedNews.date).toLocaleDateString(language === 'en' ? 'en-US' : 'id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}
-              </p>
-              <h2 className="text-2xl font-bold text-[#1B1B1B]">
-                {(selectedNews as typeof newsData[0] & {translatedTitle?: string}).translatedTitle || selectedNews.title}
-              </h2>
-              <p className="text-gray-600 leading-relaxed whitespace-pre-line">
-                {(selectedNews as typeof newsData[0] & {translatedContent?: string}).translatedContent || selectedNews.content}
-              </p>
+              {/* Modal Content */}
+              <div className="p-6 space-y-4">
+                <p className="text-sm text-gray-400">
+                  {selectedNews.date ? parseDate(selectedNews.date).toLocaleDateString(language === 'en' ? 'en-US' : 'id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}
+                </p>
+                <h2 className="text-2xl font-bold text-[#1B1B1B]">
+                  {displayTitle}
+                </h2>
+                <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+                  {displayContent}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
 
       {/* Peta Operasi Section */}
       <section className="bg-gray-100 py-16">
