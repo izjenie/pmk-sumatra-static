@@ -126,6 +126,18 @@ app.get('/api/categories', (req, res) => {
   res.json(categories);
 });
 
+// Save categories
+app.post('/api/categories', (req, res) => {
+  const categoryPath = path.join(newsDir, 'category.json');
+
+  try {
+    fs.writeFileSync(categoryPath, JSON.stringify(req.body, null, 2));
+    res.json({ success: true, message: 'Categories saved successfully' });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
 // Get news by ID
 app.get('/api/news/:id', (req, res) => {
   const id = req.params.id;

@@ -352,6 +352,42 @@
         opacity: 1;
       }
     }
+
+    .category-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem;
+      border: 1px solid hsl(var(--border));
+      border-radius: calc(var(--radius) - 2px);
+      margin-bottom: 0.5rem;
+      background: hsl(var(--background));
+      transition: all 0.2s;
+    }
+
+    .category-item:hover {
+      background: hsl(var(--accent));
+    }
+
+    .category-item-name {
+      flex: 1;
+      font-size: 0.875rem;
+    }
+
+    .category-item-delete {
+      background: hsl(var(--destructive));
+      color: hsl(var(--destructive-foreground));
+      border: none;
+      padding: 0.25rem 0.75rem;
+      border-radius: calc(var(--radius) - 2px);
+      cursor: pointer;
+      font-size: 0.875rem;
+      transition: all 0.2s;
+    }
+
+    .category-item-delete:hover {
+      opacity: 0.9;
+    }
   </style>
 </head>
 
@@ -359,7 +395,7 @@
   <div class="container">
     <div class="header">
       <h1>📰 News Editor</h1>
-      <p>Kelola berita Anda dengan mudah</p>
+      <p>Editor static untuk tanggap-bencana.go.id</p>
     </div>
 
     <div id="alert" class="alert"></div>
@@ -371,6 +407,28 @@
         <h3 id="modalTitle" class="modal-title"></h3>
         <p id="modalMessage" class="modal-message"></p>
         <button id="modalButton" class="button button-primary modal-button">OK</button>
+      </div>
+    </div>
+
+    <!-- Category Editor Modal -->
+    <div id="categoryModalOverlay" class="modal-overlay">
+      <div class="modal-content" style="max-width: 500px;">
+        <h3 class="modal-title" style="text-align: left; margin-bottom: 1.5rem;">Edit Kategori</h3>
+
+        <div id="categoryList" style="margin-bottom: 1rem;">
+          <!-- Categories will be listed here -->
+        </div>
+
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem;">
+          <input type="text" id="newCategoryInput" class="form-input" placeholder="Tambah kategori baru..."
+            style="flex: 1;">
+          <button type="button" id="addCategoryBtn" class="button button-primary">➕ Tambah</button>
+        </div>
+
+        <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+          <button type="button" id="cancelCategoryBtn" class="button button-secondary">Batal</button>
+          <button type="button" id="saveCategoryBtn" class="button button-primary">💾 Simpan</button>
+        </div>
       </div>
     </div>
 
@@ -386,27 +444,54 @@
         <span id="newsCounter" class="badge">News 1 of 6</span>
       </div>
 
+      <div class="navigation" style="margin-top: 0; padding-top: 0; border-top: none; margin-bottom: 1.5rem;">
+        <div class="nav-buttons">
+          <button id="prevBtnTop" class="button button-primary" type="button">
+            ← Sebelumnya
+          </button>
+          <button id="nextBtnTop" class="button button-primary" type="button">
+            Selanjutnya →
+          </button>
+        </div>
+      </div>
+
       <form id="newsForm">
         <div class="form-group">
-          <label class="form-label" for="title">Judul Berita</label>
+          <label class="form-label" for="title">Judul Berita (Indonesia)</label>
           <input type="text" id="title" class="form-input" placeholder="Masukkan judul berita" required>
         </div>
 
         <div class="form-group">
+          <label class="form-label" for="titleEn">Judul Berita (English)</label>
+          <input type="text" id="titleEn" class="form-input" placeholder="Enter news title in English" required>
+        </div>
+
+        <div class="form-group">
           <label class="form-label" for="date">Tanggal</label>
-          <input type="text" id="date" class="form-input" placeholder="DD/MM/YYYY" required>
+          <input type="date" id="date" class="form-input" required>
         </div>
 
         <div class="form-group">
           <label class="form-label" for="category">Kategori</label>
-          <select id="category" class="form-select" required>
-            <option value="">Pilih kategori...</option>
-          </select>
+          <div style="display: flex; gap: 0.5rem;">
+            <select id="category" class="form-select" required style="flex: 1;">
+              <option value="">Pilih kategori...</option>
+            </select>
+            <button type="button" id="editCategoryBtn" class="button button-secondary" style="white-space: nowrap;">
+              ✏️ Edit Kategori
+            </button>
+          </div>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="content">Konten Berita</label>
+          <label class="form-label" for="content">Konten Berita (Indonesia)</label>
           <textarea id="content" class="form-textarea" placeholder="Tulis konten berita di sini..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contentEn">Konten Berita (English)</label>
+          <textarea id="contentEn" class="form-textarea" placeholder="Write news content in English..."
+            required></textarea>
         </div>
 
         <div class="form-group">
@@ -426,10 +511,10 @@
 
       <div class="navigation">
         <div class="nav-buttons">
-          <button id="prevBtn" class="button button-secondary">
+          <button id="prevBtn" class="button button-primary">
             ← Sebelumnya
           </button>
-          <button id="nextBtn" class="button button-secondary">
+          <button id="nextBtn" class="button button-primary">
             Selanjutnya →
           </button>
         </div>
@@ -471,6 +556,95 @@
       });
     }
 
+    // Open category editor modal
+    function openCategoryModal() {
+      renderCategoryList();
+      document.getElementById('categoryModalOverlay').classList.add('show');
+    }
+
+    // Close category editor modal
+    function closeCategoryModal() {
+      document.getElementById('categoryModalOverlay').classList.remove('show');
+      document.getElementById('newCategoryInput').value = '';
+    }
+
+    // Render category list in modal
+    function renderCategoryList() {
+      const categoryList = document.getElementById('categoryList');
+      categoryList.innerHTML = '';
+
+      categories.forEach((cat, index) => {
+        const item = document.createElement('div');
+        item.className = 'category-item';
+        item.innerHTML = `
+          <span class="category-item-name">${cat}</span>
+          <button class="category-item-delete" data-index="${index}">🗑️ Hapus</button>
+        `;
+        categoryList.appendChild(item);
+      });
+
+      // Add delete event listeners
+      categoryList.querySelectorAll('.category-item-delete').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const index = parseInt(e.target.dataset.index);
+          deleteCategory(index);
+        });
+      });
+    }
+
+    // Add new category
+    function addCategory() {
+      const input = document.getElementById('newCategoryInput');
+      const newCategory = input.value.trim();
+
+      if (!newCategory) {
+        showModal('error', 'Nama kategori tidak boleh kosong!');
+        return;
+      }
+
+      if (categories.includes(newCategory)) {
+        showModal('error', 'Kategori sudah ada!');
+        return;
+      }
+
+      categories.push(newCategory);
+      renderCategoryList();
+      input.value = '';
+    }
+
+    // Delete category
+    function deleteCategory(index) {
+      if (confirm(`Hapus kategori "${categories[index]}"?`)) {
+        categories.splice(index, 1);
+        renderCategoryList();
+      }
+    }
+
+    // Save categories
+    async function saveCategories() {
+      try {
+        const response = await fetch(`${API_BASE}/categories`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(categories)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          await loadCategories();
+          closeCategoryModal();
+          showModal('success', 'Kategori berhasil disimpan!');
+        } else {
+          showModal('error', 'Gagal menyimpan kategori!');
+        }
+      } catch (error) {
+        showModal('error', 'Gagal menyimpan kategori: ' + error.message);
+      }
+    }
+
     // Load news
     async function loadNews(id) {
       try {
@@ -478,9 +652,11 @@
         const news = await response.json();
 
         document.getElementById('title').value = news.title || '';
-        document.getElementById('date').value = news.date || getTodayDate();
+        document.getElementById('titleEn').value = news.title_en || '';
+        document.getElementById('date').value = convertToDateInput(news.date);
         document.getElementById('category').value = news.category || '';
         document.getElementById('content').value = news.content || '';
+        document.getElementById('contentEn').value = news.content_en || '';
 
         // Load image
         const imagePreview = document.getElementById('imagePreview');
@@ -521,9 +697,11 @@
       try {
         const newsData = {
           title: document.getElementById('title').value,
-          date: document.getElementById('date').value,
+          title_en: document.getElementById('titleEn').value,
+          date: convertFromDateInput(document.getElementById('date').value),
           category: document.getElementById('category').value,
           content: document.getElementById('content').value,
+          content_en: document.getElementById('contentEn').value,
           image: `${currentNewsId}.jpg`
         };
 
@@ -556,6 +734,28 @@
       }
     }
 
+    // Convert DD/MM/YYYY to YYYY-MM-DD for date input
+    function convertToDateInput(dateStr) {
+      if (!dateStr) return getTodayDateInput();
+      const parts = dateStr.split('/');
+      if (parts.length === 3) {
+        const [day, month, year] = parts;
+        return `${year}-${month}-${day}`;
+      }
+      return getTodayDateInput();
+    }
+
+    // Convert YYYY-MM-DD to DD/MM/YYYY for JSON storage
+    function convertFromDateInput(dateStr) {
+      if (!dateStr) return getTodayDate();
+      const parts = dateStr.split('-');
+      if (parts.length === 3) {
+        const [year, month, day] = parts;
+        return `${day}/${month}/${year}`;
+      }
+      return getTodayDate();
+    }
+
     // Get today's date in DD/MM/YYYY format
     function getTodayDate() {
       const today = new Date();
@@ -565,6 +765,15 @@
       return `${day}/${month}/${year}`;
     }
 
+    // Get today's date in YYYY-MM-DD format for date input
+    function getTodayDateInput() {
+      const today = new Date();
+      const day = String(today.getDate()).padStart(2, '0');
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const year = today.getFullYear();
+      return `${year}-${month}-${day}`;
+    }
+
     // Update counter
     function updateCounter() {
       document.getElementById('newsCounter').textContent = `News ${currentNewsId} of 6`;
@@ -572,8 +781,13 @@
 
     // Update navigation buttons
     function updateNavigationButtons() {
-      document.getElementById('prevBtn').disabled = currentNewsId === 1;
-      document.getElementById('nextBtn').disabled = currentNewsId === 6;
+      const isFirst = currentNewsId === 1;
+      const isLast = currentNewsId === 6;
+
+      document.getElementById('prevBtn').disabled = isFirst;
+      document.getElementById('nextBtn').disabled = isLast;
+      document.getElementById('prevBtnTop').disabled = isFirst;
+      document.getElementById('nextBtnTop').disabled = isLast;
     }
 
     // Show modal dialog
@@ -622,6 +836,20 @@
       }
     });
 
+    document.getElementById('prevBtnTop').addEventListener('click', async () => {
+      if (currentNewsId > 1) {
+        currentNewsId--;
+        await loadNews(currentNewsId);
+      }
+    });
+
+    document.getElementById('nextBtnTop').addEventListener('click', async () => {
+      if (currentNewsId < 6) {
+        currentNewsId++;
+        await loadNews(currentNewsId);
+      }
+    });
+
     document.getElementById('imageInput').addEventListener('change', (e) => {
       const file = e.target.files[0];
       if (file) {
@@ -641,6 +869,24 @@
     document.getElementById('modalOverlay').addEventListener('click', (e) => {
       if (e.target.id === 'modalOverlay') {
         closeModal();
+      }
+    });
+
+    // Category modal event listeners
+    document.getElementById('editCategoryBtn').addEventListener('click', openCategoryModal);
+    document.getElementById('addCategoryBtn').addEventListener('click', addCategory);
+    document.getElementById('saveCategoryBtn').addEventListener('click', saveCategories);
+    document.getElementById('cancelCategoryBtn').addEventListener('click', closeCategoryModal);
+    document.getElementById('categoryModalOverlay').addEventListener('click', (e) => {
+      if (e.target.id === 'categoryModalOverlay') {
+        closeCategoryModal();
+      }
+    });
+
+    // Add category on Enter key
+    document.getElementById('newCategoryInput').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        addCategory();
       }
     });
 
