@@ -417,7 +417,6 @@ const callCenterBPBD = {
     { kota: "Aceh Barat", contacts: [{ nama: "BPBD", jabatan: "", no: "(0655) 7551413" }] },
     { kota: "Aceh Besar", contacts: [{ nama: "BPBD", jabatan: "", no: "0811 6713 113" }] },
     { kota: "Aceh Jaya", contacts: [{ nama: "BPBD", jabatan: "", no: "0811 6899 113" }] },
-    { kota: "Aceh Selatan", contacts: [{ nama: "BPBD", jabatan: "", no: "(0656) 322797 " }] },
     { kota: "Aceh Tengah", contacts: [{ nama: "BPBD", jabatan: "", no: "0812 6425 7378" }] },
     { kota: "Aceh Timur", contacts: [{ nama: "BPBD", jabatan: "", no: "0823 2466 8545" }] },
     { kota: "Kota Banda Aceh", contacts: [{ nama: "BPBD", jabatan: "", no: " 0822 7670 5800" }] },
@@ -741,7 +740,6 @@ export default function Home() {
                 {selectedEmergencyTab === 'Aceh' && (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      { name: 'BPBD Aceh', phone: '(0651)34783' },
                       { name: 'Basarnas Wilayah Aceh', phone: '(0651) 33876' },
                       { name: 'PMI Aceh', phone: '0852 2315 0090' },
                       { name: 'BPBD Aceh Besar (Emergency)', phone: '0811 6713 113' },
