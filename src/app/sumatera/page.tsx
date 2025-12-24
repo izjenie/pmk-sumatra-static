@@ -419,11 +419,7 @@ const callCenterBPBD = {
     { kota: "Aceh Jaya", contacts: [{ nama: "BPBD", jabatan: "", no: "0811 6899 113" }] },
     { kota: "Aceh Selatan", contacts: [{ nama: "BPBD", jabatan: "", no: "(0656) 322797 " }] },
     { kota: "Aceh Tengah", contacts: [{ nama: "BPBD", jabatan: "", no: "0812 6425 7378" }] },
-    { kota: "Aceh Tenggara", contacts: [{ nama: "BPBD", jabatan: "", no: "(0629) 21741" }] },
     { kota: "Aceh Timur", contacts: [{ nama: "BPBD", jabatan: "", no: "0823 2466 8545" }] },
-    { kota: "Aceh Utara", contacts: [{ nama: "BPBD", jabatan: "", no: "(0645) 31710" }] },
-    { kota: "Bireun", contacts: [{ nama: "BPBD", jabatan: "", no: "(0644) 323535" }] },
-    { kota: "Gayo Lues", contacts: [{ nama: "BPBD", jabatan: "", no: "(0642) 21390" }] },
     { kota: "Kota Banda Aceh", contacts: [{ nama: "BPBD", jabatan: "", no: " 0822 7670 5800" }] },
     { kota: "Kota Lhokseumawe", contacts: [{ nama: "BPBD", jabatan: "", no: " 0851 0500 4113" }] },
     { kota: "Langsa", contacts: [{ nama: "BPBD", jabatan: "", no: "(0641) 20113113" }] },
@@ -454,7 +450,6 @@ const callCenterBPBD = {
     { kota: "Kota Padang", contacts: [{ nama: "BPBD", jabatan: "", no: "0858 9152 2181" }] },
     { kota: "Padang Pariaman", contacts: [{ nama: "BPBD", jabatan: "", no: "0811 6662 114" }] },
     { kota: "Pesisir Selatan", contacts: [{ nama: "BPBD", jabatan: "", no: "0852 6938 0950" }] },
-    { kota: "Provinsi Sumatera Barat", contacts: [{ nama: "BPBD", jabatan: "", no: "(0751) 890721" }] },
   ],
 }
 
@@ -750,10 +745,8 @@ export default function Home() {
                       { name: 'Basarnas Wilayah Aceh', phone: '(0651) 33876' },
                       { name: 'PMI Aceh', phone: '0852 2315 0090' },
                       { name: 'BPBD Aceh Besar (Emergency)', phone: '0811 6713 113' },
-                      { name: 'BPBD Aceh Besar (Emergency)', phone: '(0651) 92071' },
                       { name: 'Pusdalops BPBD Aceh Tengah', phone: '0812 6425 7378' },
                       { name: 'BPBD Aceh Tengah', phone: '(0643) 23113' },
-                      { name: 'BPBD Aceh Utara (Kantor)', phone: '(0645) 31710' },
                       { name: 'UDD PMI Aceh Utara (Darah)', phone: '0823 7998 1593' },
                       { name: 'BPBD Pidie (Kantor)', phone: '(0653) 7829567' },
                       { name: 'BPBD Aceh Barat', phone: '(0655) 7551413' },
@@ -762,9 +755,6 @@ export default function Home() {
                       { name: 'BPBD Aceh Jaya', phone: '0811 6899 113' },
                       { name: 'Damkar BPBK Aceh Jaya', phone: '0811 6792 113' },
                       { name: 'BPBD Langsa', phone: '(0641) 20113113' },
-                      { name: 'BPBD Bireun', phone: '(0644) 323535' },
-                      { name: 'BPBD Gayo Lues', phone: '(0642) 21390' },
-                      { name: 'BPBD Aceh Tenggara', phone: '(0629) 21741' },
                       { name: 'BPBD Kota Lhokseumawe', phone: '0851 0500 4113' },
                     ].map((item, idx) => (
                       <div key={idx} className="bg-gray-50 rounded-xl p-4 border border-gray-200">
@@ -783,8 +773,6 @@ export default function Home() {
                 {selectedEmergencyTab === 'Sumatera Barat' && (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      { name: 'BPBD Sumatera Barat', phone: '(0751) 890721' },
-                      { name: 'PMI Sumatera Barat', phone: '(0751) 27882' },
                       { name: 'Damkar Kota Padang', phone: '0811 6606 113' },
                       { name: 'BPBD Padang Pariaman', phone: '0811 666 2114' },
                       { name: 'Damkar Bukittinggi', phone: '0853 5515 7883' },
