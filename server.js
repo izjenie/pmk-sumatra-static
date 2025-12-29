@@ -42,6 +42,9 @@ const upload = multer({
     const extname = allowedTypes.test(path.extname(file.originalname).toLowerCase());
     const mimetype = allowedTypes.test(file.mimetype);
 
+console.log('ORIGINAL NAME:', file.originalname);
+  console.log('MIMETYPE:', file.mimetype);
+
     if (mimetype && extname) {
       return cb(null, true);
     } else {
