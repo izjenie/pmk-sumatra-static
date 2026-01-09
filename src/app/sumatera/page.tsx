@@ -921,14 +921,14 @@ export default function Home() {
                   <p className="text-xs opacity-70">{t.situation.worshipPlaces}</p>
                   <p className="text-lg font-bold">{rumahIbadah.toLocaleString('id-ID')}</p>
                 </div>
-                <div className="bg-white/10 rounded-lg px-3 py-2">
+                {/* <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">{t.situation.publicFacilities}</p>
                   <p className="text-lg font-bold">{fasilitasUmum.toLocaleString('id-ID')}</p>
                 </div>
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">{t.situation.officeBuildings}</p>
                   <p className="text-lg font-bold">{gedungKantor.toLocaleString('id-ID')}</p>
-                </div>
+                </div> */}
                 <div className="bg-white/10 rounded-lg px-3 py-2">
                   <p className="text-xs opacity-70">{t.situation.healthFacilities}</p>
                   <p className="text-lg font-bold">{fasKesehatan.toLocaleString('id-ID')}</p>
@@ -1288,9 +1288,9 @@ export default function Home() {
       </section>
 
       {/* Logistik Stok PMI Section */}
-      <section className="py-16 bg-[#1B1B1B]">
-        <div className="container mx-auto px-4 sm:px-6 md:px-10">
-          <div className="text-center mb-10">
+      {/* <section className="py-16 bg-[#1B1B1B]"> */}
+        {/* <div className="container mx-auto px-4 sm:px-6 md:px-10"> */}
+          {/* <div className="text-center mb-10">
             <div className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#D22730] to-[#B71C1C] px-6 py-3 rounded-xl mb-4">
               <img src="/logos/pmi.png" alt="PMI" className="w-12 h-12 object-contain" />
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">
@@ -1312,11 +1312,11 @@ export default function Home() {
             <p className="text-sm text-gray-500">
               {t.pmiStock.lastUpdate}: <span className="font-semibold">{pmiLastUpdate || t.pmiStock.loading}</span>
             </p>
-          </div>
+          </div> */}
 
-          <div className="bg-white text-black rounded-xl shadow-xl p-6">
+          {/* <div className="bg-white text-black rounded-xl shadow-xl p-6"> */}
             {/* Category Tabs */}
-            <div className="flex flex-wrap gap-2 mb-6">
+            {/* <div className="flex flex-wrap gap-2 mb-6">
               {Object.keys(pmiStockCategories).map((category) => (
                 <button
                   key={category}
@@ -1329,10 +1329,10 @@ export default function Home() {
                   {category}
                 </button>
               ))}
-            </div>
+            </div> */}
 
             {/* Stock List */}
-            <div className="border border-gray-200 rounded-xl overflow-hidden">
+            {/* <div className="border border-gray-200 rounded-xl overflow-hidden">
               <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex justify-between items-center">
                 <h3 className="font-bold text-gray-800">{selectedPmiCategory}</h3>
                 <span className="text-sm text-gray-500">
@@ -1355,9 +1355,9 @@ export default function Home() {
                   </tbody>
                 </table>
               </div>
-            </div>
+            </div> */}
 
-            <div className="mt-4 text-center">
+            {/* <div className="mt-4 text-center">
               <a
                 href="https://pmi.or.id/dashboard/stock"
                 target="_blank"
@@ -1366,10 +1366,10 @@ export default function Home() {
               >
                 {t.pmiStock.source}: pmi.or.id/dashboard/stock →
               </a>
-            </div>
-          </div>
-        </div>
-      </section>
+            </div> */}
+          {/* </div> */}
+        {/* </div> */}
+      {/* </section> */}
 
       {/* Layanan BAZNAS Section */}
       <section className="bg-gray-100 py-16">
