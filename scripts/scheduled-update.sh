@@ -22,7 +22,7 @@ echo ""
 
 # 3. Jalankan Docker production
 echo "Step 3: Menjalankan Docker production..."
-sudo ./scripts/docker-production.sh
+./scripts/docker-production.sh
 echo ""
 
 echo "=== Scheduled Update Completed ==="
